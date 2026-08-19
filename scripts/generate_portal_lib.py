@@ -63,76 +63,16 @@ def generate_html(chronicle_data, output_path):
             ],
             "correct": "A",
             "explanation": "【日置流の鉄則】「会議は10分以内ルール」（2026/6/12会議）。定性的な状況報告を長々と聞く時間は無駄であり、事前に数字を共有した上で、ボトルネックに対する意思決定だけを秒で下すカルチャーを徹底しました。"
-        },
-        {
-            "id": 6,
-            "category": "固定費・財務規律",
-            "question": "事業拡大に伴いインターン生の採用を増やし、オフィス移転も検討しています。日置さんが設定している固定費・人件費の明確な規律基準は？",
-            "options": [
-                {"key": "A", "text": "「インターン給与は売上の50%以内、オフィス賃料は売上の10%以下に抑える。」"},
-                {"key": "B", "text": "「調達した資金の範囲内であれば、売上比率に関わらず自由に投資してよい。」"},
-                {"key": "C", "text": "「人件費は売上の80%まで許容し、オフィスは会社の信用のため最高級ビルを借りる。」"}
-            ],
-            "correct": "A",
-            "explanation": "【日置流の鉄則】2026/6/26の会議で明言された財務規律。「インターン給与は売上の50%以内、賃料は売上の10%以下」。トップラインが伸びても固定費が暴走すれば単月黒字・キャッシュランウェイが崩壊するため、明確な比率規律を引いています。"
-        },
-        {
-            "id": 7,
-            "category": "定性論の数値翻訳",
-            "question": "営業メンバーが「最近テレアポの反応が鈍く、クライアントの警戒感が高まっている気がします」と相談してきました。日置さんならどう切り返しますか？",
-            "options": [
-                {"key": "A", "text": "「景気が悪いのかもしれないね。トークスクリプトを明るい感じに変えてみよう。」"},
-                {"key": "B", "text": "「それを数字で言うと？ アポ率・初期設計転換率は何%落ちてる？ 成約＝相談数×成功率でどこがボトルネック？」"},
-                {"key": "C", "text": "「営業活動を一時中断して、営業セミナーを全員で受講しましょう。」"}
-            ],
-            "correct": "B",
-            "explanation": "【日置流の鉄則】「定性論を数字に翻訳させる」。感覚的な「反応が鈍い」を受け取らず、「相談数（分母）が落ちているのか、成功率（転換率）が落ちているのか」を数式で特定させます（2026/7/10会議）。"
-        },
-        {
-            "id": 8,
-            "category": "逆算と供給体制",
-            "question": "7月の営業目標を「上駐100件」と設定した場合、人事・採用チームに対して日置さんはどのように指示を出しますか？",
-            "options": [
-                {"key": "A", "text": "「営業が100件取れたら、その時点で慌てて採用を開始してください。」"},
-                {"key": "B", "text": "「とにかく採用できるだけたくさん採用して、待機人材をプールしておいてください。」"},
-                {"key": "C", "text": "「リーダー1人あたりの案件キャパから逆算して、100件支えるには12人のリーダーが必要。今リーダー候補が何人いて何人不足するか逆算して採用・育成を先行させて。」"}
-            ],
-            "correct": "C",
-            "explanation": "【日置流の鉄則】事業部の営業目標から供給能力（リーダー数・採用数・育成リードタイム）を逆算して同期させるのが日置流の組織マネジメントです（2026/5/1会議）。"
-        },
-        {
-            "id": 9,
-            "category": "投資家目線・IR",
-            "question": "シリーズA（5〜10億円調達）のVC面談に向けて、事業の強みを説明する資料を作成しています。日置さんが最も強くこだわる資料は？",
-            "options": [
-                {"key": "A", "text": "これまでの累積売上グラフと創業ストーリーの美談"},
-                {"key": "B", "text": "人材のスキルTier1〜7ピラミッドや採用〜育成フローの1枚スライドなど、「成長の再現性と仕組みが確立している証拠」"},
-                {"key": "C", "text": "競合他社の悪口と自社がいかに安いかをアピールする比較表"}
-            ],
-            "correct": "B",
-            "explanation": "【日置流の鉄則】「投資家が見ているのは『本当に成長できるのか』という再現性の証明だけ」。単発の売上ではなく、スキルTierピラミッドや育成フローの1枚スライドなど、仕組み化されている証拠を提示することを最重視します（2026/5/1、6/5会議）。"
-        },
-        {
-            "id": 10,
-            "category": "未達時のマネジメント",
-            "question": "月次目標が大きく未達となり、リーダー陣が暗い雰囲気で会議に臨んでいます。日置さんのマネジメントスタンスとして正しいものは？",
-            "options": [
-                {"key": "A", "text": "怒鳴り散らして精神論で反省文を書かせる。"},
-                {"key": "B", "text": "穏やかに「なぜその数字になったのか、どう変えるか」を一緒に再計算し、「今は仕込み・練習台と考えていい」と再定義して前を向かせる。"},
-                {"key": "C", "text": "未達には触れず、雑談をして場を和ませる。"}
-            ],
-            "correct": "B",
-            "explanation": "【日置流の鉄則】日置さんは感情的に怒ることは一切なく、穏やかなトーンで論理の穴を突き、一緒に計算式を解き直します。そして「今のことは練習台・仕込みだと考えていい」と再定義して次のアクションに集中させます（人物像分析・システムプロンプト）。"
         }
     ]
     drills_json_str = json.dumps(drills_data, ensure_ascii=False)
 
     html_content = f'''<!DOCTYPE html>
-<html lang="ja" class="dark">
+<html lang="ja" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>日置佑輔 CFOインテリジェンス・ポータル | VEXUM 経営思考・全会議分析 &「第二の日置さん」育成ガイド</title>
+    <title>VEXUM CFO Intelligence Portal | 日置佑輔 CFO思考OS ＆ 全会議分析</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -141,24 +81,9 @@ def generate_html(chronicle_data, output_path):
             theme: {{
                 extend: {{
                     colors: {{
-                        brand: {{
-                            50: '#eef2ff',
-                            100: '#e0e7ff',
-                            400: '#818cf8',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                            900: '#312e81',
-                        }},
-                        emerald: {{
-                            400: '#34d399',
-                            500: '#10b981',
-                            600: '#059669',
-                        }},
                         darkBg: '#0b0f19',
                         darkCard: '#111827',
-                        darkBorder: '#1f2937',
-                        darkInput: '#1e293b'
+                        darkBorder: '#1f2937'
                     }}
                 }}
             }}
@@ -174,7 +99,7 @@ def generate_html(chronicle_data, output_path):
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {{
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
@@ -183,76 +108,45 @@ def generate_html(chronicle_data, output_path):
             font-family: 'JetBrains Mono', monospace;
         }}
         ::-webkit-scrollbar {{
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
         }}
         ::-webkit-scrollbar-track {{
-            background: rgba(15, 23, 42, 0.6);
+            background: transparent;
         }}
         ::-webkit-scrollbar-thumb {{
-            background: rgba(99, 102, 241, 0.4);
-            border-radius: 4px;
-        }}
-        ::-webkit-scrollbar-thumb:hover {{
-            background: rgba(99, 102, 241, 0.7);
-        }}
-        .glass-card {{
-            background: rgba(17, 24, 39, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }}
-        .light .glass-card {{
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-        }}
-        .gradient-text {{
-            background: linear-gradient(135deg, #6366f1 0%, #38bdf8 50%, #34d399 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: rgba(148, 163, 184, 0.5);
+            border-radius: 3px;
         }}
         .tab-btn.active {{
-            border-color: #6366f1;
-            color: #818cf8;
-            background: rgba(99, 102, 241, 0.12);
+            background: #0f172a;
+            color: #ffffff;
         }}
-        .light .tab-btn.active {{
-            border-color: #4f46e5;
-            color: #4f46e5;
-            background: rgba(79, 70, 229, 0.08);
-        }}
-        .dropzone-active {{
-            border-color: #6366f1 !important;
-            background: rgba(99, 102, 241, 0.15) !important;
-        }}
-        .animate-fadeIn {{
-            animation: fadeIn 0.25s ease-in-out;
-        }}
-        @keyframes fadeIn {{
-            from {{ opacity: 0; transform: translateY(4px); }}
-            to {{ opacity: 1; transform: translateY(0); }}
+        .dark .tab-btn.active {{
+            background: #f8fafc;
+            color: #0f172a;
         }}
     </style>
 </head>
-<body class="bg-darkBg text-slate-100 min-h-screen transition-colors duration-200 selection:bg-indigo-500 selection:text-white">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen transition-colors duration-150 selection:bg-slate-900 selection:text-white dark:selection:bg-slate-100 dark:selection:text-slate-900">
 
     <!-- Top Navigation Header -->
-    <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 px-4 lg:px-8 py-3 transition-all">
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 px-4 lg:px-8 py-3 dark:bg-slate-900 dark:border-slate-800 transition-colors">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-emerald-400 flex items-center justify-center shadow-lg shadow-indigo-500/20 text-white font-bold text-lg">
+                <div class="w-9 h-9 rounded-lg bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 flex items-center justify-center font-bold text-base shadow-sm">
                     H
                 </div>
                 <div>
                     <div class="flex items-center space-x-2">
-                        <h1 class="text-lg font-bold tracking-tight text-white">
+                        <h1 class="text-base font-bold tracking-tight text-slate-900 dark:text-white">
                             VEXUM CFO Intelligence Portal
                         </h1>
-                        <span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-                            Ver 3.0 (常時更新対応)
+                        <span id="header-badge" class="px-2 py-0.5 text-xs font-semibold rounded bg-slate-100 text-slate-700 border border-slate-300 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700">
+                            同期中
                         </span>
                     </div>
-                    <p class="text-xs text-slate-400">
+                    <p class="text-xs text-slate-500 dark:text-slate-400">
                         日置佑輔の経営哲学・CFO思考OS・全議事録分析 ＆「第二の日置さん」育成ガイド
                     </p>
                 </div>
@@ -260,42 +154,42 @@ def generate_html(chronicle_data, output_path):
 
             <!-- Quick Action Buttons -->
             <div class="flex items-center space-x-2">
-                <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition text-sm flex items-center space-x-1 border border-slate-700" title="テーマ切り替え">
+                <button onclick="toggleTheme()" class="p-2 rounded-lg bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-700 transition text-xs flex items-center space-x-1.5 shadow-sm" title="テーマ切り替え">
                     <i data-lucide="sun-moon" class="w-4 h-4"></i>
-                    <span class="text-xs hidden sm:inline" id="theme-btn-text">ライト</span>
+                    <span id="theme-btn-text">ダーク表示</span>
                 </button>
-                <button onclick="exportDataJSON()" class="p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition text-sm flex items-center space-x-1 border border-slate-700" title="データエクスポート">
+                <button onclick="exportDataJSON()" class="p-2 rounded-lg bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-700 transition text-xs flex items-center space-x-1.5 shadow-sm" title="データエクスポート">
                     <i data-lucide="download" class="w-4 h-4"></i>
-                    <span class="text-xs hidden sm:inline">JSON保存</span>
+                    <span class="hidden sm:inline">JSON保存</span>
                 </button>
-                <button onclick="switchTab('tab-manage')" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition text-xs font-semibold flex items-center space-x-1 shadow-md shadow-indigo-600/30">
-                    <i data-lucide="file-plus" class="w-3.5 h-3.5"></i>
-                    <span>ドキュメント投入 / 自動更新</span>
+                <button onclick="switchTab('tab-manage')" class="px-3 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 transition text-xs font-semibold flex items-center space-x-1.5 shadow-sm">
+                    <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
+                    <span>ドキュメント投入 / 同期</span>
                 </button>
             </div>
         </div>
 
         <!-- Navigation Tabs -->
-        <div class="max-w-7xl mx-auto mt-3 overflow-x-auto flex space-x-2 border-t border-slate-800/60 pt-2 text-sm font-medium">
-            <button onclick="switchTab('tab-profile')" id="btn-tab-profile" class="tab-btn active px-4 py-2 rounded-lg border border-transparent transition flex items-center space-x-2 whitespace-nowrap">
-                <i data-lucide="user-check" class="w-4 h-4"></i>
+        <div class="max-w-7xl mx-auto mt-3 overflow-x-auto flex space-x-1 border-t border-slate-200 dark:border-slate-800 pt-2 text-xs font-semibold">
+            <button onclick="switchTab('tab-profile')" id="btn-tab-profile" class="tab-btn active px-3.5 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100">
+                <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
                 <span>1. 人物像 & CFO機能の全貌</span>
             </button>
-            <button onclick="switchTab('tab-kpi')" id="btn-tab-kpi" class="tab-btn px-4 py-2 rounded-lg border border-transparent text-slate-400 hover:text-slate-200 transition flex items-center space-x-2 whitespace-nowrap">
-                <i data-lucide="activity" class="w-4 h-4"></i>
+            <button onclick="switchTab('tab-kpi')" id="btn-tab-kpi" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100">
+                <i data-lucide="activity" class="w-3.5 h-3.5"></i>
                 <span>2. 必見KPI & 逆算シミュレーター</span>
             </button>
-            <button onclick="switchTab('tab-chronicle')" id="btn-tab-chronicle" class="tab-btn px-4 py-2 rounded-lg border border-transparent text-slate-400 hover:text-slate-200 transition flex items-center space-x-2 whitespace-nowrap">
-                <i data-lucide="calendar-days" class="w-4 h-4"></i>
+            <button onclick="switchTab('tab-chronicle')" id="btn-tab-chronicle" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100">
+                <i data-lucide="calendar-days" class="w-3.5 h-3.5"></i>
                 <span>3. 経営会議 完全クロニクル</span>
             </button>
-            <button onclick="switchTab('tab-roadmap')" id="btn-tab-roadmap" class="tab-btn px-4 py-2 rounded-lg border border-transparent text-slate-400 hover:text-slate-200 transition flex items-center space-x-2 whitespace-nowrap">
-                <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            <button onclick="switchTab('tab-roadmap')" id="btn-tab-roadmap" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100">
+                <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
                 <span>4. 「第二の日置さん」育成ロードマップ</span>
             </button>
-            <button onclick="switchTab('tab-manage')" id="btn-tab-manage" class="tab-btn px-4 py-2 rounded-lg border border-transparent text-slate-400 hover:text-slate-200 transition flex items-center space-x-2 whitespace-nowrap">
-                <i data-lucide="refresh-cw" class="w-4 h-4 text-emerald-400"></i>
-                <span class="text-emerald-400 font-bold">5. ドキュメント投入 / 自動更新</span>
+            <button onclick="switchTab('tab-manage')" id="btn-tab-manage" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100">
+                <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
+                <span>5. ドキュメント投入 / 同期</span>
             </button>
         </div>
     </header>
@@ -303,976 +197,322 @@ def generate_html(chronicle_data, output_path):
     <!-- Main Content Area -->
     <main class="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8">
 
-        <!-- ========================================== -->
-        <!-- TAB 1: 日置さんの人物像 & CFO機能の全貌 -->
-        <!-- ========================================== -->
-        <section id="tab-profile" class="tab-content block space-y-8 animate-fadeIn">
-            <!-- Hero Card -->
-            <div class="glass-card rounded-2xl p-6 lg:p-8 relative overflow-hidden border border-indigo-500/20 shadow-2xl bg-gradient-to-br from-slate-900 via-indigo-950/40 to-slate-900">
-                <div class="absolute -right-16 -bottom-16 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <!-- TAB 1: Profile -->
+        <section id="tab-profile" class="tab-content block space-y-8">
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 lg:p-8 dark:bg-slate-900 dark:border-slate-800 shadow-sm space-y-6">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div class="space-y-3 max-w-3xl">
-                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold">
-                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                        <div class="inline-flex items-center space-x-2 px-2.5 py-1 rounded bg-slate-100 text-slate-800 text-xs font-semibold dark:bg-slate-800 dark:text-slate-300">
                             <span>株式会社VEXUM 代表取締役 兼 経営統括・CFO</span>
                         </div>
-                        <h2 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                            日置 佑輔 <span class="text-xl font-normal text-slate-400">（Yusuke）</span>
+                        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                            日置 佑輔 <span class="text-lg font-normal text-slate-500">（Yusuke）</span>
                         </h2>
-                        <p class="text-base lg:text-lg text-slate-300 leading-relaxed font-medium">
-                            <span class="gradient-text font-bold">「数字を共通言語にして、逆算とスピードで“成長の再現性”を証明し続ける」</span>
+                        <p class="text-base text-slate-800 dark:text-slate-200 font-semibold leading-relaxed">
+                            「数字を共通言語にして、逆算とスピードで“成長の再現性”を証明し続ける」
                         </p>
-                        <p class="text-sm text-slate-400 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                             AI活用の人材派遣・常駐受託（「上駐」）支援事業を率い、シリーズA調達（5〜10億円規模）と「1年後に有料顧客3,000社」という全社ゴールを牽引。毎週金曜の経営会議を主宰し、営業・採用・財務・資金調達・ガバナンスのすべてを数字で統括する戦略的CFO/CEO。
                         </p>
                     </div>
 
-                    <!-- Quick Summary Metrics -->
-                    <div class="grid grid-cols-2 gap-3 w-full md:w-auto shrink-0 font-mono">
-                        <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/60 text-center">
-                            <div class="text-xs text-slate-400 font-sans">全社目標 (1年後)</div>
-                            <div class="text-xl font-bold text-amber-400">有料 3,000社</div>
-                            <div class="text-[11px] text-slate-400 font-sans">ボーナス総額 1億円</div>
+                    <div class="grid grid-cols-2 gap-3 w-full md:w-auto shrink-0 font-mono text-center">
+                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-3 rounded-xl">
+                            <div class="text-[11px] text-slate-500 font-sans">全社目標 (1年後)</div>
+                            <div class="text-lg font-bold text-slate-900 dark:text-white">有料 3,000社</div>
+                            <div class="text-[10px] text-slate-400 font-sans">1億円ボーナス</div>
                         </div>
-                        <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/60 text-center">
-                            <div class="text-xs text-slate-400 font-sans">資金調達目標</div>
-                            <div class="text-xl font-bold text-emerald-400">5億〜10億円</div>
-                            <div class="text-[11px] text-slate-400 font-sans">シリーズA ラウンド</div>
+                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-3 rounded-xl">
+                            <div class="text-[11px] text-slate-500 font-sans">資金調達目標</div>
+                            <div class="text-lg font-bold text-slate-900 dark:text-white">5億〜10億円</div>
+                            <div class="text-[10px] text-slate-400 font-sans">シリーズA</div>
                         </div>
-                        <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/60 text-center">
-                            <div class="text-xs text-slate-400 font-sans">必要供給体制</div>
-                            <div class="text-xl font-bold text-indigo-400">4,500人体制</div>
-                            <div class="text-[11px] text-slate-400 font-sans">Tier1〜7 ピラミッド</div>
+                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-3 rounded-xl">
+                            <div class="text-[11px] text-slate-500 font-sans">蓄積会議数</div>
+                            <div id="summary-meeting-count" class="text-lg font-bold text-slate-900 dark:text-white">-</div>
+                            <div class="text-[10px] text-slate-400 font-sans">全件解析済み</div>
                         </div>
-                        <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/60 text-center">
-                            <div class="text-xs text-slate-400 font-sans">意思決定ルール</div>
-                            <div class="text-xl font-bold text-rose-400">10分会議</div>
-                            <div class="text-[11px] text-slate-400 font-sans">LINE即時予算承認</div>
+                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-3 rounded-xl">
+                            <div class="text-[11px] text-slate-500 font-sans">意思決定ルール</div>
+                            <div class="text-lg font-bold text-slate-900 dark:text-white">10分会議</div>
+                            <div class="text-[10px] text-slate-400 font-sans">LINE即時承認</div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border-l-4 border-slate-900 p-3.5 rounded-r-lg dark:bg-slate-950 dark:border-slate-100 flex items-start space-x-3">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-slate-700 dark:text-slate-300 shrink-0 mt-0.5"></i>
+                    <div class="text-xs space-y-1">
+                        <div class="font-bold text-slate-900 dark:text-white">最新の経営進捗・日置さんの重要方針（<span id="latest-meeting-date">-</span>）：</div>
+                        <div id="latest-decision-text" class="text-slate-700 dark:text-slate-300 leading-relaxed">-</div>
                     </div>
                 </div>
             </div>
 
-            <!-- 日置流 思考OS (Thinking OS) 7大原則 -->
+            <!-- Principles -->
             <div class="space-y-4">
                 <div class="flex items-center space-x-2">
-                    <i data-lucide="cpu" class="w-6 h-6 text-indigo-400"></i>
-                    <h3 class="text-2xl font-bold text-white tracking-tight">日置流『思考OS（Thinking OS）』7大原則</h3>
+                    <i data-lucide="cpu" class="w-5 h-5 text-slate-900 dark:text-white"></i>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">日置流『思考OS（Thinking OS）』7大原則</h3>
                 </div>
-                <p class="text-sm text-slate-400">
-                    日置さんのすべての発言・指示・問いかけの根底にある思考のOSです。定性論を排し、常に以下の7つの順序・フレームワークで思考を展開します。
-                </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-                    <!-- Principle 1 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 hover:border-indigo-500/40 transition duration-200 flex flex-col justify-between">
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono">原則 01</span>
-                                <i data-lucide="git-branch" class="w-4 h-4 text-indigo-400"></i>
-                            </div>
-                            <h4 class="text-lg font-bold text-white">すべては「逆算」で組む</h4>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                ゴール（例：7月上駐100件）から、<strong class="text-indigo-300">リードタイム・各ファネル転換率・必要行動量</strong>へ分解。「上駐100件 ÷ 転換率6掛け ＝ アポ160件 ＝ 初回接触200件」を即座に組み立てる。人事・採用も案件キャパから必要リーダー数を逆算。
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-white border border-slate-200 p-5 rounded-xl dark:bg-slate-900 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="text-xs font-bold text-slate-500 font-mono mb-1">原則 01</div>
+                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">すべては「逆算」で組む</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                ゴール（例：7月上駐100件）からリードタイム・各ファネル転換率・必要行動量へ分解。「上駐100件 ÷ 6掛け ＝ アポ160件 ＝ 初回接触200件」を即座に組み立てる。
                             </p>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 italic">
-                            💬「リーダー12人必要なら、今リーダー候補は何人いるんだっけと逆算して動いて」
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                            💬「リーダー12人必要なら今候補は何人いるか逆算して」
                         </div>
                     </div>
 
-                    <!-- Principle 2 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 hover:border-indigo-500/40 transition duration-200 flex flex-col justify-between">
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono">原則 02</span>
-                                <i data-lucide="calculator" class="w-4 h-4 text-indigo-400"></i>
-                            </div>
-                            <h4 class="text-lg font-bold text-white">定性論を数字に翻訳させる</h4>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                「頑張ります」「感触は良い」などの定性報告を一切許さない。<strong class="text-indigo-300">「成約数 ＝ 相談数 × 成功率」</strong>のように基本の数式に落とし、ボトルネックが分母（相談数）か分子（転換率）かを特定させる。
+                    <div class="bg-white border border-slate-200 p-5 rounded-xl dark:bg-slate-900 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="text-xs font-bold text-slate-500 font-mono mb-1">原則 02</div>
+                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">定性論を数字に翻訳させる</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                「頑張ります」を許さず「成約数 ＝ 相談数 × 成功率」のように基本の数式に落とし、ボトルネックが分母か転換率かを即特定させる。
                             </p>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 italic">
-                            💬「それを数字で言うと？」「相談数×成功率で、課題はどっちにあるんすか？」
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                            💬「それを数字で言うと？」「相談数×成功率でどこが課題？」
                         </div>
                     </div>
 
-                    <!-- Principle 3 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 hover:border-indigo-500/40 transition duration-200 flex flex-col justify-between">
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono">原則 03</span>
-                                <i data-lucide="repeat" class="w-4 h-4 text-indigo-400"></i>
-                            </div>
-                            <h4 class="text-lg font-bold text-white">成長の再現性・スケールの証明</h4>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                「投資家が見ているのは“本当に成長できるのか”だけ」。単発の売上ではなく、<strong class="text-indigo-300">同じ勝ち筋を仕組みとして繰り返せるか</strong>を最重要視。スキルTier1〜7ピラミッドや教育フロー1枚スライドなど、仕組みの証明資料に執着。
+                    <div class="bg-white border border-slate-200 p-5 rounded-xl dark:bg-slate-900 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="text-xs font-bold text-slate-500 font-mono mb-1">原則 03</div>
+                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">成長の再現性・スケールの証明</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                投資家が見ているのは「成長できることの証明」のみ。一発屋を排し、スキルTier1〜7ピラミッドや教育フロー1枚スライドなど仕組み化に執着。
                             </p>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 italic">
-                            💬「投資家が見てるのは成長できることの証明。成長できていることが全て」
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                            💬「投資家が見てるのは成長の証明。成長できてることが全て」
                         </div>
                     </div>
 
-                    <!-- Principle 4 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 hover:border-indigo-500/40 transition duration-200 flex flex-col justify-between">
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono">原則 04</span>
-                                <i data-lucide="zap" class="w-4 h-4 text-indigo-400"></i>
-                            </div>
-                            <h4 class="text-lg font-bold text-white">スピード＝唯一の競争優位</h4>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                「ベンチャーでスピードは唯一の競争優位。予算承認に1週間かけるな」。会議時間を10分以内に短縮し、LINEグループで即座に予算を承認。「週単位ではなく秒単位でサイクルを回せ」「プロアスリートの水準で自己研鑽を」と要求。
+                    <div class="bg-white border border-slate-200 p-5 rounded-xl dark:bg-slate-900 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="text-xs font-bold text-slate-500 font-mono mb-1">原則 04</div>
+                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">スピード＝唯一の競争優位</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                予算承認に1週間かけるな。LINEで喋りながら即承認。会議は10分以内ルール、秒単位でサイクルを回す。
                             </p>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 italic">
-                            💬「喋りながらLINEで連絡してその場で承認しろ。遅さそのものがリスク」
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                            💬「喋りながらLINEで連絡して今すぐ承認しろ」
                         </div>
                     </div>
 
-                    <!-- Principle 5 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 hover:border-indigo-500/40 transition duration-200 flex flex-col justify-between">
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono">原則 05</span>
-                                <i data-lucide="shield-alert" class="w-4 h-4 text-indigo-400"></i>
-                            </div>
-                            <h4 class="text-lg font-bold text-white">予実管理と「見込み3倍」ルール</h4>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                計画に対する進捗差（下振れ）を最重要リスクとしてリアルタイム監視。<strong class="text-indigo-300">「見込みは目標の3倍（150%以上）持て。100%だと必ず下振れする」</strong>。放置を許さず、日次・週次で改善サイクルを回す。
+                    <div class="bg-white border border-slate-200 p-5 rounded-xl dark:bg-slate-900 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="text-xs font-bold text-slate-500 font-mono mb-1">原則 05</div>
+                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">予実管理と「見込み3倍」ルール</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                「見込みは目標の3倍（150%以上）持て。100%だと必ず下振れる」。下振れを最重要リスクとして日次で監視。
                             </p>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 italic">
-                            💬「見込みが目標を下回ってるのを放置すると、資金調達と成長に直結して悪影響」
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                            💬「見込み放置は資金調達と成長に直結して悪影響」
                         </div>
                     </div>
 
-                    <!-- Principle 6 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 hover:border-indigo-500/40 transition duration-200 flex flex-col justify-between">
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono">原則 06</span>
-                                <i data-lucide="coins" class="w-4 h-4 text-indigo-400"></i>
-                            </div>
-                            <h4 class="text-lg font-bold text-white">利益構造・ユニットエコノミクス</h4>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                売上（トップライン）だけでなく、<strong class="text-indigo-300">限界利益率・原価率（約66%の改善）・案件あたり利益・LTV・解約率（チャーン70%）</strong>を見る。解約が多い時期には「採用を一時停止し、社内育成に全投資する」英断を下す。
+                    <div class="bg-white border border-slate-200 p-5 rounded-xl dark:bg-slate-900 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="text-xs font-bold text-slate-500 font-mono mb-1">原則 06</div>
+                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">利益構造・ユニットエコノミクス</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                売上だけでなく限界利益率・原価率（約66%改善）・案件粗利・LTVを見る。解約率70%時には新規採用を停止し社内育成に全集中。
                             </p>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 italic">
-                            💬「初月売上ではなく原価を引いた後の案件利益率が適切か。ボーダーを決めろ」
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                            💬「初月売上ではなく原価を引いた後の案件利益率で判断しろ」
                         </div>
-                    </div>
-
-                    <!-- Principle 7 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 hover:border-indigo-500/40 transition duration-200 flex flex-col justify-between lg:col-span-3">
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono">原則 07</span>
-                                <i data-lucide="database" class="w-4 h-4 text-indigo-400"></i>
-                            </div>
-                            <h4 class="text-lg font-bold text-white">記録・ログ・CRMと財務のデータ整合性への執着</h4>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                「取れないなら手動でもいい。とにかく直近の数字を把握し、相関を理解する姿勢を持て」。CRMの受注ステータスと財務会計の売上入金がズレていることを厳格に追究し、「あの数字はめっちゃ大事」と一致を要求。将来の振り返りのために仮置き数値を必ずログ化。
-                            </p>
-                        </div>
-                        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 italic">
-                            💬「売上の入金が3ヶ月横ばいなこととCRMの見込みをどう合わせるか。ギャップを合わせるのがめっちゃ大事」
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CFOとしての6大実務領域と職務全うの型 -->
-            <div class="space-y-4">
-                <div class="flex items-center space-x-2">
-                    <i data-lucide="briefcase" class="w-6 h-6 text-emerald-400"></i>
-                    <h3 class="text-2xl font-bold text-white tracking-tight">日置さんがCFOとして職務を全うする6大領域</h3>
-                </div>
-                <p class="text-sm text-slate-400">
-                    日置さんは単なる「経理・財務のまとめ役」ではありません。事業部（営業・開発・採用）の活動を全て数式に落とし、投資家のストーリーと完全に接続させる<strong class="text-emerald-400">「事業推進型CFO（Operating / Strategic CFO）」</strong>として機能しています。
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-                    <!-- Function 1 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                        <div class="flex items-center space-x-3">
-                            <div class="p-2 rounded-lg bg-emerald-500/20 text-emerald-400">
-                                <i data-lucide="trending-up" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-base font-bold text-white">① ファイナンス・資本政策・IR</h4>
-                                <span class="text-xs text-slate-400">シリーズA 5〜10億円調達に向けたバリュエーション最大化</span>
-                            </div>
-                        </div>
-                        <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
-                            <li><strong>バリュエーション最大化</strong>：6月・7月の数値を跳ねさせ、投資家に「成長の再現性」を証明。</li>
-                            <li><strong>資本政策・SO設計</strong>：増資前にストックオプション（SO）を付与するスケジュールを策定。</li>
-                            <li><strong>決算・税務最適化</strong>：6月決算に向けた免税事業者の選択、決算見込み1億円の達成管理。</li>
-                        </ul>
-                    </div>
-
-                    <!-- Function 2 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                        <div class="flex items-center space-x-3">
-                            <div class="p-2 rounded-lg bg-indigo-500/20 text-indigo-400">
-                                <i data-lucide="line-chart" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-base font-bold text-white">② 戦略的予実管理（Operating CFO）</h4>
-                                <span class="text-xs text-slate-400">営業パイプラインと財務会計の完全同期</span>
-                            </div>
-                        </div>
-                        <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
-                            <li><strong>CRMと財務の乖離是正</strong>：CRMの見込み売上と実際の銀行口座入金のズレを毎週突合。</li>
-                            <li><strong>先行指標（Leading Indicator）管理</strong>：「初期設計数」を上駐成約の最重要先行指標と定義。</li>
-                            <li><strong>見込みの厚み管理</strong>：目標の150%〜300%のパイプライン確保を事業部に義務付け。</li>
-                        </ul>
-                    </div>
-
-                    <!-- Function 3 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                        <div class="flex items-center space-x-3">
-                            <div class="p-2 rounded-lg bg-amber-500/20 text-amber-400">
-                                <i data-lucide="pie-chart" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-base font-bold text-white">③ ユニットエコノミクス & コスト規律</h4>
-                                <span class="text-xs text-slate-400">限界利益の死守と固定費コントロール</span>
-                            </div>
-                        </div>
-                        <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
-                            <li><strong>原価率（66%）の改善</strong>：案件あたりの利益率を算出し、投資判断のボーダーラインを設定。</li>
-                            <li><strong>固定費のルール化</strong>：インターン給与は「売上の50%以内」、オフィス賃料は「売上の10%以内」。</li>
-                            <li><strong>コストの外科手術</strong>：成果の出ていない顧問契約を整理し、顧問料を月50万円に即座に削減。</li>
-                        </ul>
-                    </div>
-
-                    <!-- Function 4 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                        <div class="flex items-center space-x-3">
-                            <div class="p-2 rounded-lg bg-purple-500/20 text-purple-400">
-                                <i data-lucide="users-round" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-base font-bold text-white">④ 供給能力・組織設計の逆算</h4>
-                                <span class="text-xs text-slate-400">営業目標と採用・育成能力の同期</span>
-                            </div>
-                        </div>
-                        <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
-                            <li><strong>必要リーダー数の逆算</strong>：営業目標案件数 ÷ 1人あたり案件キャパ ＝ 必要リーダー数（12名等）。</li>
-                            <li><strong>スキルTier 1〜7 ピラミッド</strong>：全人材のスキルレベルを格付けし、育成体制を可視化。</li>
-                            <li><strong>採用停止と育成集中</strong>：解約率70%の課題に対し、採用を止めて社内育成に全投資する英断。</li>
-                        </ul>
-                    </div>
-
-                    <!-- Function 5 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                        <div class="flex items-center space-x-3">
-                            <div class="p-2 rounded-lg bg-blue-500/20 text-blue-400">
-                                <i data-lucide="shield-check" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-base font-bold text-white">⑤ ガバナンス・法務・子会社管理</h4>
-                                <span class="text-xs text-slate-400">宮本弁護士と連携した先回りのリスクヘッジ</span>
-                            </div>
-                        </div>
-                        <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
-                            <li><strong>労働者派遣法の適格性</strong>：常駐支援における指揮命令記録や契約条項を先回りで適正化。</li>
-                            <li><strong>グループ・子会社管理</strong>：子会社設立、登記、法人口座開設をスムーズに推進。</li>
-                            <li><strong>知的財産・成果物開示</strong>：契約書における成果物・著作権条項のチェックを徹底。</li>
-                        </ul>
-                    </div>
-
-                    <!-- Function 6 -->
-                    <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                        <div class="flex items-center space-x-3">
-                            <div class="p-2 rounded-lg bg-rose-500/20 text-rose-400">
-                                <i data-lucide="message-square-quote" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-base font-bold text-white">⑥ マネジメント & コミュニケーション</h4>
-                                <span class="text-xs text-slate-400">穏やかな確認口調と論理的追及・再定義フォロー</span>
-                            </div>
-                        </div>
-                        <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
-                            <li><strong>穏やかな口調</strong>：「〜じゃないですか」「〜なんですよ」「〜って感じですかね」。</li>
-                            <li><strong>一緒に再計算</strong>：「160から100だから6掛け。22日のリードタイムで出してる感じ？」。</li>
-                            <li><strong>再定義のフォロー</strong>：未達で落ち込むチームに「今は仕込み・練習台と考えていい」と前を向かせる。</li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <!-- ========================================== -->
-        <!-- TAB 2: 必見KPIダッシュボード & 逆算シミュレーター -->
-        <!-- ========================================== -->
-        <section id="tab-kpi" class="tab-content hidden space-y-8 animate-fadeIn">
-            <div class="space-y-2">
-                <div class="flex items-center space-x-2">
-                    <i data-lucide="activity" class="w-6 h-6 text-indigo-400"></i>
-                    <h3 class="text-2xl font-bold text-white tracking-tight">日置流 必見KPIダッシュボード体系</h3>
-                </div>
-                <p class="text-sm text-slate-400">
-                    日置さんに報告する前に必ず頭に入れ、数式で連動させておくべき重要KPIの4象限マトリクスです。
-                </p>
-            </div>
-
-            <!-- 4 Quadrants Matrix -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Quad 1: Sales -->
-                <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                    <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-                        <div class="flex items-center space-x-2 text-indigo-400 font-bold text-sm">
-                            <i data-lucide="filter" class="w-4 h-4"></i>
-                            <span>A. 営業パイプライン（逆算の起点）</span>
-                        </div>
-                        <span class="text-xs text-slate-400 font-mono">Sales Funnel</span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-2 text-xs">
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">初回接触・リード数</div>
-                            <div class="font-bold text-white font-mono text-sm">月200件</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">アポ獲得数</div>
-                            <div class="font-bold text-white font-mono text-sm">月160件 (1日1件)</div>
-                        </div>
-                        <div class="bg-indigo-950/40 p-2.5 rounded-lg border border-indigo-500/30">
-                            <div class="text-indigo-300 font-semibold">初期設計数【最重要先行指標】</div>
-                            <div class="font-bold text-indigo-400 font-mono text-sm">転換率 約80%</div>
-                        </div>
-                        <div class="bg-emerald-950/40 p-2.5 rounded-lg border border-emerald-500/30">
-                            <div class="text-emerald-300 font-semibold">上駐開始数【必達マスト】</div>
-                            <div class="font-bold text-emerald-400 font-mono text-sm">月64〜100件</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">リードタイム</div>
-                            <div class="font-bold text-white font-mono text-sm">接触→上駐 57日 / 設計→上駐 22日</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">見込みパイプライン厚み</div>
-                            <div class="font-bold text-amber-400 font-mono text-sm">目標の3倍 (150%以上)</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quad 2: Unit Economics & Retention -->
-                <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                    <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-                        <div class="flex items-center space-x-2 text-emerald-400 font-bold text-sm">
-                            <i data-lucide="refresh-cw" class="w-4 h-4"></i>
-                            <span>B. 収益・ユニットエコノミクス</span>
-                        </div>
-                        <span class="text-xs text-slate-400 font-mono">Unit Economics</span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-2 text-xs">
-                        <div class="bg-rose-950/40 p-2.5 rounded-lg border border-rose-500/30">
-                            <div class="text-rose-300 font-semibold">解約率 (チャーン)</div>
-                            <div class="font-bold text-rose-400 font-mono text-sm">約70% (要改善)</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">LTV & 平均契約期間</div>
-                            <div class="font-bold text-white font-mono text-sm">顧客生涯価値の最大化</div>
-                        </div>
-                        <div class="bg-amber-950/40 p-2.5 rounded-lg border border-amber-500/30">
-                            <div class="text-amber-300 font-semibold">全社原価率</div>
-                            <div class="font-bold text-amber-400 font-mono text-sm">約66% (圧縮目標)</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">平均常駐日数 (アーリス)</div>
-                            <div class="font-bold text-white font-mono text-sm">5.7日 → 2〜2.5日/人</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">案件あたり利益率</div>
-                            <div class="font-bold text-white font-mono text-sm">原価控除後の粗利率</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">アップセル率</div>
-                            <div class="font-bold text-white font-mono text-sm">スタンダードをデフォルト提示</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quad 3: Finance -->
-                <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                    <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-                        <div class="flex items-center space-x-2 text-amber-400 font-bold text-sm">
-                            <i data-lucide="wallet" class="w-4 h-4"></i>
-                            <span>C. 財務・資金調達</span>
-                        </div>
-                        <span class="text-xs text-slate-400 font-mono">Finance & Runway</span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-2 text-xs">
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">月次売上実績</div>
-                            <div class="font-bold text-white font-mono text-sm">5月1,425万 → 7月2,200万</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">キャッシュランウェイ</div>
-                            <div class="font-bold text-white font-mono text-sm">最低3ヶ月分を死守</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">シリーズA 調達目標</div>
-                            <div class="font-bold text-emerald-400 font-mono text-sm">5億〜10億円</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">インターン給与規律</div>
-                            <div class="font-bold text-white font-mono text-sm">売上の50%以内</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">オフィス賃料規律</div>
-                            <div class="font-bold text-white font-mono text-sm">売上の10%以下</div>
-                        </div>
-                        <div class="bg-rose-950/40 p-2.5 rounded-lg border border-rose-500/30">
-                            <div class="text-rose-300 font-semibold">CRM・財務データ乖離</div>
-                            <div class="font-bold text-rose-400 font-mono text-sm">乖離ゼロ (完全一致要求)</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quad 4: HR & Supply -->
-                <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                    <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-                        <div class="flex items-center space-x-2 text-purple-400 font-bold text-sm">
-                            <i data-lucide="users" class="w-4 h-4"></i>
-                            <span>D. 人事・採用・供給逆算</span>
-                        </div>
-                        <span class="text-xs text-slate-400 font-mono">HR Supply Chain</span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-2 text-xs">
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">承諾率 基準</div>
-                            <div class="font-bold text-white font-mono text-sm">80%超を維持</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">応募→上駐リードタイム</div>
-                            <div class="font-bold text-white font-mono text-sm">3週間〜1ヶ月</div>
-                        </div>
-                        <div class="bg-purple-950/40 p-2.5 rounded-lg border border-purple-500/30">
-                            <div class="text-purple-300 font-semibold">人材格付けピラミッド</div>
-                            <div class="font-bold text-purple-400 font-mono text-sm">Tier 1 〜 Tier 7</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">必要リーダー数</div>
-                            <div class="font-bold text-white font-mono text-sm">営業目標から逆算 (12名等)</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">稼働メッシュ</div>
-                            <div class="font-bold text-white font-mono text-sm">常駐 85名 / 待機 22名</div>
-                        </div>
-                        <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50">
-                            <div class="text-slate-400">媒体別CPA × Aランク比率</div>
-                            <div class="font-bold text-white font-mono text-sm">単価とスキルの相関分析</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 動的ツール: 逆算シミュレーター (Reverse Engineering Calculator) -->
-            <div class="glass-card rounded-2xl p-6 border border-indigo-500/30 bg-slate-900/90 shadow-xl space-y-6">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+        <!-- TAB 2: Dynamic KPI & Simulator -->
+        <section id="tab-kpi" class="tab-content hidden space-y-8">
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 lg:p-8 dark:bg-slate-900 dark:border-slate-800 shadow-sm space-y-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
                     <div>
-                        <div class="inline-flex items-center space-x-2 text-indigo-400 text-xs font-bold uppercase tracking-wider">
-                            <i data-lucide="calculator" class="w-4 h-4"></i>
-                            <span>Interactive CFO Simulator</span>
+                        <div class="text-xs font-bold uppercase tracking-wider text-slate-500">
+                            Interactive Reverse Engineering Tool
                         </div>
-                        <h4 class="text-xl font-bold text-white">日置流『営業・供給 逆算シミュレーター』</h4>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                            日置流『営業・供給 逆算シミュレーター』
+                        </h3>
                     </div>
-                    <p class="text-xs text-slate-400 max-w-md">
+                    <p class="text-xs text-slate-500 dark:text-slate-400 max-w-md">
                         目標とする「上駐開始件数（成約）」を入力すると、日置さんのロジック（転換率・リードタイム・リーダーキャパ）に基づいて必要なアクション量を即座に逆算します。
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Controls -->
-                    <div class="space-y-4 bg-slate-800/40 p-4 rounded-xl border border-slate-700/60">
+                    <div class="space-y-4 bg-slate-50 p-4 rounded-xl border border-slate-200 dark:bg-slate-950 dark:border-slate-800">
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
                                 目標 上駐開始数 (成約件数 / 月)
                             </label>
                             <div class="relative">
-                                <input type="number" id="sim-target-deals" value="100" min="1" max="1000" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white font-mono font-bold text-lg focus:border-indigo-500 focus:outline-none" oninput="calculateReverseModel()">
+                                <input type="number" id="sim-target-deals" value="100" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-slate-900 font-mono font-bold text-lg focus:border-slate-900 focus:outline-none dark:bg-slate-900 dark:border-slate-700 dark:text-white" oninput="calculateReverseModel()">
                                 <span class="absolute right-3 top-2.5 text-xs text-slate-400">社</span>
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">
-                                初期設計 → 上駐 転換率 (デフォルト: 62.5%)
-                            </label>
-                            <input type="range" id="sim-rate-deal" min="30" max="90" value="63" class="w-full accent-indigo-500" oninput="calculateReverseModel()">
-                            <div class="flex justify-between text-[11px] text-slate-400 font-mono">
-                                <span>30%</span>
-                                <span id="sim-rate-deal-val" class="text-indigo-400 font-bold">63%</span>
-                                <span>90%</span>
+                            <div class="flex justify-between text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                                <span>初期設計 → 上駐 転換率</span>
+                                <span id="sim-rate-deal-val" class="font-mono">63%</span>
                             </div>
+                            <input type="range" id="sim-rate-deal" min="30" max="90" value="63" class="w-full accent-slate-900 dark:accent-slate-100" oninput="calculateReverseModel()">
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">
-                                アポ → 初期設計 転換率 (デフォルト: 80%)
-                            </label>
-                            <input type="range" id="sim-rate-design" min="40" max="95" value="80" class="w-full accent-indigo-500" oninput="calculateReverseModel()">
-                            <div class="flex justify-between text-[11px] text-slate-400 font-mono">
-                                <span>40%</span>
-                                <span id="sim-rate-design-val" class="text-indigo-400 font-bold">80%</span>
-                                <span>95%</span>
+                            <div class="flex justify-between text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                                <span>アポ → 初期設計 転換率</span>
+                                <span id="sim-rate-design-val" class="font-mono">80%</span>
                             </div>
+                            <input type="range" id="sim-rate-design" min="40" max="95" value="80" class="w-full accent-slate-900 dark:accent-slate-100" oninput="calculateReverseModel()">
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">
-                                リーダー1人あたり案件キャパ (デフォルト: 8社)
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                                リーダー1人あたり案件キャパ
                             </label>
-                            <input type="number" id="sim-leader-cap" value="8" min="1" max="20" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-white font-mono text-sm focus:border-indigo-500 focus:outline-none" oninput="calculateReverseModel()">
+                            <input type="number" id="sim-leader-cap" value="8" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-slate-900 font-mono text-sm dark:bg-slate-900 dark:border-slate-700 dark:text-white focus:outline-none" oninput="calculateReverseModel()">
                         </div>
                     </div>
 
-                    <!-- Calculated Results -->
                     <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-3">
-                        <div class="bg-indigo-950/30 p-4 rounded-xl border border-indigo-500/40 flex flex-col justify-between">
-                            <div class="text-xs text-indigo-300 font-semibold">① 必要初期設計数 (先行指標)</div>
-                            <div class="my-2">
-                                <div id="res-design-count" class="text-2xl lg:text-3xl font-extrabold text-indigo-400 font-mono">160</div>
-                                <div class="text-[10px] text-slate-400">リードタイム: 約22日前</div>
-                            </div>
-                            <div class="text-[10px] text-slate-400">成約 ÷ 転換率</div>
+                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-4 rounded-xl flex flex-col justify-between">
+                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400">① 必要初期設計数 (先行指標)</div>
+                            <div id="res-design-count" class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono my-2">160</div>
+                            <div class="text-[10px] text-slate-400">リードタイム: 約22日前</div>
                         </div>
 
-                        <div class="bg-indigo-950/30 p-4 rounded-xl border border-indigo-500/40 flex flex-col justify-between">
-                            <div class="text-xs text-indigo-300 font-semibold">② 必要アポイント数</div>
-                            <div class="my-2">
-                                <div id="res-appo-count" class="text-2xl lg:text-3xl font-extrabold text-indigo-400 font-mono">200</div>
-                                <div class="text-[10px] text-slate-400 font-mono" id="res-appo-daily">日次: 約8.0件</div>
-                            </div>
-                            <div class="text-[10px] text-slate-400">初期設計 ÷ 設計率</div>
+                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-4 rounded-xl flex flex-col justify-between">
+                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400">② 必要アポイント数</div>
+                            <div id="res-appo-count" class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono my-2">200</div>
+                            <div id="res-appo-daily" class="text-[10px] text-slate-400 font-mono">日次: 約8.0件</div>
                         </div>
 
-                        <div class="bg-amber-950/30 p-4 rounded-xl border border-amber-500/40 flex flex-col justify-between">
-                            <div class="text-xs text-amber-300 font-semibold">③ 必要見込みパイプライン (3倍)</div>
-                            <div class="my-2">
-                                <div id="res-pipeline-3x" class="text-2xl lg:text-3xl font-extrabold text-amber-400 font-mono">300</div>
-                                <div class="text-[10px] text-amber-400/80 font-semibold">下振れ防止バッファ</div>
-                            </div>
-                            <div class="text-[10px] text-slate-400">日置式 3倍ルール</div>
+                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-4 rounded-xl flex flex-col justify-between">
+                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400">③ 必要見込み (3倍ルール)</div>
+                            <div id="res-pipeline-3x" class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono my-2">300</div>
+                            <div class="text-[10px] text-slate-500 font-semibold">下振れ防止バッファ</div>
                         </div>
 
-                        <div class="bg-purple-950/30 p-4 rounded-xl border border-purple-500/40 flex flex-col justify-between">
-                            <div class="text-xs text-purple-300 font-semibold">④ 必要リーダー数</div>
-                            <div class="my-2">
-                                <div id="res-leader-count" class="text-2xl lg:text-3xl font-extrabold text-purple-400 font-mono">13</div>
-                                <div class="text-[10px] text-slate-400">名 (案件管理体制)</div>
-                            </div>
-                            <div class="text-[10px] text-slate-400">目標社数 ÷ キャパ</div>
+                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-4 rounded-xl flex flex-col justify-between">
+                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400">④ 必要リーダー数</div>
+                            <div id="res-leader-count" class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono my-2">13</div>
+                            <div class="text-[10px] text-slate-400">名 (案件管理体制)</div>
                         </div>
 
-                        <div class="bg-emerald-950/30 p-4 rounded-xl border border-emerald-500/40 flex flex-col justify-between">
-                            <div class="text-xs text-emerald-300 font-semibold">⑤ 想定月次売上 (単価25万)</div>
-                            <div class="my-2">
-                                <div id="res-monthly-sales" class="text-2xl lg:text-3xl font-extrabold text-emerald-400 font-mono">2,500万</div>
-                                <div class="text-[10px] text-slate-400 font-mono">円 / 月</div>
-                            </div>
-                            <div class="text-[10px] text-slate-400">上駐数 × 単価</div>
+                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-4 rounded-xl flex flex-col justify-between">
+                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400">⑤ 想定月次売上 (単価25万)</div>
+                            <div id="res-monthly-sales" class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono my-2">2,500万</div>
+                            <div class="text-[10px] text-slate-400">円 / 月</div>
                         </div>
 
-                        <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/80 flex flex-col justify-between">
-                            <div class="text-xs text-slate-300 font-semibold">⑥ インターン給与上限 (50%)</div>
-                            <div class="my-2">
-                                <div id="res-intern-budget" class="text-2xl lg:text-3xl font-extrabold text-slate-200 font-mono">1,250万</div>
-                                <div class="text-[10px] text-slate-400">円 (財務規律上限)</div>
-                            </div>
-                            <div class="text-[10px] text-slate-400">売上 × 50%以内</div>
+                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-4 rounded-xl flex flex-col justify-between">
+                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400">⑥ インターン給与上限 (50%)</div>
+                            <div id="res-intern-budget" class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono my-2">1,250万</div>
+                            <div class="text-[10px] text-slate-400">円 (財務規律上限)</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <!-- ========================================== -->
-        <!-- TAB 3: 経営会議 完全クロニクル -->
-        <!-- ========================================== -->
-        <section id="tab-chronicle" class="tab-content hidden space-y-8 animate-fadeIn">
+        <!-- TAB 3: Chronicle -->
+        <section id="tab-chronicle" class="tab-content hidden space-y-6">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div class="space-y-1">
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="calendar-days" class="w-6 h-6 text-indigo-400"></i>
-                        <h3 class="text-2xl font-bold text-white tracking-tight">VEXUM経営会議 完全クロニクル</h3>
-                    </div>
-                    <p class="text-sm text-slate-400">
-                        蓄積されたすべての経営会議議事録・Geminiメモ・発言・意思決定の全記録（全 <span id="chronicle-total-count" class="text-indigo-400 font-bold">0</span> 件）
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                        VEXUM経営会議 完全クロニクル
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">
+                        蓄積されたすべての会議議事録・意思決定ログ（全 <span id="chronicle-total-count" class="font-bold text-slate-900 dark:text-white">0</span> 件）
                     </p>
                 </div>
-
-                <!-- Search & Filters -->
-                <div class="flex flex-wrap items-center gap-2">
-                    <div class="relative">
-                        <input type="text" id="chronicle-search" placeholder="キーワード・数字・発言検索..." class="bg-slate-900 border border-slate-700 rounded-lg pl-8 pr-3 py-1.5 text-xs text-white placeholder-slate-500 focus:border-indigo-500 focus:outline-none w-48 sm:w-64" oninput="filterChronicle()">
-                        <i data-lucide="search" class="w-3.5 h-3.5 text-slate-500 absolute left-2.5 top-2.5"></i>
-                    </div>
-                    <select id="chronicle-tag-filter" class="bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-300 focus:border-indigo-500 focus:outline-none" onchange="filterChronicle()">
-                        <option value="ALL">全てのタグ (全件)</option>
+                <div class="flex items-center gap-2">
+                    <input type="text" id="chronicle-search" placeholder="キーワード・発言検索..." class="bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:border-slate-900 focus:outline-none dark:bg-slate-900 dark:border-slate-700 dark:text-white" oninput="filterChronicle()">
+                    <select id="chronicle-tag-filter" class="bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs text-slate-700 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-300 focus:outline-none" onchange="filterChronicle()">
+                        <option value="ALL">全てのタグ</option>
                         <option value="逆算設計">逆算設計</option>
-                        <option value="資金調達">資金調達・シリーズA</option>
-                        <option value="単月黒字">単月黒字化・財務</option>
-                        <option value="ユニットエコノミクス">ユニットエコノミクス・原価</option>
+                        <option value="資金調達">資金調達</option>
+                        <option value="ユニットエコノミクス">ユニットエコノミクス</option>
                         <option value="3000社目標">3000社目標</option>
-                        <option value="危機管理">危機管理・下振れ対策</option>
-                        <option value="構造改革">構造改革・分業制</option>
                     </select>
                 </div>
             </div>
 
-            <!-- Chronicle Cards Container -->
-            <div id="chronicle-container" class="space-y-6">
-                <!-- Dynamically populated by JS -->
-            </div>
+            <div id="chronicle-container" class="space-y-4"></div>
         </section>
 
-
-        <!-- ========================================== -->
-        <!-- TAB 4: 「第二の日置さん」育成ロードマップ -->
-        <!-- ========================================== -->
-        <section id="tab-roadmap" class="tab-content hidden space-y-8 animate-fadeIn">
-            <div class="space-y-2">
-                <div class="flex items-center space-x-2">
-                    <i data-lucide="graduation-cap" class="w-6 h-6 text-indigo-400"></i>
-                    <h3 class="text-2xl font-bold text-white tracking-tight">「第二の日置さん」になるための学習・思考ロードマップ</h3>
-                </div>
-                <p class="text-sm text-slate-400">
-                    あなたが日置さんと同じ解像度で事業を牽引し、CFO・経営統括として機能するために身につけるべき3階層のスキル体系と日常の思考訓練です。
+        <!-- TAB 4: Roadmap & Drills -->
+        <section id="tab-roadmap" class="tab-content hidden space-y-8">
+            <div class="space-y-1">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                    「第二の日置さん」育成ロードマップ ＆ 実践ドリル
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                    ドキュメントが追加されるたびに、新しい意思決定や論点が学習データとして蓄積されます。
                 </p>
             </div>
 
-            <!-- 3 Layers of Skills -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Layer 1 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-full blur-2xl"></div>
-                    <div class="flex items-center space-x-2 text-amber-400 text-xs font-bold font-mono">
-                        <span>LAYER 01</span>
-                        <span>•</span>
-                        <span>基礎体力</span>
-                    </div>
-                    <h4 class="text-xl font-bold text-white">財務・ファイナンス・管理会計の武器</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        日置さんは会社のキャッシュ、限界利益、資本政策を常に頭の中で回しています。簿記だけでなく「スタートアップ特有のファイナンス」を修得します。
-                    </p>
-
-                    <div class="space-y-2 pt-2 border-t border-slate-800 text-xs text-slate-300">
-                        <div class="font-semibold text-amber-300">重点修得テーマ：</div>
-                        <ul class="space-y-1.5 list-disc list-inside text-slate-400 text-[11px]">
-                            <li><strong>管理会計・限界利益</strong>：固定費・変動費の分解と損益分岐点売上高の計算。</li>
-                            <li><strong>資金繰り表（キャッシュフロー）</strong>：最低3ヶ月分のランウェイ予測と入金サイト管理。</li>
-                            <li><strong>スタートアップ資本政策</strong>：シリーズA（5〜10億）調達、バリュエーション算定、SOプール（10〜15%）設計。</li>
-                            <li><strong>税務と会社形態</strong>：免税事業者の選択、決算対策、子会社設立とガバナンス。</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Layer 2 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-500/10 rounded-full blur-2xl"></div>
-                    <div class="flex items-center space-x-2 text-indigo-400 text-xs font-bold font-mono">
-                        <span>LAYER 02</span>
-                        <span>•</span>
-                        <span>事業推進</span>
-                    </div>
-                    <h4 class="text-xl font-bold text-white">事業オペレーション＆数値モデリング</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        定性的な事業活動を「数式」に落とし込み、先行指標とボトルネックを秒で特定するOperating CFOのコアスキルです。
-                    </p>
-
-                    <div class="space-y-2 pt-2 border-t border-slate-800 text-xs text-slate-300">
-                        <div class="font-semibold text-indigo-300">重点修得テーマ：</div>
-                        <ul class="space-y-1.5 list-disc list-inside text-slate-400 text-[11px]">
-                            <li><strong>逆算ファネル設計</strong>：ゴールから逆算してリードタイム・転換率・日次必要量を算出。</li>
-                            <li><strong>先行指標（Leading Indicators）の特定</strong>：成約の前に必ず動く数字（初期設計数など）を特定し監視。</li>
-                            <li><strong>ユニットエコノミクス・LTV/CAC</strong>：案件あたり原価、チャーン率、平均稼働日数（アーリス）の最大化。</li>
-                            <li><strong>SFA/CRMデータ整合性</strong>：CRM上の見込みステータスと財務会計の売上を完全一致させる運用。</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Layer 3 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl"></div>
-                    <div class="flex items-center space-x-2 text-emerald-400 text-xs font-bold font-mono">
-                        <span>LAYER 03</span>
-                        <span>•</span>
-                        <span>経営・リーダーシップ</span>
-                    </div>
-                    <h4 class="text-xl font-bold text-white">経営対話・投資家目線・マネジメント</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        投資家を納得させる成長ストーリーの構築と、感情的にならずロジックでチームを鼓舞するマネジメント術です。
-                    </p>
-
-                    <div class="space-y-2 pt-2 border-t border-slate-800 text-xs text-slate-300">
-                        <div class="font-semibold text-emerald-300">重点修得テーマ：</div>
-                        <ul class="space-y-1.5 list-disc list-inside text-slate-400 text-[11px]">
-                            <li><strong>投資家目線のストーリーテリング</strong>：「成長の再現性」をスライド1枚・数字で証明する技術。</li>
-                            <li><strong>穏やかなロジカル・マネジメント</strong>：感情で怒らず「なぜその数字なのか」「どう変えるか」を一緒に再計算。</li>
-                            <li><strong>危機感の共有と再定義フォロー</strong>：下振れの危機感を共有しつつ、「今は練習台」と前を向かせる心理設計。</li>
-                            <li><strong>スピード至上主義カルチャー</strong>：会議10分ルール、LINE即決など、遅さを排除する仕組み作り。</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-5 dark:bg-slate-900 dark:border-slate-800 shadow-sm space-y-4">
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                    <i data-lucide="layers" class="w-4 h-4"></i>
+                    <span>全会議から蓄積された日置流「意思決定・実践ログ」</span>
+                </h4>
+                <div id="dynamic-decisions-container" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs max-h-60 overflow-y-auto pr-1"></div>
             </div>
 
-            <!-- 日置流 思考チェックリスト20選 -->
-            <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
-                <div class="flex items-center space-x-2">
-                    <i data-lucide="check-square" class="w-5 h-5 text-indigo-400"></i>
-                    <h4 class="text-lg font-bold text-white">意思決定・報告前に日置さんなら必ず投げる「思考チェックリスト20」</h4>
+            <div class="bg-white border border-slate-200 rounded-xl p-6 dark:bg-slate-900 dark:border-slate-800 shadow-sm space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                    <h4 class="text-base font-bold text-slate-900 dark:text-white">
+                        日置式 実践思考ドリル (<span id="drill-score" class="font-bold text-slate-900 dark:text-white">0</span> / 5 正解)
+                    </h4>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">01.</span>
-                        <span>その数字は目標からの「逆算」で組まれているか？（分母・転換率・行動量）</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">02.</span>
-                        <span>定性的な感想や努力目標ではなく、「数字」に翻訳して説明できるか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">03.</span>
-                        <span>それは「一発屋」ではなく、同じ勝ち筋を繰り返せる「再現性」があるか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">04.</span>
-                        <span>見込みパイプラインは目標の「3倍（150%以上）」確保されているか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">05.</span>
-                        <span>「初期設計数」などの最重要先行指標の進捗は日次で追えているか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">06.</span>
-                        <span>トップライン（売上）だけでなく、「原価控除後の案件利益率」は適正か？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">07.</span>
-                        <span>全社の原価率（約66%）や解約率（チャーン）は改善傾向にあるか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">08.</span>
-                        <span>CRM上の受注ステータスと財務の入金実績は「1円の狂いもなく一致」しているか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">09.</span>
-                        <span>インターン給与は「売上の50%以内」、賃料は「10%以内」に収まっているか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">10.</span>
-                        <span>費用対効果の薄い顧問料や固定費は即座に削られているか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">11.</span>
-                        <span>営業目標の案件数から「必要リーダー数」や「必要採用数」を逆算しているか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">12.</span>
-                        <span>採用は単なる人数ではなく「媒体別CPA × Aランク比率」で評価しているか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">13.</span>
-                        <span>解約率が高い時は「採用を止めて社内育成に投資する」等の外科手術ができているか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">14.</span>
-                        <span>意思決定や予算承認に何日もかけていないか？（秒で判断・LINE承認）</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">15.</span>
-                        <span>会議は10分以内で終わっているか？（ダラダラ報告ではなく意思決定の場か）</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">16.</span>
-                        <span>「1年後 有料3,000社・1億円ボーナス」という北極星目標と接続しているか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">17.</span>
-                        <span>シリーズA（5〜10億円調達）の投資家に対して説得力のある成長証拠になっているか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">18.</span>
-                        <span>労働者派遣法の指揮命令記録や契約条項など法務コンプライアンスは万全か？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">19.</span>
-                        <span>システムが未完成でも「手動でログを取り相関を掴む」姿勢を徹底しているか？</span>
-                    </div>
-                    <div class="flex items-start space-x-2 p-2 rounded bg-slate-800/40 border border-slate-700/40">
-                        <span class="text-indigo-400 font-bold font-mono">20.</span>
-                        <span>未達時に感情で詰めるのではなく「なぜ・どう変える」の改善サイクルへ導けているか？</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- インタラクティブ思考ドリル (ケーススタディ10問) -->
-            <div class="glass-card p-6 rounded-2xl border border-indigo-500/30 bg-slate-900/90 space-y-6">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
-                    <div>
-                        <div class="text-indigo-400 text-xs font-bold uppercase font-mono">Interactive CFO Case-Study Drills</div>
-                        <h4 class="text-xl font-bold text-white">日置式 CFO実践思考ドリル（全10問・即時判定）</h4>
-                    </div>
-                    <div class="text-xs text-slate-400">
-                        スコア: <span id="drill-score" class="font-bold text-indigo-400 font-mono text-sm">0</span> / 10 問正解
-                    </div>
-                </div>
-
-                <div id="quiz-container" class="space-y-6">
-                    <!-- Dynamically populated 10 drills -->
-                </div>
+                <div id="quiz-container" class="space-y-6"></div>
             </div>
         </section>
 
-
-        <!-- ========================================== -->
-        <!-- TAB 5: ドキュメント投入 / 自動更新 (UPGRADED) -->
-        <!-- ========================================== -->
-        <section id="tab-manage" class="tab-content hidden space-y-8 animate-fadeIn">
-            <div class="space-y-2">
-                <div class="flex items-center space-x-2">
-                    <i data-lucide="refresh-cw" class="w-6 h-6 text-emerald-400"></i>
-                    <h3 class="text-2xl font-bold text-white tracking-tight">ドキュメント投入 ＆ ポータル自動更新システム</h3>
-                </div>
-                <p class="text-sm text-slate-400">
-                    PDFやテキストファイルをここにドラッグ＆ドロップするか、フォルダにファイルを入れてスクリプトを実行することで、ポータルが常に最新状態に自動同期されます。
+        <!-- TAB 5: Manage & Sync -->
+        <section id="tab-manage" class="tab-content hidden space-y-8">
+            <div class="space-y-1">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                    ドキュメント投入 ＆ 全体自動同期
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                    PDFやTXTをドロップすると自動解析され、KPI・シミュレーター・クロニクルが全自動で更新されます。
                 </p>
             </div>
 
-            <!-- Drag & Drop Instant Parser Area -->
-            <div id="drop-zone" class="glass-card p-8 rounded-2xl border-2 border-dashed border-slate-700 hover:border-indigo-500 transition-all text-center space-y-4 bg-slate-900/60 cursor-pointer" onclick="document.getElementById('file-drop-input').click()">
+            <div id="drop-zone" class="bg-white border-2 border-dashed border-slate-300 hover:border-slate-900 p-8 rounded-2xl text-center space-y-4 dark:bg-slate-900 dark:border-slate-700 dark:hover:border-slate-100 transition-all cursor-pointer shadow-sm" onclick="document.getElementById('file-drop-input').click()">
                 <input type="file" id="file-drop-input" accept=".pdf,.txt" multiple class="hidden" onchange="handleFileDropSelect(event)">
-                <div class="w-16 h-16 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center mx-auto text-indigo-400">
-                    <i data-lucide="upload-cloud" class="w-8 h-8"></i>
+                <div class="w-14 h-14 rounded-xl bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 flex items-center justify-center mx-auto">
+                    <i data-lucide="upload-cloud" class="w-7 h-7"></i>
                 </div>
                 <div class="space-y-1">
-                    <h4 class="text-base font-bold text-white">ここにPDF・TXTファイルをドラッグ＆ドロップ</h4>
-                    <p class="text-xs text-slate-400">
-                        またはクリックしてファイルを選択（複数ファイル同時対応）
+                    <h4 class="text-base font-bold text-slate-900 dark:text-white">
+                        ここにPDF・TXTファイルをドラッグ＆ドロップ
+                    </h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">
+                        またはクリックしてファイルを選択（即座に全画面のデータが自動更新されます）
                     </p>
                 </div>
-                <div class="flex items-center justify-center space-x-2 text-[11px] text-slate-400">
-                    <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 font-mono">.pdf (Geminiメモ・議事録)</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 font-mono">.txt (文字起こし)</span>
-                </div>
-                <div id="drop-loading-status" class="hidden text-xs font-bold text-indigo-400 animate-pulse">
-                    ファイルを解析中... 日置さんの発言・意思決定・KPIを自動抽出しています
-                </div>
-            </div>
-
-            <!-- Dual Auto-Sync Methods Guide -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                    <div class="flex items-center space-x-2 text-emerald-400 font-bold text-sm">
-                        <i data-lucide="terminal" class="w-4 h-4"></i>
-                        <span>方法 1: Pythonスクリプトで一括自動同期</span>
-                    </div>
-                    <p class="text-xs text-slate-300 leading-relaxed">
-                        フォルダ内に新しいPDFやTXTを入れた後、ターミナルで以下のコマンドを実行するだけで全ファイルを再スキャンしてHTMLを完全同期します：
-                    </p>
-                    <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800 font-mono text-xs text-emerald-400 flex items-center justify-between">
-                        <code>python3 update_portal.py</code>
-                        <button onclick="navigator.clipboard.writeText('python3 update_portal.py'); alert('コマンドをコピーしました！')" class="text-slate-500 hover:text-slate-300 text-[10px] uppercase font-sans">コピー</button>
-                    </div>
-                </div>
-
-                <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                    <div class="flex items-center space-x-2 text-indigo-400 font-bold text-sm">
-                        <i data-lucide="eye" class="w-4 h-4"></i>
-                        <span>方法 2: フォルダ常時監視（Watcher）</span>
-                    </div>
-                    <p class="text-xs text-slate-300 leading-relaxed">
-                        常駐スクリプトを立ち上げておけば、フォルダにファイルが保存された瞬間に自動で解析・HTMLが更新されます：
-                    </p>
-                    <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800 font-mono text-xs text-indigo-400 flex items-center justify-between">
-                        <code>python3 watch_meetings.py</code>
-                        <button onclick="navigator.clipboard.writeText('python3 watch_meetings.py'); alert('コマンドをコピーしました！')" class="text-slate-500 hover:text-slate-300 text-[10px] uppercase font-sans">コピー</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Manual Add Form -->
-            <div class="glass-card p-6 rounded-2xl border border-slate-800 bg-slate-900/60 space-y-4">
-                <h4 class="text-base font-bold text-white flex items-center space-x-2">
-                    <i data-lucide="edit-3" class="w-4 h-4 text-indigo-400"></i>
-                    <span>手動での会議・分析メモの直接入力</span>
-                </h4>
-
-                <form id="add-meeting-form" onsubmit="handleAddNewMeeting(event)" class="space-y-4 text-xs">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block font-semibold text-slate-300 mb-1">開催日 (YYYY-MM-DD)</label>
-                            <input type="date" id="new-date" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white font-mono focus:border-indigo-500 focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block font-semibold text-slate-300 mb-1">主要テーマ・アジェンダ</label>
-                            <input type="text" id="new-theme" placeholder="例: 9月目標設定・新規チャネル開拓・シリーズA調達進捗" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white focus:border-indigo-500 focus:outline-none">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block font-semibold text-slate-300 mb-1">概要サマリー (何が議論・決定されたか)</label>
-                        <textarea id="new-summary" rows="3" placeholder="会議全体の要約を入力..." required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white focus:border-indigo-500 focus:outline-none"></textarea>
-                    </div>
-
-                    <div>
-                        <label class="block font-semibold text-slate-300 mb-1">日置さんの重要意思決定・指摘 (改行区切り)</label>
-                        <textarea id="new-decisions" rows="3" placeholder="・見込み3倍ルールの再徹底&#10;・顧問料の削減を指示&#10;・成約＝相談数×成功率での日次追跡を要求" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white focus:border-indigo-500 focus:outline-none"></textarea>
-                    </div>
-
-                    <div>
-                        <label class="block font-semibold text-slate-300 mb-1">日置さんの実際の発言・名言 (改行区切り)</label>
-                        <textarea id="new-quotes" rows="2" placeholder="「数字で語れないなら経営じゃない」「スピードは唯一の競争優位」" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white focus:border-indigo-500 focus:outline-none"></textarea>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block font-semibold text-slate-300 mb-1">タグ (カンマ区切り)</label>
-                            <input type="text" id="new-tags" placeholder="逆算設計, 資金調達, ユニットエコノミクス" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white focus:border-indigo-500 focus:outline-none">
-                        </div>
-                        <div class="flex items-end">
-                            <button type="submit" class="w-full py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition flex items-center justify-center space-x-2 shadow-lg shadow-indigo-600/30">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                                <span>データを追加してポータルを更新</span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Export / Import & Storage Tools -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                    <h5 class="text-sm font-bold text-white flex items-center space-x-2">
-                        <i data-lucide="download" class="w-4 h-4 text-emerald-400"></i>
-                        <span>JSONデータのエクスポート</span>
-                    </h5>
-                    <p class="text-xs text-slate-400">
-                        現在蓄積されている全経営会議データをJSONファイルとしてダウンロードします。
-                    </p>
-                    <button onclick="exportDataJSON()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-xs font-semibold flex items-center space-x-2">
-                        <i data-lucide="file-json" class="w-3.5 h-3.5 text-emerald-400"></i>
-                        <span>全データをダウンロード (JSON)</span>
-                    </button>
-                </div>
-
-                <div class="glass-card p-5 rounded-xl border border-slate-800 space-y-3">
-                    <h5 class="text-sm font-bold text-white flex items-center space-x-2">
-                        <i data-lucide="upload" class="w-4 h-4 text-indigo-400"></i>
-                        <span>JSONデータのインポート</span>
-                    </h5>
-                    <p class="text-xs text-slate-400">
-                        保存したJSONファイルを読み込んでポータルのデータを同期します。
-                    </p>
-                    <input type="file" id="import-json-file" accept=".json" class="text-xs text-slate-400 file:mr-2 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-500" onchange="importDataJSON(event)">
+                <div id="drop-loading-status" class="hidden text-xs font-bold text-slate-900 dark:text-white animate-pulse">
+                    ファイルを解析中... 日置さんの意思決定・KPIを抽出して全体同期中...
                 </div>
             </div>
         </section>
@@ -1280,27 +520,40 @@ def generate_html(chronicle_data, output_path):
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800/80 mt-16 py-8 px-4 text-center text-xs text-slate-500 space-y-2">
-        <p>株式会社VEXUM CFO Intelligence & Knowledge Architecture System | Ver 3.0</p>
-        <p>Continuous Integration & Intelligent Auto-Sync Enabled | Prepared for High-Performance Team</p>
+    <footer class="border-t border-slate-200 dark:border-slate-800 mt-16 py-8 px-4 text-center text-xs text-slate-500">
+        <p>株式会社VEXUM CFO Intelligence System | Clean White UI (GitHub Synchronized)</p>
     </footer>
 
     <!-- Core Interactive JavaScript -->
     <script>
         let chronicleData = {chronicle_json_str};
         const drillsData = {drills_json_str};
+        let drillResults = {{}};
 
-        // Check local storage
+        // LocalStorage sync
         const storedData = localStorage.getItem('vexum_chronicle_data');
         if (storedData) {{
             try {{
                 chronicleData = JSON.parse(storedData);
             }} catch(e) {{
-                console.error("Failed to parse localStorage data", e);
+                console.error("Storage parse error", e);
             }}
         }}
 
-        let drillResults = {{}};
+        function toggleTheme() {{
+            const html = document.documentElement;
+            const btnText = document.getElementById('theme-btn-text');
+            if (html.classList.contains('dark')) {{
+                html.classList.remove('dark');
+                html.classList.add('light');
+                btnText.textContent = 'ダーク表示';
+            }} else {{
+                html.classList.remove('light');
+                html.classList.add('dark');
+                btnText.textContent = 'ライト表示';
+            }}
+            lucide.createIcons();
+        }}
 
         function switchTab(tabId) {{
             document.querySelectorAll('.tab-content').forEach(el => {{
@@ -1326,25 +579,6 @@ def generate_html(chronicle_data, output_path):
             window.scrollTo({{ top: 0, behavior: 'smooth' }});
         }}
 
-        function toggleTheme() {{
-            const html = document.documentElement;
-            const btnText = document.getElementById('theme-btn-text');
-            if (html.classList.contains('dark')) {{
-                html.classList.remove('dark');
-                html.classList.add('light');
-                btnText.textContent = 'ダーク';
-                document.body.classList.remove('bg-darkBg', 'text-slate-100');
-                document.body.classList.add('bg-slate-50', 'text-slate-900');
-            }} else {{
-                html.classList.remove('light');
-                html.classList.add('dark');
-                btnText.textContent = 'ライト';
-                document.body.classList.remove('bg-slate-50', 'text-slate-900');
-                document.body.classList.add('bg-darkBg', 'text-slate-100');
-            }}
-            lucide.createIcons();
-        }}
-
         function calculateReverseModel() {{
             const targetDeals = parseInt(document.getElementById('sim-target-deals').value) || 0;
             const rateDealPct = parseInt(document.getElementById('sim-rate-deal').value) || 63;
@@ -1364,11 +598,42 @@ def generate_html(chronicle_data, output_path):
 
             document.getElementById('res-design-count').textContent = requiredDesign.toLocaleString();
             document.getElementById('res-appo-count').textContent = requiredAppos.toLocaleString();
-            document.getElementById('res-appo-daily').textContent = `日次: 約${{dailyAppos}}件 (20営業日換算)`;
+            document.getElementById('res-appo-daily').textContent = `日次: 約${{dailyAppos}}件`;
             document.getElementById('res-pipeline-3x').textContent = pipeline3x.toLocaleString();
             document.getElementById('res-leader-count').textContent = requiredLeaders.toLocaleString();
             document.getElementById('res-monthly-sales').textContent = monthlySalesMan + '万';
             document.getElementById('res-intern-budget').textContent = internBudgetMan + '万';
+        }}
+
+        function renderDynamicStats() {{
+            const latest = chronicleData[0] || {{}};
+            const totalEl = document.getElementById('summary-meeting-count');
+            const latestDateEl = document.getElementById('latest-meeting-date');
+            const latestDecEl = document.getElementById('latest-decision-text');
+            const badgeEl = document.getElementById('header-badge');
+
+            if (totalEl) totalEl.textContent = chronicleData.length + ' 回分';
+            if (badgeEl) badgeEl.textContent = `全${{chronicleData.length}}会議 同期中`;
+            if (latestDateEl) latestDateEl.textContent = latest.display_date || latest.date || '最新';
+            if (latestDecEl) latestDecEl.textContent = (latest.yusuke_decisions && latest.yusuke_decisions[0]) || latest.summary || '経営数値の進捗確認と重要意思決定を推進中。';
+
+            // Populate decisions list in Roadmap tab
+            const decContainer = document.getElementById('dynamic-decisions-container');
+            if (decContainer) {{
+                decContainer.innerHTML = '';
+                let count = 0;
+                chronicleData.forEach(m => {{
+                    (m.yusuke_decisions || []).forEach(d => {{
+                        if (count < 10) {{
+                            const item = document.createElement('div');
+                            item.className = 'bg-slate-50 p-2.5 rounded border border-slate-200 dark:bg-slate-950 dark:border-slate-800 space-y-1';
+                            item.innerHTML = `<div class="text-[10px] font-bold text-slate-500">${{m.display_date || m.date}}</div><div class="text-slate-700 dark:text-slate-300">${{d}}</div>`;
+                            decContainer.appendChild(item);
+                            count++;
+                        }}
+                    }});
+                }});
+            }}
         }}
 
         function renderChronicleCards(dataToRender) {{
@@ -1377,98 +642,45 @@ def generate_html(chronicle_data, output_path):
             if (totalCountEl) totalCountEl.textContent = dataToRender.length;
             container.innerHTML = '';
 
-            if (dataToRender.length === 0) {{
-                container.innerHTML = `
-                    <div class="text-center py-12 glass-card rounded-2xl text-slate-400">
-                        <i data-lucide="inbox" class="w-12 h-12 mx-auto mb-3 opacity-40"></i>
-                        <p class="text-sm">該当する経営会議データが見つかりませんでした。</p>
-                    </div>
-                `;
-                lucide.createIcons();
-                return;
-            }}
-
             dataToRender.forEach((m, idx) => {{
                 const card = document.createElement('div');
-                card.className = "glass-card rounded-2xl p-6 border border-slate-800 hover:border-slate-700 transition duration-200 space-y-4";
+                card.className = "bg-white border border-slate-200 rounded-xl p-5 dark:bg-slate-900 dark:border-slate-800 shadow-sm space-y-3";
                 
-                const tagsHtml = (m.tags || []).map(t => `<span class="px-2 py-0.5 rounded text-[11px] font-medium bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">${{t}}</span>`).join(' ');
-
-                const decisionsHtml = (m.yusuke_decisions || []).map(d => `<li class="leading-relaxed"><strong class="text-white">${{d.split('：')[0] || ''}}</strong>${{d.includes('：') ? '：' + d.split('：').slice(1).join('：') : d}}</li>`).join('');
-
+                const tagsHtml = (m.tags || []).map(t => `<span class="px-2 py-0.5 rounded text-[10px] bg-slate-50 border border-slate-200 text-slate-600 dark:bg-slate-950 dark:border-slate-800 dark:text-slate-400">${{t}}</span>`).join(' ');
+                const decisionsHtml = (m.yusuke_decisions || []).map(d => `<li>${{d}}</li>`).join('');
                 const quotesHtml = (m.quotes || []).map(q => `
-                    <div class="bg-indigo-950/20 border-l-2 border-indigo-500 p-2.5 rounded-r-lg text-xs text-indigo-200 italic">
+                    <div class="bg-slate-50 border-l-2 border-slate-900 p-2 rounded text-xs text-slate-700 dark:bg-slate-950 dark:border-slate-100 dark:text-slate-300 italic">
                         💬 "${{q}}"
                     </div>
                 `).join('');
 
-                const kpisHtml = (m.kpis || []).map(k => `
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-800 text-center">
-                        <div class="text-[10px] text-slate-400">${{k.label}}</div>
-                        <div class="text-xs font-bold text-white font-mono mt-0.5">${{k.value}}</div>
-                    </div>
-                `).join('');
-
-                const actionsHtml = (m.actions || []).map(a => `
-                    <div class="text-[11px] flex items-start space-x-2 text-slate-300">
-                        <span class="px-1.5 py-0.2 rounded bg-slate-800 text-indigo-300 font-mono font-bold shrink-0">${{a.assignee}}</span>
-                        <span><strong>${{a.task}}</strong>: ${{a.detail}}</span>
-                    </div>
-                `).join('');
-
                 card.innerHTML = `
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
-                        <div class="flex items-center space-x-3">
-                            <span class="px-2.5 py-1 rounded-lg bg-indigo-600/20 text-indigo-400 font-mono font-bold text-xs border border-indigo-500/30">
+                    <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200 text-xs font-bold font-mono">
                                 第${{idx + 1}}回
                             </span>
-                            <h4 class="text-base font-bold text-white">${{m.display_date || m.date}}</h4>
+                            <span class="text-xs font-bold text-slate-900 dark:text-white">
+                                ${{m.display_date || m.date}}
+                            </span>
                         </div>
-                        <div class="flex flex-wrap gap-1.5">
+                        <div class="flex gap-1">
                             ${{tagsHtml}}
                         </div>
                     </div>
-
-                    <div>
-                        <h5 class="text-sm font-bold text-indigo-300 mb-1.5">${{m.theme}}</h5>
-                        <p class="text-xs text-slate-300 leading-relaxed">${{m.summary}}</p>
-                    </div>
-
-                    ${{kpisHtml ? `
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
-                        ${{kpisHtml}}
-                    </div>` : ''}}
-
-                    <div class="space-y-2 pt-2 border-t border-slate-800">
-                        <div class="text-xs font-bold text-slate-200 flex items-center space-x-1.5">
-                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400"></i>
-                            <span>日置さんの重要意思決定・指摘事項</span>
-                        </div>
-                        <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white">${{m.theme}}</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${{m.summary}}</p>
+                    ${{decisionsHtml ? `
+                    <div class="space-y-1 pt-2 border-t border-slate-100 dark:border-slate-800">
+                        <div class="text-[11px] font-bold text-slate-700 dark:text-slate-300">日置さんの重要意思決定・指摘：</div>
+                        <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1 list-disc list-inside">
                             ${{decisionsHtml}}
                         </ul>
-                    </div>
-
-                    ${{quotesHtml ? `
-                    <div class="space-y-1.5 pt-1">
-                        ${{quotesHtml}}
                     </div>` : ''}}
-
-                    ${{actionsHtml ? `
-                    <div class="pt-2 border-t border-slate-800 space-y-1.5">
-                        <div class="text-[11px] font-bold text-slate-400 flex items-center space-x-1">
-                            <i data-lucide="list-todo" class="w-3 h-3 text-slate-400"></i>
-                            <span>決定アクションアイテム</span>
-                        </div>
-                        <div class="space-y-1">
-                            ${{actionsHtml}}
-                        </div>
-                    </div>` : ''}}
+                    ${{quotesHtml ? `<div class="space-y-1 pt-1">${{quotesHtml}}</div>` : ''}}
                 `;
-
                 container.appendChild(card);
             }});
-
             lucide.createIcons();
         }}
 
@@ -1484,7 +696,6 @@ def generate_html(chronicle_data, output_path):
                     (m.quotes || []).some(q => q.toLowerCase().includes(searchVal));
 
                 const matchTag = tagVal === 'ALL' || (m.tags || []).some(t => t.includes(tagVal));
-
                 return matchSearch && matchTag;
             }});
 
@@ -1497,32 +708,26 @@ def generate_html(chronicle_data, output_path):
 
             drillsData.forEach(d => {{
                 const card = document.createElement('div');
-                card.className = "bg-slate-800/40 p-5 rounded-xl border border-slate-700/60 space-y-3";
+                card.className = "bg-slate-50 p-5 rounded-xl border border-slate-200 dark:bg-slate-950 dark:border-slate-800 space-y-3";
                 card.id = `drill-${{d.id}}`;
 
                 const optionsHtml = d.options.map(opt => `
-                    <button onclick="handleAnswerDrill(${{d.id}}, '${{opt.key}}')" class="w-full text-left p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-indigo-500 transition text-slate-300 text-xs">
-                        <strong class="text-indigo-400">${{opt.key}}.</strong> ${{opt.text}}
+                    <button onclick="handleAnswerDrill(${{d.id}}, '${{opt.key}}')" class="w-full text-left p-3 rounded-lg bg-white border border-slate-200 hover:border-slate-400 text-slate-700 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-300 text-xs transition">
+                        <strong class="mr-1">${{opt.key}}.</strong> ${{opt.text}}
                     </button>
                 `).join('');
 
                 card.innerHTML = `
                     <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono">Q${{d.id}}</span>
-                            <span class="text-xs text-slate-400">${{d.category}}</span>
-                        </div>
-                        <span class="text-xs text-slate-400 font-semibold" id="drill-${{d.id}}-status">未回答</span>
+                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-200 font-mono">
+                            Q${{d.id}}. ${{d.category}}
+                        </span>
+                        <span class="text-xs font-bold text-slate-500" id="drill-${{d.id}}-status">未回答</span>
                     </div>
-                    <p class="text-sm font-semibold text-white">
-                        ${{d.question}}
-                    </p>
-                    <div class="space-y-2 text-xs">
-                        ${{optionsHtml}}
-                    </div>
+                    <p class="text-sm font-semibold text-slate-900 dark:text-white">${{d.question}}</p>
+                    <div class="space-y-2 text-xs">${{optionsHtml}}</div>
                     <div id="drill-${{d.id}}-ans" class="hidden p-3 rounded-lg text-xs leading-relaxed"></div>
                 `;
-
                 container.appendChild(card);
             }});
             lucide.createIcons();
@@ -1535,57 +740,29 @@ def generate_html(chronicle_data, output_path):
             const resultEl = document.getElementById(`drill-${{qId}}-ans`);
             const statusEl = document.getElementById(`drill-${{qId}}-status`);
 
-            resultEl.classList.remove('hidden', 'bg-emerald-950/40', 'border-emerald-500/40', 'text-emerald-300', 'bg-rose-950/40', 'border-rose-500/40', 'text-rose-300');
+            resultEl.classList.remove('hidden');
 
             if (choice === drill.correct) {{
-                resultEl.classList.add('bg-emerald-950/40', 'border', 'border-emerald-500/40', 'text-emerald-200');
-                resultEl.innerHTML = `<div class="font-bold text-emerald-400 mb-1 flex items-center space-x-1"><i data-lucide="check-circle" class="w-4 h-4"></i><span>正解！ 正しい日置さんの思考です。</span></div>${{drill.explanation}}`;
+                resultEl.className = 'p-3 rounded-lg text-xs leading-relaxed bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-200 border border-slate-300 dark:border-slate-700';
+                resultEl.innerHTML = `<div class="font-bold text-slate-900 dark:text-white mb-1">正解！ 正しい日置さんの思考です。</div>${{drill.explanation}}`;
                 statusEl.textContent = '正解 ✅';
-                statusEl.className = 'text-xs font-bold text-emerald-400';
                 drillResults[qId] = true;
             }} else {{
-                resultEl.classList.add('bg-rose-950/40', 'border', 'border-rose-500/40', 'text-rose-200');
-                resultEl.innerHTML = `<div class="font-bold text-rose-400 mb-1 flex items-center space-x-1"><i data-lucide="x-circle" class="w-4 h-4"></i><span>不正解（正解: ${{drill.correct}}）</span></div>${{drill.explanation}}`;
+                resultEl.className = 'p-3 rounded-lg text-xs leading-relaxed bg-rose-50 text-rose-800 dark:bg-rose-950/40 dark:text-rose-200 border border-rose-200 dark:border-rose-900';
+                resultEl.innerHTML = `<div class="font-bold text-rose-800 dark:text-rose-200 mb-1">不正解（正解: ${{drill.correct}}）</div>${{drill.explanation}}`;
                 statusEl.textContent = '要復習 ❌';
-                statusEl.className = 'text-xs font-bold text-rose-400';
                 drillResults[qId] = false;
             }}
 
             const correctCount = Object.values(drillResults).filter(v => v === true).length;
             document.getElementById('drill-score').textContent = correctCount;
-            lucide.createIcons();
         }}
 
-        // In-Browser Drag & Drop PDF / TXT Parsing
-        const dropZone = document.getElementById('drop-zone');
-        if (dropZone) {{
-            ['dragenter', 'dragover'].forEach(eventName => {{
-                dropZone.addEventListener(eventName, (e) => {{
-                    e.preventDefault();
-                    dropZone.classList.add('dropzone-active');
-                }}, false);
-            }});
-            ['dragleave', 'drop'].forEach(eventName => {{
-                dropZone.addEventListener(eventName, (e) => {{
-                    e.preventDefault();
-                    dropZone.classList.remove('dropzone-active');
-                }}, false);
-            }});
-            dropZone.addEventListener('drop', (e) => {{
-                const dt = e.dataTransfer;
-                const files = dt.files;
-                handleFiles(files);
-            }}, false);
-        }}
-
-        function handleFileDropSelect(e) {{
-            handleFiles(e.target.files);
-        }}
-
+        // In-Browser Drag & Drop PDF / TXT Parsing with full tab refresh
         async function handleFiles(files) {{
             if (!files || files.length === 0) return;
             const statusEl = document.getElementById('drop-loading-status');
-            statusEl.classList.remove('hidden');
+            if (statusEl) statusEl.classList.remove('hidden');
 
             let addedCount = 0;
 
@@ -1599,23 +776,43 @@ def generate_html(chronicle_data, output_path):
                 }}
 
                 if (text) {{
-                    const parsedMeeting = parseDocumentInBrowser(file.name, text);
-                    if (parsedMeeting) {{
-                        chronicleData.unshift(parsedMeeting);
-                        addedCount++;
-                    }}
+                    const mDate = file.name.match(/2026[_\-](\\d{{2}})[_\-](\\d{{2}})/);
+                    const dateStr = mDate ? `2026-${{mDate[1]}}-${{mDate[2]}}` : new Date().toISOString().slice(0, 10);
+                    const displayDate = mDate ? `2026年${{parseInt(mDate[1])}}月${{parseInt(mDate[2])}}日` : `${{dateStr}} (追加)`;
+
+                    let summary = "";
+                    const ovMatch = text.match(/概要\\s*([\\s\\S]*?)(?=次のステップ|文字起こし|添付ファイル|$)/);
+                    if (ovMatch) summary = ovMatch[1].replace(/\\s+/g, ' ').trim().slice(0, 300);
+
+                    const bullets = text.split('\\n').filter(l => l.trim().startsWith('●') || l.trim().startsWith('*') || l.trim().startsWith('・'));
+                    const yusukeDecisions = bullets.map(b => b.replace(/^[●*・\\-]\\s*/, '').trim()).filter(b => b.includes('Yusuke') || b.includes('日置') || b.includes('目標') || b.includes('逆算') || b.includes('利益') || b.includes('原価')).slice(0, 5);
+
+                    const newMeeting = {{
+                        date: dateStr,
+                        display_date: displayDate,
+                        theme: `${{displayDate}} 経営進捗・意思決定`,
+                        summary: summary || "経営会議ログ",
+                        yusuke_decisions: yusukeDecisions.length > 0 ? yusukeDecisions : ["経営数値の進捗確認と重要意思決定を実行。"],
+                        quotes: [],
+                        kpis: [],
+                        actions: [],
+                        tags: ["ドキュメント追加", "自動同期"]
+                    }};
+
+                    chronicleData.unshift(newMeeting);
+                    addedCount++;
                 }}
             }}
 
-            statusEl.classList.add('hidden');
+            if (statusEl) statusEl.classList.add('hidden');
 
             if (addedCount > 0) {{
                 localStorage.setItem('vexum_chronicle_data', JSON.stringify(chronicleData));
+                renderDynamicStats();
                 renderChronicleCards(chronicleData);
-                alert(`${{addedCount}} 件のドキュメントを解析してポータルを自動更新しました！`);
+                calculateReverseModel();
+                alert(`${{addedCount}} 件のドキュメントを解析し、全タブのKPI・クロニクル・学習データを自動更新しました！`);
                 switchTab('tab-chronicle');
-            }} else {{
-                alert('ファイルの解析に失敗しました。有効なPDFまたはTXTファイルを選択してください。');
             }}
         }}
 
@@ -1627,8 +824,7 @@ def generate_html(chronicle_data, output_path):
                 for (let p = 1; p <= pdf.numPages; p++) {{
                     const page = await pdf.getPage(p);
                     const textContent = await page.getTextContent();
-                    const pageText = textContent.items.map(item => item.str).join(' ');
-                    fullText += pageText + '\\n';
+                    fullText += textContent.items.map(item => item.str).join(' ') + '\\n';
                 }}
                 return fullText;
             }} catch(err) {{
@@ -1637,112 +833,21 @@ def generate_html(chronicle_data, output_path):
             }}
         }}
 
-        function parseDocumentInBrowser(fileName, text) {{
-            const mDate = fileName.match(/2026[_\-](\\d{{2}})[_\-](\\d{{2}})/);
-            const dateStr = mDate ? `2026-${{mDate[1]}}-${{mDate[2]}}` : new Date().toISOString().slice(0, 10);
-            const displayDate = mDate ? `2026年${{parseInt(mDate[1])}}月${{parseInt(mDate[2])}}日` : `${{dateStr}} (ドロップ追加)`;
-
-            // Extract summary
-            let summary = "";
-            const ovMatch = text.match(/概要\\s*([\\s\\S]*?)(?=次のステップ|文字起こし|添付ファイル|$)/);
-            if (ovMatch) {{
-                summary = ovMatch[1].replace(/\\s+/g, ' ').trim().slice(0, 300);
-            }} else {{
-                summary = text.slice(0, 250).replace(/\\s+/g, ' ').trim();
-            }}
-
-            // Extract Yusuke points
-            const bullets = text.split('\\n').filter(l => l.trim().startsWith('●') || l.trim().startsWith('*') || l.trim().startsWith('・'));
-            const yusukeDecisions = bullets.map(b => b.replace(/^[●*・\\-]\\s*/, '').trim()).filter(b => b.includes('Yusuke') || b.includes('日置') || b.includes('目標') || b.includes('逆算') || b.includes('利益') || b.includes('原価')).slice(0, 5);
-
-            if (yusukeDecisions.length === 0) {{
-                yusukeDecisions.push("経営数値の進捗確認と重要意思決定を実行。");
-            }}
-
-            return {{
-                date: dateStr,
-                display_date: displayDate,
-                theme: `${{displayDate}} 経営進捗・意思決定`,
-                summary: summary || "経営会議ログ",
-                yusuke_decisions: yusukeDecisions,
-                quotes: [],
-                kpis: [
-                    {{ label: "登録ファイル", value: fileName }}
-                ],
-                actions: [],
-                tags: ["ドキュメント追加", "自動解析"]
-            }};
-        }}
-
-        function handleAddNewMeeting(e) {{
-            e.preventDefault();
-            const date = document.getElementById('new-date').value;
-            const theme = document.getElementById('new-theme').value;
-            const summary = document.getElementById('new-summary').value;
-            const decisionsRaw = document.getElementById('new-decisions').value;
-            const quotesRaw = document.getElementById('new-quotes').value;
-            const tagsRaw = document.getElementById('new-tags').value;
-
-            const decisions = decisionsRaw.split('\\n').map(s => s.trim().replace(/^[●*・\\-]/, '')).filter(s => s.length > 0);
-            const quotes = quotesRaw.split('\\n').map(s => s.trim().replace(/^["「]/, '').replace(/["」]$/, '')).filter(s => s.length > 0);
-            const tags = tagsRaw.split(',').map(s => s.trim()).filter(s => s.length > 0);
-
-            const newRecord = {{
-                date: date,
-                display_date: `${{date}} (追加ミーティング)`,
-                theme: theme,
-                summary: summary,
-                yusuke_decisions: decisions,
-                quotes: quotes,
-                tags: tags.length > 0 ? tags : ['追加議事録'],
-                kpis: [],
-                actions: []
-            }};
-
-            chronicleData.unshift(newRecord);
-            localStorage.setItem('vexum_chronicle_data', JSON.stringify(chronicleData));
-
-            alert('新しい経営会議データを正常に追加・保存しました！');
-            document.getElementById('add-meeting-form').reset();
-            renderChronicleCards(chronicleData);
-            switchTab('tab-chronicle');
+        function handleFileDropSelect(e) {{
+            handleFiles(e.target.files);
         }}
 
         function exportDataJSON() {{
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(chronicleData, null, 2));
-            const downloadAnchor = document.createElement('a');
-            downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", `vexum_cfo_intelligence_${{new Date().toISOString().slice(0,10)}}.json`);
-            document.body.appendChild(downloadAnchor);
-            downloadAnchor.click();
-            downloadAnchor.remove();
-        }}
-
-        function importDataJSON(event) {{
-            const file = event.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {{
-                try {{
-                    const imported = JSON.parse(e.target.result);
-                    if (Array.isArray(imported)) {{
-                        chronicleData = imported;
-                        localStorage.setItem('vexum_chronicle_data', JSON.stringify(chronicleData));
-                        renderChronicleCards(chronicleData);
-                        alert('JSONデータを正常にインポートしました！');
-                        switchTab('tab-chronicle');
-                    }} else {{
-                        alert('JSONデータのフォーマットが正しくありません。');
-                    }}
-                }} catch(err) {{
-                    alert('JSONの読み込みに失敗しました: ' + err.message);
-                }}
-            }};
-            reader.readAsText(file);
+            const a = document.createElement('a');
+            a.href = dataStr;
+            a.download = `vexum_cfo_intelligence_${{new Date().toISOString().slice(0,10)}}.json`;
+            a.click();
         }}
 
         document.addEventListener('DOMContentLoaded', () => {{
             lucide.createIcons();
+            renderDynamicStats();
             calculateReverseModel();
             renderChronicleCards(chronicleData);
             renderDrills();
@@ -1753,4 +858,4 @@ def generate_html(chronicle_data, output_path):
 '''
     with open(output_path, 'w', encoding='utf-8') as fp:
         fp.write(html_content)
-    print(f"Generated HTML successfully at: {output_path}")
+    print(f"Generated clean HTML successfully at: {output_path}")
