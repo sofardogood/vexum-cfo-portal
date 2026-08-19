@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. 思考ドリル | VEXUM CFO Intelligence Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            background-color: #ffffff !important;
+            color: #0f1419 !important;
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #ffffff; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    </style>
+</head>
+<body class="bg-white text-[#0f1419] min-h-screen">
+
+    
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 px-4 lg:px-8 py-3.5">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="w-9 h-9 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold text-base hover:bg-slate-800 transition">
+                    H
+                </a>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <a href="index.html" class="text-base font-bold tracking-tight text-slate-900">
+                            VEXUM CFO Intelligence Portal
+                        </a>
+                        <span class="px-2 py-0.5 text-xs font-medium rounded bg-slate-100 text-slate-600 border border-slate-200">
+                            全15会議
+                        </span>
+                    </div>
+                    <p class="text-xs text-slate-500">
+                        日置佑輔 CFO思考OS ＆ 全会議分析ポータル
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <a href="5_ドキュメント投入_同期.html" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition text-xs font-semibold flex items-center space-x-1.5">
+                    <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
+                    <span>ドキュメント投入</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto mt-3 overflow-x-auto flex space-x-1 border-t border-slate-100 pt-2 text-xs font-medium">
+            <a href="index.html" class="px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">1. 人物像 & CFO思考OS</a>
+<a href="2_必見KPI_逆算シミュレーター.html" class="px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">2. 必見KPI & 逆算シミュレーター</a>
+<a href="3_全会議クロニクル.html" class="px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">3. 全会議クロニクル (15)</a>
+<a href="4_第二の日置さん_思考ドリル.html" class="px-3.5 py-1.5 rounded-md transition whitespace-nowrap bg-slate-900 text-white font-semibold">4. 思考ドリル</a>
+<a href="5_ドキュメント投入_同期.html" class="px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">5. ドキュメント投入 / 同期</a>
+
+        </div>
+    </header>
+    
+    <main class="max-w-6xl mx-auto px-4 lg:px-8 py-8 space-y-8 bg-white">
+        <div class="space-y-1">
+            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">
+                4. 「第二の日置さん」思考ドリル
+            </h2>
+            <p class="text-xs text-slate-500">
+                経営会議の実際の意思決定から抽出された論点に基づく、CFO思考OSの実践トレーニング
+            </p>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl p-6 space-y-6 bg-white">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h4 class="text-base font-bold text-slate-900">
+                    日置式 実践思考ドリル (<span id="drill-score" class="font-bold text-slate-900">0</span> / 5 正解)
+                </h4>
+            </div>
+            <div id="quiz-container" class="space-y-6"></div>
+        </div>
+
+        <div class="flex justify-between items-center pt-6 border-t border-slate-100">
+            <a href="3_全会議クロニクル.html" class="px-4 py-2 border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-lg text-xs font-semibold flex items-center space-x-1.5">
+                <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                <span>前へ: 3. 全会議クロニクル</span>
+            </a>
+            <a href="5_ドキュメント投入_同期.html" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-semibold flex items-center space-x-1.5">
+                <span>次へ: 5. ドキュメント投入 / 同期</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+        </div>
+    </main>
+    
+    <footer class="border-t border-slate-200 mt-16 py-6 px-4 text-center text-xs text-slate-400 bg-white">
+        <p>株式会社VEXUM CFO Intelligence System | Multi-page Portal Structure</p>
+    </footer>
+    
+    <script>
+        const drillsData = [{"id": 1, "category": "見込み管理", "question": "事業部から「今月の目標100社に対して、確度の高い見込みがちょうど100社集まりました！必達を目指して頑張ります！」と報告がありました。日置さんならどう返しますか？", "options": [{"key": "A", "text": "「素晴らしい！メンバーのモチベーションを高めて、1社も落とさないよう気合いでクロージングしてください。」"}, {"key": "B", "text": "「見込み100%だと必ず下振れる。見込みは目標の3倍（300社＝150%〜300%）持っておかないとダメ。リード獲得の分母をどう増やすかすぐ再設計して。」"}, {"key": "C", "text": "「100社達成したら予算を増額するので、来月の目標を150社に引き上げておいてください。」"}], "correct": "B", "explanation": "【日置流の鉄則】「見込みは目標の3倍持て」。見込み100%は商談途中でのドロップや稟議遅延により確実に未達に終わります。定性的な気合いではなく、確率論として分母を3倍に積むのがCFOの規律です（2026/5/8会議など）。"}, {"id": 2, "category": "財務・CRM整合性", "question": "財務担当から「CRM上の今月売上見込みは3,000万円ですが、実際の通帳入金実績は直近3ヶ月間2,000万円で横ばいです」と報告がありました。日置さんの第一声として最も適切なものは？", "options": [{"key": "A", "text": "「入金は売上計上から遅れて入ってくるものだから、来月まで様子を見ましょう。」"}, {"key": "B", "text": "「売上の入金が3ヶ月横ばいなこととCRMの数字をどう合わせるか。あの数字はめっちゃ大事。CRMのステータス定義と入金のギャップを今すぐ突合して。」"}, {"key": "C", "text": "「経理のシステムが古いのが原因なので、新しい会計クラウドを導入して自動化しましょう。」"}], "correct": "B", "explanation": "【日置流の鉄則】CRMと財務会計の数値乖離を極端に嫌います。入金が横ばいなのにCRMの数字だけが先行している状態は予実の崩壊を意味するため、「あの数字はめっちゃ大事」とステータス定義と入金の即時突合を要求します（2026/5/1会議）。"}, {"id": 3, "category": "ユニットエコノミクス", "question": "新規顧客は順調に増えているものの、解約率（チャーン）が約70%と高く、人材の定着に課題が出ています。人事部が「もっと採用広告費を増やして母集団を増やしたい」と提案してきました。日置さんならどう判断しますか？", "options": [{"key": "A", "text": "「穴の空いたバケツに水を注ぐな。新規採用を一時ストップし、予算を既存メンバーの社内育成と定着プログラムに全集中させる。」"}, {"key": "B", "text": "「解約される以上のペースで採用すればスケールするので、広告予算を2倍に増やしましょう。」"}, {"key": "C", "text": "「解約したクライアントに対して割引プランを提示して引き止めを行いましょう。」"}], "correct": "A", "explanation": "【日置流の鉄則】解約率70%の状態で採用を増やせば採用コストと原価率が悪化するだけです。日置さんは2026/7/17の経営会議で実際に「新規採用を一時停止し、予算を社内育成に全集中する」という外科手術的ピボットを決断しました。"}, {"id": 4, "category": "意思決定スピード", "question": "マーケティング担当から「展示会出展やWeb広告の追加予算200万円の稟議書を作成したので、来週の経営会議でご審議いただけますか？」と言われました。日置さんの対応は？", "options": [{"key": "A", "text": "「来週の経営会議の第1アジェンダにして、役員全員で慎重に議論しましょう。」"}, {"key": "B", "text": "「ベンチャーで予算承認に1週間かけるな。LINEグループで喋りながら数字を投げて、今その場で即判断して承認しろ。」"}, {"key": "C", "text": "「一旦ROIのシミュレーションを3パターン作って来月末までに再提出してください。」"}], "correct": "B", "explanation": "【日置流の鉄則】「スピードは唯一の競争優位」。日置さんは2026/7/3の会議で、マーケティング予算をLINEグループを通じて即時承認するフローを制定し、「承認に時間をかける遅さそのものがリスク」と指導しました。"}, {"id": 5, "category": "組織・会議運営", "question": "毎週の経営会議で各事業部の状況報告が長引き、毎回1時間を超えてしまっています。日置さんが導入したルールは？", "options": [{"key": "A", "text": "「会議時間を10分以内に制限する。状況報告は事前に数字で済ませ、本質的な意思決定のみを行う場にする。」"}, {"key": "B", "text": "「時間を無制限にして、全員が納得するまで徹底的に議論を尽くす。」"}, {"key": "C", "text": "「経営会議の開催頻度を月1回に減らし、各事業部に全権委任する。」"}], "correct": "A", "explanation": "【日置流の鉄則】「会議は10分以内ルール」（2026/6/12会議）。定性的な状況報告を長々と聞く時間は無駄であり、事前に数字を共有した上で、ボトルネックに対する意思決定だけを秒で下すカルチャーを徹底しました。"}];
+        let drillResults = {};
+
+        function renderDrills() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+            drillsData.forEach(d => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3";
+                const optionsHtml = d.options.map(opt => `
+                    <button onclick="handleAnswerDrill(${d.id}, '${opt.key}')" class="w-full text-left p-3 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-800 text-xs font-medium transition">
+                        <strong class="mr-1">${opt.key}.</strong> ${opt.text}
+                    </button>
+                `).join('');
+
+                card.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-white text-slate-700 border border-slate-200 font-mono">
+                            Q${d.id}. ${d.category}
+                        </span>
+                        <span class="text-xs font-bold text-slate-500" id="drill-${d.id}-status">未回答</span>
+                    </div>
+                    <p class="text-sm font-bold text-slate-900 leading-relaxed">${d.question}</p>
+                    <div class="space-y-2 text-xs">${optionsHtml}</div>
+                    <div id="drill-${d.id}-ans" class="hidden p-3 rounded-lg text-xs leading-relaxed"></div>
+                `;
+                container.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        function handleAnswerDrill(qId, choice) {
+            const drill = drillsData.find(d => d.id === qId);
+            if (!drill) return;
+            const resultEl = document.getElementById(`drill-${qId}-ans`);
+            const statusEl = document.getElementById(`drill-${qId}-status`);
+            resultEl.classList.remove('hidden');
+
+            if (choice === drill.correct) {
+                resultEl.className = 'p-3 rounded-lg text-xs leading-relaxed bg-white border border-slate-200 text-slate-800 font-medium';
+                resultEl.innerHTML = `<div class="font-bold mb-1">🎉 正解！ 正しい日置さんの思考です。</div>${drill.explanation}`;
+                statusEl.textContent = '正解 ✅';
+                drillResults[qId] = true;
+            } else {
+                resultEl.className = 'p-3 rounded-lg text-xs leading-relaxed bg-rose-50 border border-rose-200 text-rose-900 font-medium';
+                resultEl.innerHTML = `<div class="font-bold mb-1">❌ 不正解（正解: ${drill.correct}）</div>${drill.explanation}`;
+                statusEl.textContent = '要復習 ❌';
+                drillResults[qId] = false;
+            }
+            const correctCount = Object.values(drillResults).filter(v => v === true).length;
+            document.getElementById('drill-score').textContent = correctCount;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderDrills();
+        });
+    </script>
+</body>
+</html>

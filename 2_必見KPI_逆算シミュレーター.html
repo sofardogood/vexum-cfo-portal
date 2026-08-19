@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. 必見KPI & 逆算シミュレーター | VEXUM CFO Intelligence Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            background-color: #ffffff !important;
+            color: #0f1419 !important;
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #ffffff; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    </style>
+</head>
+<body class="bg-white text-[#0f1419] min-h-screen">
+
+    
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 px-4 lg:px-8 py-3.5">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="w-9 h-9 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold text-base hover:bg-slate-800 transition">
+                    H
+                </a>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <a href="index.html" class="text-base font-bold tracking-tight text-slate-900">
+                            VEXUM CFO Intelligence Portal
+                        </a>
+                        <span class="px-2 py-0.5 text-xs font-medium rounded bg-slate-100 text-slate-600 border border-slate-200">
+                            全15会議
+                        </span>
+                    </div>
+                    <p class="text-xs text-slate-500">
+                        日置佑輔 CFO思考OS ＆ 全会議分析ポータル
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <a href="5_ドキュメント投入_同期.html" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition text-xs font-semibold flex items-center space-x-1.5">
+                    <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
+                    <span>ドキュメント投入</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto mt-3 overflow-x-auto flex space-x-1 border-t border-slate-100 pt-2 text-xs font-medium">
+            <a href="index.html" class="px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">1. 人物像 & CFO思考OS</a>
+<a href="2_必見KPI_逆算シミュレーター.html" class="px-3.5 py-1.5 rounded-md transition whitespace-nowrap bg-slate-900 text-white font-semibold">2. 必見KPI & 逆算シミュレーター</a>
+<a href="3_全会議クロニクル.html" class="px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">3. 全会議クロニクル (15)</a>
+<a href="4_第二の日置さん_思考ドリル.html" class="px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">4. 思考ドリル</a>
+<a href="5_ドキュメント投入_同期.html" class="px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">5. ドキュメント投入 / 同期</a>
+
+        </div>
+    </header>
+    
+    <main class="max-w-6xl mx-auto px-4 lg:px-8 py-8 space-y-8 bg-white">
+        <div class="space-y-1">
+            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">
+                2. 必見KPI ＆ 営業・供給 逆算シミュレーター
+            </h2>
+            <p class="text-xs text-slate-500">
+                日置流の逆算ロジック（成約目標から必要アポ数・リーダー数を自動算出）と重要経営指標
+            </p>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl p-6 lg:p-8 space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-100 pb-4">
+                <div>
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                        Interactive Reverse Engineering Tool
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">
+                        日置流『営業・供給 逆算シミュレーター』
+                    </h3>
+                </div>
+                <p class="text-xs text-slate-500 max-w-md">
+                    目標とする「上駐開始件数（成約）」を入力すると、日置さんのロジックに基づいて必要なアクション量を即座に逆算します。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="space-y-4 bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">
+                            目標 上駐開始数 (成約件数 / 月)
+                        </label>
+                        <div class="relative">
+                            <input type="number" id="sim-target-deals" value="100" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-slate-900 font-mono font-bold text-xl focus:border-slate-900 focus:outline-none" oninput="calculateReverseModel()">
+                            <span class="absolute right-3 top-2.5 text-xs text-slate-500 font-bold">社</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-medium text-slate-700 mb-1">
+                            <span>初期設計 → 上駐 転換率</span>
+                            <span id="sim-rate-deal-val" class="font-mono font-bold">63%</span>
+                        </div>
+                        <input type="range" id="sim-rate-deal" min="30" max="90" value="63" class="w-full accent-slate-900" oninput="calculateReverseModel()">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-medium text-slate-700 mb-1">
+                            <span>アポ → 初期設計 転換率</span>
+                            <span id="sim-rate-design-val" class="font-mono font-bold">80%</span>
+                        </div>
+                        <input type="range" id="sim-rate-design" min="40" max="95" value="80" class="w-full accent-slate-900" oninput="calculateReverseModel()">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 mb-1">
+                            リーダー1人あたり案件キャパ
+                        </label>
+                        <input type="number" id="sim-leader-cap" value="8" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-slate-900 font-mono text-sm font-bold focus:outline-none" oninput="calculateReverseModel()">
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    <div class="border border-slate-200 p-4 rounded-xl flex flex-col justify-between bg-white">
+                        <div class="text-xs text-slate-500 font-medium">① 必要初期設計数 (先行指標)</div>
+                        <div id="res-design-count" class="text-3xl font-bold text-slate-900 font-mono my-2">160</div>
+                        <div class="text-[10px] text-slate-400">リードタイム: 約22日前</div>
+                    </div>
+
+                    <div class="border border-slate-200 p-4 rounded-xl flex flex-col justify-between bg-white">
+                        <div class="text-xs text-slate-500 font-medium">② 必要アポイント数</div>
+                        <div id="res-appo-count" class="text-3xl font-bold text-slate-900 font-mono my-2">200</div>
+                        <div id="res-appo-daily" class="text-[10px] text-slate-400 font-mono">日次: 約8.0件</div>
+                    </div>
+
+                    <div class="border border-slate-200 p-4 rounded-xl flex flex-col justify-between bg-slate-50">
+                        <div class="text-xs text-slate-700 font-bold">③ 必要見込み (3倍ルール)</div>
+                        <div id="res-pipeline-3x" class="text-3xl font-bold text-blue-600 font-mono my-2">300</div>
+                        <div class="text-[10px] text-blue-600 font-medium">下振れ防止バッファ</div>
+                    </div>
+
+                    <div class="border border-slate-200 p-4 rounded-xl flex flex-col justify-between bg-white">
+                        <div class="text-xs text-slate-500 font-medium">④ 必要リーダー数</div>
+                        <div id="res-leader-count" class="text-3xl font-bold text-slate-900 font-mono my-2">13</div>
+                        <div class="text-[10px] text-slate-400">名 (案件管理体制)</div>
+                    </div>
+
+                    <div class="border border-slate-200 p-4 rounded-xl flex flex-col justify-between bg-white">
+                        <div class="text-xs text-slate-500 font-medium">⑤ 想定月次売上 (単価25万)</div>
+                        <div id="res-monthly-sales" class="text-3xl font-bold text-slate-900 font-mono my-2">2,500万</div>
+                        <div class="text-[10px] text-slate-400">円 / 月</div>
+                    </div>
+
+                    <div class="border border-slate-200 p-4 rounded-xl flex flex-col justify-between bg-white">
+                        <div class="text-xs text-slate-500 font-medium">⑥ インターン給与上限 (50%)</div>
+                        <div id="res-intern-budget" class="text-3xl font-bold text-slate-900 font-mono my-2">1,250万</div>
+                        <div class="text-[10px] text-slate-400">円 (財務規律上限)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center pt-6 border-t border-slate-100">
+            <a href="index.html" class="px-4 py-2 border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-lg text-xs font-semibold flex items-center space-x-1.5">
+                <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                <span>前へ: 1. 人物像 & CFO思考OS</span>
+            </a>
+            <a href="3_全会議クロニクル.html" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-semibold flex items-center space-x-1.5">
+                <span>次へ: 3. 全会議クロニクル</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+        </div>
+    </main>
+    
+    <footer class="border-t border-slate-200 mt-16 py-6 px-4 text-center text-xs text-slate-400 bg-white">
+        <p>株式会社VEXUM CFO Intelligence System | Multi-page Portal Structure</p>
+    </footer>
+    
+    <script>
+        function calculateReverseModel() {
+            const targetDeals = parseInt(document.getElementById('sim-target-deals').value) || 0;
+            const rateDealPct = parseInt(document.getElementById('sim-rate-deal').value) || 63;
+            const rateDesignPct = parseInt(document.getElementById('sim-rate-design').value) || 80;
+            const leaderCap = parseInt(document.getElementById('sim-leader-cap').value) || 8;
+
+            document.getElementById('sim-rate-deal-val').textContent = rateDealPct + '%';
+            document.getElementById('sim-rate-design-val').textContent = rateDesignPct + '%';
+
+            const requiredDesign = Math.round(targetDeals / (rateDealPct / 100));
+            const requiredAppos = Math.round(requiredDesign / (rateDesignPct / 100));
+            const dailyAppos = (requiredAppos / 20).toFixed(1);
+            const pipeline3x = Math.round(targetDeals * 3);
+            const requiredLeaders = Math.ceil(targetDeals / leaderCap);
+            const monthlySalesMan = (targetDeals * 25).toLocaleString();
+            const internBudgetMan = (targetDeals * 25 * 0.5).toLocaleString();
+
+            document.getElementById('res-design-count').textContent = requiredDesign.toLocaleString();
+            document.getElementById('res-appo-count').textContent = requiredAppos.toLocaleString();
+            document.getElementById('res-appo-daily').textContent = `日次: 約${dailyAppos}件`;
+            document.getElementById('res-pipeline-3x').textContent = pipeline3x.toLocaleString();
+            document.getElementById('res-leader-count').textContent = requiredLeaders.toLocaleString();
+            document.getElementById('res-monthly-sales').textContent = monthlySalesMan + '万';
+            document.getElementById('res-intern-budget').textContent = internBudgetMan + '万';
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            calculateReverseModel();
+        });
+    </script>
+</body>
+</html>

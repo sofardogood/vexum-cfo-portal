@@ -1,69 +1,111 @@
-# 📊 VEXUM CFO Intelligence Portal (日置佑輔 CFO思考OS＆全会議分析)
+# VEXUM CFO Intelligence Portal (日置佑輔 CFO思考OS ＆ 全会議分析ポータル)
 
-株式会社VEXUMの日置佑輔代表（実質的CFO）の経営哲学・意思決定ロジック・全15回経営会議分析と、「第二の日置さん」を目指す学習ロードマップを提供するフルスタックWebポータルです。
+株式会社VEXUMの日置佑輔CFOの経営哲学・思考OS・全経営会議議事録の分析と、「第二の日置さん」を育成するための学習・シミュレーションポータルです。
 
-Next.js + GitHub REST API連動により、**Web画面上でPDF/TXTをドラッグ＆ドロップするだけで、GitHubリポジトリに自動でファイルがコミット＆永続化**されます。
+**複数ページ構成（Multi-Page Structure）** により、各機能が独立した明確なページとして分離されており、どこに何があるのかが一目でわかる設計になっています。
 
 ---
 
-## 📁 ディレクトリ構成
+## 📂 プロジェクト全体のファイル構成と役割
 
 ```
-日置さんver3.0/
-├── app/                  # Next.js App Router (UI & API Routes)
-│   ├── api/
-│   │   ├── meetings/     # GitHub / ローカルから最新会議を取得するAPI
-│   │   └── upload/       # PDF/TXT解析 ＆ GitHub自動コミットAPI
-│   ├── globals.css       # グローバルCSS (Tailwind)
-│   ├── layout.tsx        # Next.js レイアウト
-│   └── page.tsx          # メインポータルUI (React)
-├── data/
-│   └── chronicle.json    # 蓄積された全会議の構造化JSONデータベース
-├── meetings/             # 過去15回の経営会議PDF、文字起こしテキスト、音声原本
-├── docs/                 # 人物像分析・システムプロンプト・デプロイマニュアル
-│   ├── 日置さん_人物像_分析.md
-│   ├── 日置さん_システムプロンプト.md
-│   ├── DEPLOY_TO_VERCEL.md
-│   └── README_自動更新システム.md
-├── scripts/              # Python自動化スクリプト
-│   ├── update_portal.py  # フォルダ内全ファイルをスキャンしてHTML更新
-│   ├── watch_meetings.py # フォルダ常時監視（Auto-Watcher）
-│   └── generate_portal_lib.py # HTML生成エンジン
-├── 日置さん_CFOインテリジェンス_ポータル.html # スタンドアローン動作用ポータル
-├── package.json
-└── README.md
+.
+├── 📄 index.html                      # 【Page 1】人物像 & CFO思考OS 7大原則（トップページ）
+├── 📄 1_人物像_CFO思考OS.html           # 【Page 1】（同上・直接アクセス用）
+├── 📄 2_必見KPI_逆算シミュレーター.html  # 【Page 2】営業・供給 逆算シミュレーター & 必見KPI
+├── 📄 3_全会議クロニクル.html           # 【Page 3】全15回の経営会議議事録・意思決定ログ
+├── 📄 4_第二の日置さん_思考ドリル.html    # 【Page 4】CFO思考OS 実践トレーニングドリル
+├── 📄 5_ドキュメント投入_同期.html       # 【Page 5】PDF・Word(DOCX)・TXTファイル投入・自動同期
+│
+├── 📁 app/                             # Next.js 14 Webアプリケーション（Vercel本番用）
+│   ├── 📄 layout.tsx                   # 共通レイアウト（白基調 #ffffff / 黒文字 #0f1419）
+│   ├── 📄 globals.css                  # グローバルCSS（クリーンデザイン・スクロールバー）
+│   ├── 📁 components/                  # 共通UIコンポーネント
+│   │   ├── 📄 Header.tsx               # 上部ナビゲーションバー（複数ページ間リンク遷移）
+│   │   └── 📄 Footer.tsx               # フッター
+│   ├── 📄 page.tsx                     # 【Route: /】1. 人物像 & CFO思考OS
+│   ├── 📁 kpi/
+│   │   └── 📄 page.tsx                 # 【Route: /kpi】2. 必見KPI & 逆算シミュレーター
+│   ├── 📁 chronicle/
+│   │   └── 📄 page.tsx                 # 【Route: /chronicle】3. 全会議クロニクル
+│   ├── 📁 roadmap/
+│   │   └── 📄 page.tsx                 # 【Route: /roadmap】4. 思考ドリル
+│   ├── 📁 upload/
+│   │   └── 📄 page.tsx                 # 【Route: /upload】5. ドキュメント投入 / 同期
+│   └── 📁 api/                         # サーバーサイドAPI
+│       ├── 📁 meetings/
+│       │   └── 📄 route.ts             # 蓄積された全会議データの取得API
+│       └── 📁 upload/
+│           └── 📄 route.ts             # PDF / Word(DOCX) / TXT解析 ＆ GitHub自動コミットAPI
+│
+├── 📁 data/
+│   └── 📄 chronicle.json               # 全経営会議の構造化データ（JSON形式）
+│
+├── 📁 meetings/                        # 過去の経営会議原本ファイル（PDF / 音声 / 文字起こし）
+│   ├── *.pdf                           # 全15回の経営会議原本PDF
+│   ├── audio.m4a                       # 原本音声
+│   └── transcript.txt                  # 文字起こしテキスト
+│
+├── 📁 scripts/                         # 自動化Pythonスクリプト群
+│   ├── 📄 update_portal.py             # meetings/ 内の全ファイルを再スキャンしてHTML/JSONを最新化
+│   ├── 📄 generate_portal_lib.py       # 各静的HTMLページ（全5ページ）を生成するライブラリ
+│   └── 📄 watch_meetings.py            # meetings/ フォルダを常時監視し新規ファイルを即時反映
+│
+└── 📁 docs/                            # 各種詳細ドキュメント
+    ├── 📄 日置さん_人物像_分析.md          # 日置佑輔氏の経営人物像・思考パターンの詳細分析書
+    ├── 📄 日置さん_システムプロンプト.md    # AIエージェントに日置さんの思考を移植するプロンプト定義
+    └── 📄 DEPLOY_TO_VERCEL.md          # Vercelデプロイ＆GitHub連携手順マニュアル
 ```
+
+---
+
+## 📑 各ページの詳細と目的
+
+### 1. 人物像 ＆ CFO思考OS (`index.html` / `/`)
+* **目的**: 日置佑輔氏の基本人物像、全社ゴール（有料顧客3,000社・資金調達5〜10億円）、および経営判断の基軸となる「思考OS 7大原則」を理解するページ。
+* **主要コンテンツ**:
+  * 4大重要指標（有料3,000社、5〜10億円調達、全15会議、10分会議ルール）
+  * 最新の重要方針バナー（直近会議での決定事項）
+  * 日置流『思考OS』7大原則カード（逆算、定性論の数字翻訳、再現性の証明、スピード、見込み3倍、利益構造）
+
+### 2. 必見KPI ＆ 逆算シミュレーター (`2_必見KPI_逆算シミュレーター.html` / `/kpi`)
+* **目的**: 「上駐開始数（成約目標）」を入力することで、日置さんのロジックに基づき、必要な初期設計数（先行指標）、アポ数、見込みバッファ（3倍）、必要リーダー数を即座に逆算するインタラクティブツール。
+* **主要コンテンツ**:
+  * 営業・供給 逆算シミュレーター（スライダーで転換率を変更可能）
+  * 4象限KPIマトリクス（営業パイプライン指標 ＆ ユニットエコノミクス指標）
+
+### 3. 全会議クロニクル (`3_全会議クロニクル.html` / `/chronicle`)
+* **目的**: 過去15回のすべての経営会議議事録、テーマ、日置さんの重要意思決定、および名言（💬）を時系列で閲覧・検索するページ。
+* **主要コンテンツ**:
+  * キーワード検索 ＆ タグフィルター（逆算設計、資金調達、ユニットエコノミクス、3000社目標など）
+  * 各会議のカード（概要、意思決定リスト、名言吹き出し）
+
+### 4. 「第二の日置さん」思考ドリル (`4_第二の日置さん_思考ドリル.html` / `/roadmap`)
+* **目的**: 実際の経営現場で起こるリアルな状況に対して、「日置さんならどう判断・指示を出すか」をクイズ形式で学べる実践トレーニング。
+* **主要コンテンツ**:
+  * 見込み管理、財務・CRM整合性、ユニットエコノミクス、意思決定スピード、組織規律に関する実践問題
+  * 正解・不正解判定と日置流の鉄則解説
+
+### 5. ドキュメント投入 ＆ GitHub同期 (`5_ドキュメント投入_同期.html` / `/upload`)
+* **目的**: 新しい会議メモや議事録（PDF、Word `.docx`、テキスト `.txt`）をドラッグ＆ドロップするだけで、自動解析され、全ページのデータが最新化される管理ページ。
+* **主要コンテンツ**:
+  * ファイルドロップゾーン（PDF / Word / TXT対応）
+  * 自動同期項目のチェックリスト
 
 ---
 
 ## 🚀 使い方
 
-### 1. ローカルでの起動
-```bash
-npm run dev
-# ブラウザで http://localhost:3000 を開きます
-```
+### ① ローカルで静的HTMLを閲覧する場合
+ブラウザで [`index.html`](file:///Users/takutookada/System/VEXUM/日置さんver3.0/index.html) を開くだけで、上部ナビゲーションから各HTMLファイルへスムーズにページ遷移できます。
 
-### 2. Vercelへのデプロイ ＆ GitHub自動コミット連携
-詳細な手順は [`docs/DEPLOY_TO_VERCEL.md`](docs/DEPLOY_TO_VERCEL.md) をご覧ください。
+### ② 新しいドキュメントを投入して自動更新する場合
+* **Web画面から行う場合**: `5_ドキュメント投入_同期.html`（または本番の `/upload` ページ）に Word / PDF / TXT ファイルをドラッグ＆ドロップしてください。
+* **コマンドラインで行う場合**: `meetings/` フォルダにファイルを配置して以下を実行します：
+  ```bash
+  python3 scripts/update_portal.py
+  ```
 
-1. GitHubリポジトリを作成してPush：
-   ```bash
-   git add .
-   git commit -m "feat: VEXUM CFO Intelligence Portal"
-   git push origin main
-   ```
-2. Vercelでリポジトリをインポートし、以下の環境変数を設定してデプロイ：
-   - `GITHUB_TOKEN`: GitHub Personal Access Token (repo権限)
-   - `GITHUB_OWNER`: GitHubアカウント名
-   - `GITHUB_REPO`: リポジトリ名
-   - `GITHUB_BRANCH`: main
-
-### 3. Pythonスクリプトでのローカル自動同期
-```bash
-# ワンクリックで meetings/ 内の全ファイルをスキャンして同期
-python3 scripts/update_portal.py
-
-# フォルダ常時監視（ファイルを置くだけで自動更新）
-python3 scripts/watch_meetings.py
-```
+### ③ Vercelに本番デプロイする場合
+1. [Vercel Dashboard](https://vercel.com/new) で GitHub リポジトリ `sofardogood/vexum-cfo-portal` をインポート。
+2. 環境変数に `GITHUB_TOKEN`（Personal Access Token）、`GITHUB_OWNER`、`GITHUB_REPO`、`GITHUB_BRANCH` を設定して Deploy をクリック。
