@@ -1,25 +1,11 @@
 <!DOCTYPE html>
-<html lang="ja" class="light">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VEXUM CFO Intelligence Portal | 日置佑輔 CFO思考OS ＆ 全会議分析</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#0b0f19',
-                        darkCard: '#111827',
-                        darkBorder: '#1f2937'
-                    }
-                }
-            }
-        }
-    </script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- PDF.js for in-browser PDF parsing -->
@@ -30,10 +16,14 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body {
+        html, body {
+            background-color: #ffffff !important;
+            color: #0f1419 !important;
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
         }
         .font-mono {
             font-family: 'JetBrains Mono', monospace;
@@ -43,41 +33,37 @@
             height: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: transparent;
+            background: #ffffff;
         }
         ::-webkit-scrollbar-thumb {
-            background: rgba(148, 163, 184, 0.5);
+            background: #cfd9de;
             border-radius: 3px;
         }
         .tab-btn.active {
-            background: #0f172a;
+            background: #0f1419;
             color: #ffffff;
-        }
-        .dark .tab-btn.active {
-            background: #f8fafc;
-            color: #0f172a;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen transition-colors duration-150 selection:bg-slate-900 selection:text-white dark:selection:bg-slate-100 dark:selection:text-slate-900">
+<body class="bg-white text-[#0f1419] min-h-screen">
 
     <!-- Top Navigation Header -->
-    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 px-4 lg:px-8 py-3 dark:bg-slate-900 dark:border-slate-800 transition-colors">
+    <header class="sticky top-0 z-50 bg-white border-b border-[#cfd9de] px-4 lg:px-8 py-3">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center space-x-3">
-                <div class="w-9 h-9 rounded-lg bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 flex items-center justify-center font-bold text-base shadow-sm">
+                <div class="w-9 h-9 rounded-lg bg-[#0f1419] text-white flex items-center justify-center font-bold text-base">
                     H
                 </div>
                 <div>
                     <div class="flex items-center space-x-2">
-                        <h1 class="text-base font-bold tracking-tight text-slate-900 dark:text-white">
+                        <h1 class="text-base font-bold tracking-tight text-[#0f1419]">
                             VEXUM CFO Intelligence Portal
                         </h1>
-                        <span id="header-badge" class="px-2 py-0.5 text-xs font-semibold rounded bg-slate-100 text-slate-700 border border-slate-300 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700">
+                        <span id="header-badge" class="px-2 py-0.5 text-xs font-semibold rounded bg-[#f7f9f9] text-[#0f1419] border border-[#cfd9de]">
                             同期中
                         </span>
                     </div>
-                    <p class="text-xs text-slate-500 dark:text-slate-400">
+                    <p class="text-xs text-[#536471]">
                         日置佑輔の経営哲学・CFO思考OS・全議事録分析 ＆「第二の日置さん」育成ガイド
                     </p>
                 </div>
@@ -85,15 +71,11 @@
 
             <!-- Quick Action Buttons -->
             <div class="flex items-center space-x-2">
-                <button onclick="toggleTheme()" class="p-2 rounded-lg bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-700 transition text-xs flex items-center space-x-1.5 shadow-sm" title="テーマ切り替え">
-                    <i data-lucide="sun-moon" class="w-4 h-4"></i>
-                    <span id="theme-btn-text">ダーク表示</span>
+                <button onclick="exportDataJSON()" class="px-3 py-1.5 rounded-lg bg-white border border-[#cfd9de] hover:bg-[#f7f9f9] text-[#0f1419] transition text-xs font-semibold flex items-center space-x-1.5" title="データエクスポート">
+                    <i data-lucide="download" class="w-4 h-4 text-[#0f1419]"></i>
+                    <span>JSON保存</span>
                 </button>
-                <button onclick="exportDataJSON()" class="p-2 rounded-lg bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-700 transition text-xs flex items-center space-x-1.5 shadow-sm" title="データエクスポート">
-                    <i data-lucide="download" class="w-4 h-4"></i>
-                    <span class="hidden sm:inline">JSON保存</span>
-                </button>
-                <button onclick="switchTab('tab-manage')" class="px-3 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 transition text-xs font-semibold flex items-center space-x-1.5 shadow-sm">
+                <button onclick="switchTab('tab-manage')" class="px-3.5 py-1.5 rounded-lg bg-[#0f1419] hover:bg-[#272c30] text-white transition text-xs font-semibold flex items-center space-x-1.5 shadow-sm">
                     <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
                     <span>ドキュメント投入 / 同期</span>
                 </button>
@@ -101,24 +83,24 @@
         </div>
 
         <!-- Navigation Tabs -->
-        <div class="max-w-7xl mx-auto mt-3 overflow-x-auto flex space-x-1 border-t border-slate-200 dark:border-slate-800 pt-2 text-xs font-semibold">
-            <button onclick="switchTab('tab-profile')" id="btn-tab-profile" class="tab-btn active px-3.5 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100">
+        <div class="max-w-7xl mx-auto mt-3 overflow-x-auto flex space-x-1 border-t border-[#cfd9de] pt-2 text-xs font-bold">
+            <button onclick="switchTab('tab-profile')" id="btn-tab-profile" class="tab-btn active px-4 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-[#536471] hover:text-[#0f1419] hover:bg-[#f7f9f9]">
                 <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
                 <span>1. 人物像 & CFO機能の全貌</span>
             </button>
-            <button onclick="switchTab('tab-kpi')" id="btn-tab-kpi" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100">
+            <button onclick="switchTab('tab-kpi')" id="btn-tab-kpi" class="tab-btn px-4 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-[#536471] hover:text-[#0f1419] hover:bg-[#f7f9f9]">
                 <i data-lucide="activity" class="w-3.5 h-3.5"></i>
                 <span>2. 必見KPI & 逆算シミュレーター</span>
             </button>
-            <button onclick="switchTab('tab-chronicle')" id="btn-tab-chronicle" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100">
+            <button onclick="switchTab('tab-chronicle')" id="btn-tab-chronicle" class="tab-btn px-4 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-[#536471] hover:text-[#0f1419] hover:bg-[#f7f9f9]">
                 <i data-lucide="calendar-days" class="w-3.5 h-3.5"></i>
                 <span>3. 経営会議 完全クロニクル</span>
             </button>
-            <button onclick="switchTab('tab-roadmap')" id="btn-tab-roadmap" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100">
+            <button onclick="switchTab('tab-roadmap')" id="btn-tab-roadmap" class="tab-btn px-4 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-[#536471] hover:text-[#0f1419] hover:bg-[#f7f9f9]">
                 <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
                 <span>4. 「第二の日置さん」育成ロードマップ</span>
             </button>
-            <button onclick="switchTab('tab-manage')" id="btn-tab-manage" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100">
+            <button onclick="switchTab('tab-manage')" id="btn-tab-manage" class="tab-btn px-4 py-2 rounded-lg transition flex items-center space-x-1.5 whitespace-nowrap text-[#536471] hover:text-[#0f1419] hover:bg-[#f7f9f9]">
                 <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
                 <span>5. ドキュメント投入 / 同期</span>
             </button>
@@ -126,56 +108,56 @@
     </header>
 
     <!-- Main Content Area -->
-    <main class="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8">
+    <main class="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8 bg-white">
 
         <!-- TAB 1: Profile -->
         <section id="tab-profile" class="tab-content block space-y-8">
-            <div class="bg-white border border-slate-200 rounded-2xl p-6 lg:p-8 dark:bg-slate-900 dark:border-slate-800 shadow-sm space-y-6">
+            <div class="bg-white border border-[#cfd9de] rounded-2xl p-6 lg:p-8 space-y-6">
                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div class="space-y-3 max-w-3xl">
-                        <div class="inline-flex items-center space-x-2 px-2.5 py-1 rounded bg-slate-100 text-slate-800 text-xs font-semibold dark:bg-slate-800 dark:text-slate-300">
+                        <div class="inline-flex items-center space-x-2 px-2.5 py-1 rounded bg-[#f7f9f9] text-[#0f1419] text-xs font-bold border border-[#cfd9de]">
                             <span>株式会社VEXUM 代表取締役 兼 経営統括・CFO</span>
                         </div>
-                        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                            日置 佑輔 <span class="text-lg font-normal text-slate-500">（Yusuke）</span>
+                        <h2 class="text-3xl font-extrabold text-[#0f1419] tracking-tight">
+                            日置 佑輔 <span class="text-lg font-normal text-[#536471]">（Yusuke）</span>
                         </h2>
-                        <p class="text-base text-slate-800 dark:text-slate-200 font-semibold leading-relaxed">
+                        <p class="text-base text-[#0f1419] font-bold leading-relaxed">
                             「数字を共通言語にして、逆算とスピードで“成長の再現性”を証明し続ける」
                         </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                        <p class="text-xs text-[#0f1419] leading-relaxed font-normal">
                             AI活用の人材派遣・常駐受託（「上駐」）支援事業を率い、シリーズA調達（5〜10億円規模）と「1年後に有料顧客3,000社」という全社ゴールを牽引。毎週金曜の経営会議を主宰し、営業・採用・財務・資金調達・ガバナンスのすべてを数字で統括する戦略的CFO/CEO。
                         </p>
                     </div>
 
                     <div class="grid grid-cols-2 gap-3 w-full md:w-auto shrink-0 font-mono text-center">
-                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-3 rounded-xl">
-                            <div class="text-[11px] text-slate-500 font-sans">全社目標 (1年後)</div>
-                            <div class="text-lg font-bold text-slate-900 dark:text-white">有料 3,000社</div>
-                            <div class="text-[10px] text-slate-400 font-sans">1億円ボーナス</div>
+                        <div class="bg-[#f7f9f9] border border-[#cfd9de] p-3.5 rounded-xl">
+                            <div class="text-[11px] text-[#536471] font-sans font-bold">全社目標 (1年後)</div>
+                            <div class="text-lg font-extrabold text-[#0f1419]">有料 3,000社</div>
+                            <div class="text-[10px] text-[#536471] font-sans font-medium">1億円ボーナス</div>
                         </div>
-                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-3 rounded-xl">
-                            <div class="text-[11px] text-slate-500 font-sans">資金調達目標</div>
-                            <div class="text-lg font-bold text-slate-900 dark:text-white">5億〜10億円</div>
-                            <div class="text-[10px] text-slate-400 font-sans">シリーズA</div>
+                        <div class="bg-[#f7f9f9] border border-[#cfd9de] p-3.5 rounded-xl">
+                            <div class="text-[11px] text-[#536471] font-sans font-bold">資金調達目標</div>
+                            <div class="text-lg font-extrabold text-[#0f1419]">5億〜10億円</div>
+                            <div class="text-[10px] text-[#536471] font-sans font-medium">シリーズA</div>
                         </div>
-                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-3 rounded-xl">
-                            <div class="text-[11px] text-slate-500 font-sans">蓄積会議数</div>
-                            <div id="summary-meeting-count" class="text-lg font-bold text-slate-900 dark:text-white">-</div>
-                            <div class="text-[10px] text-slate-400 font-sans">全件解析済み</div>
+                        <div class="bg-[#f7f9f9] border border-[#cfd9de] p-3.5 rounded-xl">
+                            <div class="text-[11px] text-[#536471] font-sans font-bold">蓄積会議数</div>
+                            <div id="summary-meeting-count" class="text-lg font-extrabold text-[#0f1419]">-</div>
+                            <div class="text-[10px] text-[#536471] font-sans font-medium">全件解析済み</div>
                         </div>
-                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-3 rounded-xl">
-                            <div class="text-[11px] text-slate-500 font-sans">意思決定ルール</div>
-                            <div class="text-lg font-bold text-slate-900 dark:text-white">10分会議</div>
-                            <div class="text-[10px] text-slate-400 font-sans">LINE即時承認</div>
+                        <div class="bg-[#f7f9f9] border border-[#cfd9de] p-3.5 rounded-xl">
+                            <div class="text-[11px] text-[#536471] font-sans font-bold">意思決定ルール</div>
+                            <div class="text-lg font-extrabold text-[#0f1419]">10分会議</div>
+                            <div class="text-[10px] text-[#536471] font-sans font-medium">LINE即時承認</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-slate-50 border-l-4 border-slate-900 p-3.5 rounded-r-lg dark:bg-slate-950 dark:border-slate-100 flex items-start space-x-3">
-                    <i data-lucide="sparkles" class="w-4 h-4 text-slate-700 dark:text-slate-300 shrink-0 mt-0.5"></i>
+                <div class="bg-[#f7f9f9] border-l-4 border-[#0f1419] p-3.5 rounded-r-lg flex items-start space-x-3 border border-[#cfd9de]">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-[#0f1419] shrink-0 mt-0.5"></i>
                     <div class="text-xs space-y-1">
-                        <div class="font-bold text-slate-900 dark:text-white">最新の経営進捗・日置さんの重要方針（<span id="latest-meeting-date">-</span>）：</div>
-                        <div id="latest-decision-text" class="text-slate-700 dark:text-slate-300 leading-relaxed">-</div>
+                        <div class="font-bold text-[#0f1419]">最新の経営進捗・日置さんの重要方針（<span id="latest-meeting-date">-</span>）：</div>
+                        <div id="latest-decision-text" class="text-[#0f1419] leading-relaxed font-normal">-</div>
                     </div>
                 </div>
             </div>
@@ -183,85 +165,85 @@
             <!-- Principles -->
             <div class="space-y-4">
                 <div class="flex items-center space-x-2">
-                    <i data-lucide="cpu" class="w-5 h-5 text-slate-900 dark:text-white"></i>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">日置流『思考OS（Thinking OS）』7大原則</h3>
+                    <i data-lucide="cpu" class="w-5 h-5 text-[#0f1419]"></i>
+                    <h3 class="text-xl font-bold text-[#0f1419]">日置流『思考OS（Thinking OS）』7大原則</h3>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div class="bg-white border border-slate-200 p-5 rounded-xl dark:bg-slate-900 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3">
+                    <div class="bg-white border border-[#cfd9de] p-5 rounded-xl flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="text-xs font-bold text-slate-500 font-mono mb-1">原則 01</div>
-                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">すべては「逆算」で組む</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            <div class="text-xs font-bold text-[#536471] font-mono mb-1">原則 01</div>
+                            <h4 class="text-base font-bold text-[#0f1419] mb-2">すべては「逆算」で組む</h4>
+                            <p class="text-xs text-[#0f1419] leading-relaxed font-normal">
                                 ゴール（例：7月上駐100件）からリードタイム・各ファネル転換率・必要行動量へ分解。「上駐100件 ÷ 6掛け ＝ アポ160件 ＝ 初回接触200件」を即座に組み立てる。
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                        <div class="pt-2 border-t border-[#e1e8ed] text-[11px] text-[#536471] font-medium">
                             💬「リーダー12人必要なら今候補は何人いるか逆算して」
                         </div>
                     </div>
 
-                    <div class="bg-white border border-slate-200 p-5 rounded-xl dark:bg-slate-900 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3">
+                    <div class="bg-white border border-[#cfd9de] p-5 rounded-xl flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="text-xs font-bold text-slate-500 font-mono mb-1">原則 02</div>
-                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">定性論を数字に翻訳させる</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            <div class="text-xs font-bold text-[#536471] font-mono mb-1">原則 02</div>
+                            <h4 class="text-base font-bold text-[#0f1419] mb-2">定性論を数字に翻訳させる</h4>
+                            <p class="text-xs text-[#0f1419] leading-relaxed font-normal">
                                 「頑張ります」を許さず「成約数 ＝ 相談数 × 成功率」のように基本の数式に落とし、ボトルネックが分母か転換率かを即特定させる。
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                        <div class="pt-2 border-t border-[#e1e8ed] text-[11px] text-[#536471] font-medium">
                             💬「それを数字で言うと？」「相談数×成功率でどこが課題？」
                         </div>
                     </div>
 
-                    <div class="bg-white border border-slate-200 p-5 rounded-xl dark:bg-slate-900 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3">
+                    <div class="bg-white border border-[#cfd9de] p-5 rounded-xl flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="text-xs font-bold text-slate-500 font-mono mb-1">原則 03</div>
-                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">成長の再現性・スケールの証明</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            <div class="text-xs font-bold text-[#536471] font-mono mb-1">原則 03</div>
+                            <h4 class="text-base font-bold text-[#0f1419] mb-2">成長の再現性・スケールの証明</h4>
+                            <p class="text-xs text-[#0f1419] leading-relaxed font-normal">
                                 投資家が見ているのは「成長できることの証明」のみ。一発屋を排し、スキルTier1〜7ピラミッドや教育フロー1枚スライドなど仕組み化に執着。
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                        <div class="pt-2 border-t border-[#e1e8ed] text-[11px] text-[#536471] font-medium">
                             💬「投資家が見てるのは成長の証明。成長できてることが全て」
                         </div>
                     </div>
 
-                    <div class="bg-white border border-slate-200 p-5 rounded-xl dark:bg-slate-900 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3">
+                    <div class="bg-white border border-[#cfd9de] p-5 rounded-xl flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="text-xs font-bold text-slate-500 font-mono mb-1">原則 04</div>
-                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">スピード＝唯一の競争優位</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            <div class="text-xs font-bold text-[#536471] font-mono mb-1">原則 04</div>
+                            <h4 class="text-base font-bold text-[#0f1419] mb-2">スピード＝唯一の競争優位</h4>
+                            <p class="text-xs text-[#0f1419] leading-relaxed font-normal">
                                 予算承認に1週間かけるな。LINEで喋りながら即承認。会議は10分以内ルール、秒単位でサイクルを回す。
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                        <div class="pt-2 border-t border-[#e1e8ed] text-[11px] text-[#536471] font-medium">
                             💬「喋りながらLINEで連絡して今すぐ承認しろ」
                         </div>
                     </div>
 
-                    <div class="bg-white border border-slate-200 p-5 rounded-xl dark:bg-slate-900 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3">
+                    <div class="bg-white border border-[#cfd9de] p-5 rounded-xl flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="text-xs font-bold text-slate-500 font-mono mb-1">原則 05</div>
-                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">予実管理と「見込み3倍」ルール</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            <div class="text-xs font-bold text-[#536471] font-mono mb-1">原則 05</div>
+                            <h4 class="text-base font-bold text-[#0f1419] mb-2">予実管理と「見込み3倍」ルール</h4>
+                            <p class="text-xs text-[#0f1419] leading-relaxed font-normal">
                                 「見込みは目標の3倍（150%以上）持て。100%だと必ず下振れる」。下振れを最重要リスクとして日次で監視。
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                        <div class="pt-2 border-t border-[#e1e8ed] text-[11px] text-[#536471] font-medium">
                             💬「見込み放置は資金調達と成長に直結して悪影響」
                         </div>
                     </div>
 
-                    <div class="bg-white border border-slate-200 p-5 rounded-xl dark:bg-slate-900 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-3">
+                    <div class="bg-white border border-[#cfd9de] p-5 rounded-xl flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="text-xs font-bold text-slate-500 font-mono mb-1">原則 06</div>
-                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2">利益構造・ユニットエコノミクス</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            <div class="text-xs font-bold text-[#536471] font-mono mb-1">原則 06</div>
+                            <h4 class="text-base font-bold text-[#0f1419] mb-2">利益構造・ユニットエコノミクス</h4>
+                            <p class="text-xs text-[#0f1419] leading-relaxed font-normal">
                                 売上だけでなく限界利益率・原価率（約66%改善）・案件粗利・LTVを見る。解約率70%時には新規採用を停止し社内育成に全集中。
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                        <div class="pt-2 border-t border-[#e1e8ed] text-[11px] text-[#536471] font-medium">
                             💬「初月売上ではなく原価を引いた後の案件利益率で判断しろ」
                         </div>
                     </div>
@@ -271,92 +253,92 @@
 
         <!-- TAB 2: Dynamic KPI & Simulator -->
         <section id="tab-kpi" class="tab-content hidden space-y-8">
-            <div class="bg-white border border-slate-200 rounded-2xl p-6 lg:p-8 dark:bg-slate-900 dark:border-slate-800 shadow-sm space-y-6">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
+            <div class="bg-white border border-[#cfd9de] rounded-2xl p-6 lg:p-8 space-y-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-[#e1e8ed] pb-4">
                     <div>
-                        <div class="text-xs font-bold uppercase tracking-wider text-slate-500">
+                        <div class="text-xs font-bold uppercase tracking-wider text-[#536471]">
                             Interactive Reverse Engineering Tool
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                        <h3 class="text-xl font-bold text-[#0f1419]">
                             日置流『営業・供給 逆算シミュレーター』
                         </h3>
                     </div>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 max-w-md">
+                    <p class="text-xs text-[#536471] max-w-md">
                         目標とする「上駐開始件数（成約）」を入力すると、日置さんのロジック（転換率・リードタイム・リーダーキャパ）に基づいて必要なアクション量を即座に逆算します。
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="space-y-4 bg-slate-50 p-4 rounded-xl border border-slate-200 dark:bg-slate-950 dark:border-slate-800">
+                    <div class="space-y-4 bg-[#f7f9f9] p-4 rounded-xl border border-[#cfd9de]">
                         <div>
-                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                            <label class="block text-xs font-bold text-[#0f1419] mb-1">
                                 目標 上駐開始数 (成約件数 / 月)
                             </label>
                             <div class="relative">
-                                <input type="number" id="sim-target-deals" value="100" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-slate-900 font-mono font-bold text-lg focus:border-slate-900 focus:outline-none dark:bg-slate-900 dark:border-slate-700 dark:text-white" oninput="calculateReverseModel()">
-                                <span class="absolute right-3 top-2.5 text-xs text-slate-400">社</span>
+                                <input type="number" id="sim-target-deals" value="100" class="w-full bg-white border border-[#cfd9de] rounded-lg px-3 py-2 text-[#0f1419] font-mono font-bold text-lg focus:border-[#0f1419] focus:outline-none" oninput="calculateReverseModel()">
+                                <span class="absolute right-3 top-2.5 text-xs text-[#536471] font-bold">社</span>
                             </div>
                         </div>
 
                         <div>
-                            <div class="flex justify-between text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                            <div class="flex justify-between text-xs font-bold text-[#0f1419] mb-1">
                                 <span>初期設計 → 上駐 転換率</span>
                                 <span id="sim-rate-deal-val" class="font-mono">63%</span>
                             </div>
-                            <input type="range" id="sim-rate-deal" min="30" max="90" value="63" class="w-full accent-slate-900 dark:accent-slate-100" oninput="calculateReverseModel()">
+                            <input type="range" id="sim-rate-deal" min="30" max="90" value="63" class="w-full accent-[#0f1419]" oninput="calculateReverseModel()">
                         </div>
 
                         <div>
-                            <div class="flex justify-between text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                            <div class="flex justify-between text-xs font-bold text-[#0f1419] mb-1">
                                 <span>アポ → 初期設計 転換率</span>
                                 <span id="sim-rate-design-val" class="font-mono">80%</span>
                             </div>
-                            <input type="range" id="sim-rate-design" min="40" max="95" value="80" class="w-full accent-slate-900 dark:accent-slate-100" oninput="calculateReverseModel()">
+                            <input type="range" id="sim-rate-design" min="40" max="95" value="80" class="w-full accent-[#0f1419]" oninput="calculateReverseModel()">
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                            <label class="block text-xs font-bold text-[#0f1419] mb-1">
                                 リーダー1人あたり案件キャパ
                             </label>
-                            <input type="number" id="sim-leader-cap" value="8" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-slate-900 font-mono text-sm dark:bg-slate-900 dark:border-slate-700 dark:text-white focus:outline-none" oninput="calculateReverseModel()">
+                            <input type="number" id="sim-leader-cap" value="8" class="w-full bg-white border border-[#cfd9de] rounded-lg px-3 py-1.5 text-[#0f1419] font-mono text-sm focus:outline-none" oninput="calculateReverseModel()">
                         </div>
                     </div>
 
                     <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-3">
-                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-4 rounded-xl flex flex-col justify-between">
-                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400">① 必要初期設計数 (先行指標)</div>
-                            <div id="res-design-count" class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono my-2">160</div>
-                            <div class="text-[10px] text-slate-400">リードタイム: 約22日前</div>
+                        <div class="bg-[#f7f9f9] border border-[#cfd9de] p-4 rounded-xl flex flex-col justify-between">
+                            <div class="text-xs font-bold text-[#0f1419]">① 必要初期設計数 (先行指標)</div>
+                            <div id="res-design-count" class="text-3xl font-extrabold text-[#0f1419] font-mono my-2">160</div>
+                            <div class="text-[10px] text-[#536471] font-medium">リードタイム: 約22日前</div>
                         </div>
 
-                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-4 rounded-xl flex flex-col justify-between">
-                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400">② 必要アポイント数</div>
-                            <div id="res-appo-count" class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono my-2">200</div>
-                            <div id="res-appo-daily" class="text-[10px] text-slate-400 font-mono">日次: 約8.0件</div>
+                        <div class="bg-[#f7f9f9] border border-[#cfd9de] p-4 rounded-xl flex flex-col justify-between">
+                            <div class="text-xs font-bold text-[#0f1419]">② 必要アポイント数</div>
+                            <div id="res-appo-count" class="text-3xl font-extrabold text-[#0f1419] font-mono my-2">200</div>
+                            <div id="res-appo-daily" class="text-[10px] text-[#536471] font-mono font-medium">日次: 約8.0件</div>
                         </div>
 
-                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-4 rounded-xl flex flex-col justify-between">
-                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400">③ 必要見込み (3倍ルール)</div>
-                            <div id="res-pipeline-3x" class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono my-2">300</div>
-                            <div class="text-[10px] text-slate-500 font-semibold">下振れ防止バッファ</div>
+                        <div class="bg-[#f7f9f9] border border-[#cfd9de] p-4 rounded-xl flex flex-col justify-between">
+                            <div class="text-xs font-bold text-[#0f1419]">③ 必要見込み (3倍ルール)</div>
+                            <div id="res-pipeline-3x" class="text-3xl font-extrabold text-[#0f1419] font-mono my-2">300</div>
+                            <div class="text-[10px] text-[#536471] font-bold">下振れ防止バッファ</div>
                         </div>
 
-                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-4 rounded-xl flex flex-col justify-between">
-                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400">④ 必要リーダー数</div>
-                            <div id="res-leader-count" class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono my-2">13</div>
-                            <div class="text-[10px] text-slate-400">名 (案件管理体制)</div>
+                        <div class="bg-[#f7f9f9] border border-[#cfd9de] p-4 rounded-xl flex flex-col justify-between">
+                            <div class="text-xs font-bold text-[#0f1419]">④ 必要リーダー数</div>
+                            <div id="res-leader-count" class="text-3xl font-extrabold text-[#0f1419] font-mono my-2">13</div>
+                            <div class="text-[10px] text-[#536471] font-medium">名 (案件管理体制)</div>
                         </div>
 
-                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-4 rounded-xl flex flex-col justify-between">
-                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400">⑤ 想定月次売上 (単価25万)</div>
-                            <div id="res-monthly-sales" class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono my-2">2,500万</div>
-                            <div class="text-[10px] text-slate-400">円 / 月</div>
+                        <div class="bg-[#f7f9f9] border border-[#cfd9de] p-4 rounded-xl flex flex-col justify-between">
+                            <div class="text-xs font-bold text-[#0f1419]">⑤ 想定月次売上 (単価25万)</div>
+                            <div id="res-monthly-sales" class="text-3xl font-extrabold text-[#0f1419] font-mono my-2">2,500万</div>
+                            <div class="text-[10px] text-[#536471] font-medium">円 / 月</div>
                         </div>
 
-                        <div class="bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 p-4 rounded-xl flex flex-col justify-between">
-                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400">⑥ インターン給与上限 (50%)</div>
-                            <div id="res-intern-budget" class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono my-2">1,250万</div>
-                            <div class="text-[10px] text-slate-400">円 (財務規律上限)</div>
+                        <div class="bg-[#f7f9f9] border border-[#cfd9de] p-4 rounded-xl flex flex-col justify-between">
+                            <div class="text-xs font-bold text-[#0f1419]">⑥ インターン給与上限 (50%)</div>
+                            <div id="res-intern-budget" class="text-3xl font-extrabold text-[#0f1419] font-mono my-2">1,250万</div>
+                            <div class="text-[10px] text-[#536471] font-medium">円 (財務規律上限)</div>
                         </div>
                     </div>
                 </div>
@@ -367,16 +349,16 @@
         <section id="tab-chronicle" class="tab-content hidden space-y-6">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                    <h3 class="text-xl font-bold text-[#0f1419] tracking-tight">
                         VEXUM経営会議 完全クロニクル
                     </h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400">
-                        蓄積されたすべての会議議事録・意思決定ログ（全 <span id="chronicle-total-count" class="font-bold text-slate-900 dark:text-white">0</span> 件）
+                    <p class="text-xs text-[#536471]">
+                        蓄積されたすべての会議議事録・意思決定ログ（全 <span id="chronicle-total-count" class="font-bold text-[#0f1419]">0</span> 件）
                     </p>
                 </div>
                 <div class="flex items-center gap-2">
-                    <input type="text" id="chronicle-search" placeholder="キーワード・発言検索..." class="bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:border-slate-900 focus:outline-none dark:bg-slate-900 dark:border-slate-700 dark:text-white" oninput="filterChronicle()">
-                    <select id="chronicle-tag-filter" class="bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs text-slate-700 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-300 focus:outline-none" onchange="filterChronicle()">
+                    <input type="text" id="chronicle-search" placeholder="キーワード・発言検索..." class="bg-white border border-[#cfd9de] rounded-lg px-3 py-1.5 text-xs text-[#0f1419] placeholder-[#536471] focus:border-[#0f1419] focus:outline-none" oninput="filterChronicle()">
+                    <select id="chronicle-tag-filter" class="bg-white border border-[#cfd9de] rounded-lg px-2.5 py-1.5 text-xs text-[#0f1419] focus:outline-none" onchange="filterChronicle()">
                         <option value="ALL">全てのタグ</option>
                         <option value="逆算設計">逆算設計</option>
                         <option value="資金調達">資金調達</option>
@@ -392,26 +374,26 @@
         <!-- TAB 4: Roadmap & Drills -->
         <section id="tab-roadmap" class="tab-content hidden space-y-8">
             <div class="space-y-1">
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                <h3 class="text-xl font-bold text-[#0f1419] tracking-tight">
                     「第二の日置さん」育成ロードマップ ＆ 実践ドリル
                 </h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400">
+                <p class="text-xs text-[#536471]">
                     ドキュメントが追加されるたびに、新しい意思決定や論点が学習データとして蓄積されます。
                 </p>
             </div>
 
-            <div class="bg-white border border-slate-200 rounded-xl p-5 dark:bg-slate-900 dark:border-slate-800 shadow-sm space-y-4">
-                <h4 class="text-sm font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+            <div class="bg-white border border-[#cfd9de] rounded-xl p-5 space-y-4">
+                <h4 class="text-sm font-bold text-[#0f1419] flex items-center space-x-2">
                     <i data-lucide="layers" class="w-4 h-4"></i>
                     <span>全会議から蓄積された日置流「意思決定・実践ログ」</span>
                 </h4>
                 <div id="dynamic-decisions-container" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs max-h-60 overflow-y-auto pr-1"></div>
             </div>
 
-            <div class="bg-white border border-slate-200 rounded-xl p-6 dark:bg-slate-900 dark:border-slate-800 shadow-sm space-y-6">
-                <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
-                    <h4 class="text-base font-bold text-slate-900 dark:text-white">
-                        日置式 実践思考ドリル (<span id="drill-score" class="font-bold text-slate-900 dark:text-white">0</span> / 5 正解)
+            <div class="bg-white border border-[#cfd9de] rounded-xl p-6 space-y-6">
+                <div class="flex items-center justify-between border-b border-[#e1e8ed] pb-3">
+                    <h4 class="text-base font-bold text-[#0f1419]">
+                        日置式 実践思考ドリル (<span id="drill-score" class="font-bold text-[#0f1419]">0</span> / 5 正解)
                     </h4>
                 </div>
                 <div id="quiz-container" class="space-y-6"></div>
@@ -421,28 +403,28 @@
         <!-- TAB 5: Manage & Sync -->
         <section id="tab-manage" class="tab-content hidden space-y-8">
             <div class="space-y-1">
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                <h3 class="text-xl font-bold text-[#0f1419] tracking-tight">
                     ドキュメント投入 ＆ 全体自動同期
                 </h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400">
+                <p class="text-xs text-[#536471]">
                     PDFやTXTをドロップすると自動解析され、KPI・シミュレーター・クロニクルが全自動で更新されます。
                 </p>
             </div>
 
-            <div id="drop-zone" class="bg-white border-2 border-dashed border-slate-300 hover:border-slate-900 p-8 rounded-2xl text-center space-y-4 dark:bg-slate-900 dark:border-slate-700 dark:hover:border-slate-100 transition-all cursor-pointer shadow-sm" onclick="document.getElementById('file-drop-input').click()">
+            <div id="drop-zone" class="bg-white border-2 border-dashed border-[#cfd9de] hover:border-[#0f1419] p-8 rounded-2xl text-center space-y-4 transition-all cursor-pointer" onclick="document.getElementById('file-drop-input').click()">
                 <input type="file" id="file-drop-input" accept=".pdf,.txt" multiple class="hidden" onchange="handleFileDropSelect(event)">
-                <div class="w-14 h-14 rounded-xl bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 flex items-center justify-center mx-auto">
+                <div class="w-14 h-14 rounded-xl bg-[#f7f9f9] text-[#0f1419] flex items-center justify-center mx-auto border border-[#cfd9de]">
                     <i data-lucide="upload-cloud" class="w-7 h-7"></i>
                 </div>
                 <div class="space-y-1">
-                    <h4 class="text-base font-bold text-slate-900 dark:text-white">
+                    <h4 class="text-base font-bold text-[#0f1419]">
                         ここにPDF・TXTファイルをドラッグ＆ドロップ
                     </h4>
-                    <p class="text-xs text-slate-500 dark:text-slate-400">
+                    <p class="text-xs text-[#536471]">
                         またはクリックしてファイルを選択（即座に全画面のデータが自動更新されます）
                     </p>
                 </div>
-                <div id="drop-loading-status" class="hidden text-xs font-bold text-slate-900 dark:text-white animate-pulse">
+                <div id="drop-loading-status" class="hidden text-xs font-bold text-[#0f1419] animate-pulse">
                     ファイルを解析中... 日置さんの意思決定・KPIを抽出して全体同期中...
                 </div>
             </div>
@@ -450,9 +432,9 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-200 dark:border-slate-800 mt-16 py-8 px-4 text-center text-xs text-slate-500">
-        <p>株式会社VEXUM CFO Intelligence System | Clean White UI (GitHub Synchronized)</p>
+    <!-- Clean Pure White Footer -->
+    <footer class="border-t border-[#cfd9de] mt-16 py-8 px-4 text-center text-xs text-[#536471] bg-white">
+        <p>株式会社VEXUM CFO Intelligence System | Clean Pure White UI (#ffffff / #0f1419)</p>
     </footer>
 
     <!-- Core Interactive JavaScript -->
@@ -469,21 +451,6 @@
             } catch(e) {
                 console.error("Storage parse error", e);
             }
-        }
-
-        function toggleTheme() {
-            const html = document.documentElement;
-            const btnText = document.getElementById('theme-btn-text');
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                html.classList.add('light');
-                btnText.textContent = 'ダーク表示';
-            } else {
-                html.classList.remove('light');
-                html.classList.add('dark');
-                btnText.textContent = 'ライト表示';
-            }
-            lucide.createIcons();
         }
 
         function switchTab(tabId) {
@@ -548,7 +515,6 @@
             if (latestDateEl) latestDateEl.textContent = latest.display_date || latest.date || '最新';
             if (latestDecEl) latestDecEl.textContent = (latest.yusuke_decisions && latest.yusuke_decisions[0]) || latest.summary || '経営数値の進捗確認と重要意思決定を推進中。';
 
-            // Populate decisions list in Roadmap tab
             const decContainer = document.getElementById('dynamic-decisions-container');
             if (decContainer) {
                 decContainer.innerHTML = '';
@@ -557,8 +523,8 @@
                     (m.yusuke_decisions || []).forEach(d => {
                         if (count < 10) {
                             const item = document.createElement('div');
-                            item.className = 'bg-slate-50 p-2.5 rounded border border-slate-200 dark:bg-slate-950 dark:border-slate-800 space-y-1';
-                            item.innerHTML = `<div class="text-[10px] font-bold text-slate-500">${m.display_date || m.date}</div><div class="text-slate-700 dark:text-slate-300">${d}</div>`;
+                            item.className = 'bg-[#f7f9f9] p-2.5 rounded border border-[#cfd9de] space-y-1';
+                            item.innerHTML = `<div class="text-[10px] font-bold text-[#536471]">${m.display_date || m.date}</div><div class="text-[#0f1419]">${d}</div>`;
                             decContainer.appendChild(item);
                             count++;
                         }
@@ -575,23 +541,23 @@
 
             dataToRender.forEach((m, idx) => {
                 const card = document.createElement('div');
-                card.className = "bg-white border border-slate-200 rounded-xl p-5 dark:bg-slate-900 dark:border-slate-800 shadow-sm space-y-3";
+                card.className = "bg-white border border-[#cfd9de] rounded-xl p-5 space-y-3";
                 
-                const tagsHtml = (m.tags || []).map(t => `<span class="px-2 py-0.5 rounded text-[10px] bg-slate-50 border border-slate-200 text-slate-600 dark:bg-slate-950 dark:border-slate-800 dark:text-slate-400">${t}</span>`).join(' ');
+                const tagsHtml = (m.tags || []).map(t => `<span class="px-2 py-0.5 rounded text-[10px] bg-[#f7f9f9] border border-[#cfd9de] text-[#0f1419] font-medium">${t}</span>`).join(' ');
                 const decisionsHtml = (m.yusuke_decisions || []).map(d => `<li>${d}</li>`).join('');
                 const quotesHtml = (m.quotes || []).map(q => `
-                    <div class="bg-slate-50 border-l-2 border-slate-900 p-2 rounded text-xs text-slate-700 dark:bg-slate-950 dark:border-slate-100 dark:text-slate-300 italic">
+                    <div class="bg-[#f7f9f9] border-l-2 border-[#0f1419] p-2.5 rounded text-xs text-[#0f1419] italic font-medium">
                         💬 "${q}"
                     </div>
                 `).join('');
 
                 card.innerHTML = `
-                    <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+                    <div class="flex items-center justify-between border-b border-[#e1e8ed] pb-2">
                         <div class="flex items-center space-x-2">
-                            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200 text-xs font-bold font-mono">
+                            <span class="px-2 py-0.5 rounded bg-[#f7f9f9] text-[#0f1419] text-xs font-bold font-mono border border-[#cfd9de]">
                                 第${idx + 1}回
                             </span>
-                            <span class="text-xs font-bold text-slate-900 dark:text-white">
+                            <span class="text-xs font-bold text-[#0f1419]">
                                 ${m.display_date || m.date}
                             </span>
                         </div>
@@ -599,12 +565,12 @@
                             ${tagsHtml}
                         </div>
                     </div>
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white">${m.theme}</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${m.summary}</p>
+                    <h4 class="text-sm font-bold text-[#0f1419]">${m.theme}</h4>
+                    <p class="text-xs text-[#0f1419] leading-relaxed font-normal">${m.summary}</p>
                     ${decisionsHtml ? `
-                    <div class="space-y-1 pt-2 border-t border-slate-100 dark:border-slate-800">
-                        <div class="text-[11px] font-bold text-slate-700 dark:text-slate-300">日置さんの重要意思決定・指摘：</div>
-                        <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1 list-disc list-inside">
+                    <div class="space-y-1 pt-2 border-t border-[#e1e8ed]">
+                        <div class="text-[11px] font-bold text-[#0f1419]">日置さんの重要意思決定・指摘：</div>
+                        <ul class="text-xs text-[#0f1419] space-y-1 list-disc list-inside font-normal">
                             ${decisionsHtml}
                         </ul>
                     </div>` : ''}
@@ -639,23 +605,23 @@
 
             drillsData.forEach(d => {
                 const card = document.createElement('div');
-                card.className = "bg-slate-50 p-5 rounded-xl border border-slate-200 dark:bg-slate-950 dark:border-slate-800 space-y-3";
+                card.className = "bg-[#f7f9f9] p-5 rounded-xl border border-[#cfd9de] space-y-3";
                 card.id = `drill-${d.id}`;
 
                 const optionsHtml = d.options.map(opt => `
-                    <button onclick="handleAnswerDrill(${d.id}, '${opt.key}')" class="w-full text-left p-3 rounded-lg bg-white border border-slate-200 hover:border-slate-400 text-slate-700 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-300 text-xs transition">
+                    <button onclick="handleAnswerDrill(${d.id}, '${opt.key}')" class="w-full text-left p-3 rounded-lg bg-white border border-[#cfd9de] hover:bg-[#f7f9f9] text-[#0f1419] text-xs font-medium transition">
                         <strong class="mr-1">${opt.key}.</strong> ${opt.text}
                     </button>
                 `).join('');
 
                 card.innerHTML = `
                     <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-200 font-mono">
+                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-white text-[#0f1419] border border-[#cfd9de] font-mono">
                             Q${d.id}. ${d.category}
                         </span>
-                        <span class="text-xs font-bold text-slate-500" id="drill-${d.id}-status">未回答</span>
+                        <span class="text-xs font-bold text-[#536471]" id="drill-${d.id}-status">未回答</span>
                     </div>
-                    <p class="text-sm font-semibold text-slate-900 dark:text-white">${d.question}</p>
+                    <p class="text-sm font-bold text-[#0f1419]">${d.question}</p>
                     <div class="space-y-2 text-xs">${optionsHtml}</div>
                     <div id="drill-${d.id}-ans" class="hidden p-3 rounded-lg text-xs leading-relaxed"></div>
                 `;
@@ -674,13 +640,13 @@
             resultEl.classList.remove('hidden');
 
             if (choice === drill.correct) {
-                resultEl.className = 'p-3 rounded-lg text-xs leading-relaxed bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-200 border border-slate-300 dark:border-slate-700';
-                resultEl.innerHTML = `<div class="font-bold text-slate-900 dark:text-white mb-1">正解！ 正しい日置さんの思考です。</div>${drill.explanation}`;
+                resultEl.className = 'p-3 rounded-lg text-xs leading-relaxed bg-white text-[#0f1419] border border-[#cfd9de] font-medium';
+                resultEl.innerHTML = `<div class="font-bold text-[#0f1419] mb-1">正解！ 正しい日置さんの思考です。</div>${drill.explanation}`;
                 statusEl.textContent = '正解 ✅';
                 drillResults[qId] = true;
             } else {
-                resultEl.className = 'p-3 rounded-lg text-xs leading-relaxed bg-rose-50 text-rose-800 dark:bg-rose-950/40 dark:text-rose-200 border border-rose-200 dark:border-rose-900';
-                resultEl.innerHTML = `<div class="font-bold text-rose-800 dark:text-rose-200 mb-1">不正解（正解: ${drill.correct}）</div>${drill.explanation}`;
+                resultEl.className = 'p-3 rounded-lg text-xs leading-relaxed bg-rose-50 text-rose-900 border border-rose-200 font-medium';
+                resultEl.innerHTML = `<div class="font-bold text-rose-900 mb-1">不正解（正解: ${drill.correct}）</div>${drill.explanation}`;
                 statusEl.textContent = '要復習 ❌';
                 drillResults[qId] = false;
             }
