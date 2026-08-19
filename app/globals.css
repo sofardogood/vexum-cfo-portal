@@ -2,11 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-150;
-    font-family: 'Inter', 'Noto Sans JP', sans-serif;
-  }
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --border-color: #e2e8f0;
+}
+
+.dark {
+  --bg-main: #090d16;
+  --bg-card: #111827;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #1f2937;
+}
+
+html, body {
+  background-color: var(--bg-main) !important;
+  color: var(--text-main) !important;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .font-mono {
@@ -22,17 +39,9 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.5);
+  background: #cbd5e1;
   border-radius: 3px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 116, 139, 0.8);
-}
-
-.card-base {
-  @apply bg-white border border-slate-200 rounded-xl shadow-sm dark:bg-slate-900 dark:border-slate-800;
-}
-
-.card-subtle {
-  @apply bg-slate-50 border border-slate-200 rounded-lg dark:bg-slate-950 dark:border-slate-800;
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
 }
