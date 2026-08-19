@@ -36,254 +36,229 @@
             background: #ffffff;
         }
         ::-webkit-scrollbar-thumb {
-            background: #cfd9de;
+            background: #cbd5e1;
             border-radius: 3px;
         }
         .tab-btn.active {
-            background: #0f1419;
+            background: #0f172a;
             color: #ffffff;
+            font-weight: 600;
         }
     </style>
 </head>
 <body class="bg-white text-[#0f1419] min-h-screen">
 
     <!-- Top Navigation Header -->
-    <header class="sticky top-0 z-50 bg-white border-b border-[#cfd9de] px-4 lg:px-8 py-3.5 shadow-sm">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <div class="flex items-center space-x-3.5">
-                <div class="w-10 h-10 rounded-xl bg-[#0f1419] text-white flex items-center justify-center font-black text-lg shadow-sm">
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 px-4 lg:px-8 py-3.5">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold text-base">
                     H
                 </div>
                 <div>
                     <div class="flex items-center space-x-2">
-                        <h1 class="text-lg font-black tracking-tight text-[#0f1419]">
+                        <h1 class="text-base font-bold tracking-tight text-slate-900">
                             VEXUM CFO Intelligence Portal
                         </h1>
-                        <span id="header-badge" class="px-2.5 py-0.5 text-xs font-bold rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+                        <span id="header-badge" class="px-2 py-0.5 text-xs font-medium rounded bg-slate-100 text-slate-600 border border-slate-200">
                             同期中
                         </span>
                     </div>
-                    <p class="text-xs text-[#536471] font-medium">
-                        日置佑輔の経営哲学・CFO思考OS・全議事録分析 ＆「第二の日置さん」育成ガイド
+                    <p class="text-xs text-slate-500">
+                        日置佑輔 CFO思考OS ＆ 全会議分析ポータル
                     </p>
                 </div>
             </div>
 
             <!-- Quick Action Buttons -->
-            <div class="flex items-center space-x-2.5">
-                <button onclick="exportDataJSON()" class="px-3.5 py-2 rounded-lg bg-white border border-[#cfd9de] hover:bg-[#f7f9f9] text-[#0f1419] transition text-xs font-bold flex items-center space-x-1.5 shadow-sm" title="データエクスポート">
-                    <i data-lucide="download" class="w-4 h-4 text-[#536471]"></i>
+            <div class="flex items-center space-x-2">
+                <button onclick="exportDataJSON()" class="px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 transition text-xs font-medium flex items-center space-x-1.5" title="データエクスポート">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i>
                     <span>JSON保存</span>
                 </button>
-                <button onclick="switchTab('tab-manage')" class="px-4 py-2 rounded-lg bg-[#2563eb] hover:bg-[#1d4ed8] text-white transition text-xs font-bold flex items-center space-x-1.5 shadow-sm">
-                    <i data-lucide="upload-cloud" class="w-4 h-4"></i>
-                    <span>ドキュメント投入 / 同期</span>
+                <button onclick="switchTab('tab-manage')" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition text-xs font-semibold flex items-center space-x-1.5">
+                    <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
+                    <span>ドキュメント投入</span>
                 </button>
             </div>
         </div>
 
         <!-- Navigation Tabs -->
-        <div class="max-w-7xl mx-auto mt-3.5 overflow-x-auto flex space-x-1 border-t border-[#cfd9de] pt-2 text-xs font-bold">
-            <button onclick="switchTab('tab-profile')" id="btn-tab-profile" class="tab-btn active px-4 py-2.5 rounded-lg transition flex items-center space-x-2 whitespace-nowrap text-sm text-[#536471] hover:text-[#0f1419] hover:bg-[#f7f9f9]">
-                <i data-lucide="user-check" class="w-4 h-4"></i>
-                <span>1. 人物像 & CFO思考OS</span>
+        <div class="max-w-6xl mx-auto mt-3 overflow-x-auto flex space-x-1 border-t border-slate-100 pt-2 text-xs font-medium">
+            <button onclick="switchTab('tab-profile')" id="btn-tab-profile" class="tab-btn active px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+                1. 人物像 & CFO思考OS
             </button>
-            <button onclick="switchTab('tab-kpi')" id="btn-tab-kpi" class="tab-btn px-4 py-2.5 rounded-lg transition flex items-center space-x-2 whitespace-nowrap text-sm text-[#536471] hover:text-[#0f1419] hover:bg-[#f7f9f9]">
-                <i data-lucide="activity" class="w-4 h-4"></i>
-                <span>2. 必見KPI & 逆算シミュレーター</span>
+            <button onclick="switchTab('tab-kpi')" id="btn-tab-kpi" class="tab-btn px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+                2. 必見KPI & 逆算シミュレーター
             </button>
-            <button onclick="switchTab('tab-chronicle')" id="btn-tab-chronicle" class="tab-btn px-4 py-2.5 rounded-lg transition flex items-center space-x-2 whitespace-nowrap text-sm text-[#536471] hover:text-[#0f1419] hover:bg-[#f7f9f9]">
-                <i data-lucide="calendar-days" class="w-4 h-4"></i>
-                <span>3. 全会議クロニクル</span>
+            <button onclick="switchTab('tab-chronicle')" id="btn-tab-chronicle" class="tab-btn px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+                3. 全会議クロニクル
             </button>
-            <button onclick="switchTab('tab-roadmap')" id="btn-tab-roadmap" class="tab-btn px-4 py-2.5 rounded-lg transition flex items-center space-x-2 whitespace-nowrap text-sm text-[#536471] hover:text-[#0f1419] hover:bg-[#f7f9f9]">
-                <i data-lucide="graduation-cap" class="w-4 h-4"></i>
-                <span>4. 「第二の日置さん」思考ドリル</span>
+            <button onclick="switchTab('tab-roadmap')" id="btn-tab-roadmap" class="tab-btn px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+                4. 思考ドリル
             </button>
-            <button onclick="switchTab('tab-manage')" id="btn-tab-manage" class="tab-btn px-4 py-2.5 rounded-lg transition flex items-center space-x-2 whitespace-nowrap text-sm text-blue-600 hover:bg-blue-50">
-                <i data-lucide="upload-cloud" class="w-4 h-4"></i>
-                <span>5. ドキュメント投入 / 同期</span>
+            <button onclick="switchTab('tab-manage')" id="btn-tab-manage" class="tab-btn px-3.5 py-1.5 rounded-md transition whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+                5. ドキュメント投入 / 同期
             </button>
         </div>
     </header>
 
     <!-- Main Content Area -->
-    <main class="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-10 bg-white">
+    <main class="max-w-6xl mx-auto px-4 lg:px-8 py-8 space-y-8 bg-white">
 
         <!-- TAB 1: Profile -->
-        <section id="tab-profile" class="tab-content block space-y-10">
-            <div class="bg-white border-2 border-[#cfd9de] rounded-2xl p-6 lg:p-8 space-y-6 shadow-sm">
+        <section id="tab-profile" class="tab-content block space-y-8">
+            <div class="border border-slate-200 rounded-xl p-6 lg:p-8 space-y-6">
                 <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-                    <div class="space-y-3.5 max-w-3xl">
-                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-100 text-[#0f1419] text-xs font-bold border border-[#cfd9de]">
-                            <span>株式会社VEXUM 代表取締役 兼 経営統括・CFO</span>
+                    <div class="space-y-3 max-w-2xl">
+                        <div class="inline-block text-xs font-semibold text-slate-500 tracking-wide uppercase">
+                            株式会社VEXUM 代表取締役 兼 経営統括・CFO
                         </div>
-                        <h2 class="text-3xl lg:text-4xl font-black text-[#0f1419] tracking-tight">
-                            日置 佑輔 <span class="text-xl font-bold text-[#536471]">（Yusuke）</span>
+                        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">
+                            日置 佑輔 <span class="text-lg font-normal text-slate-400">（Yusuke）</span>
                         </h2>
-                        <p class="text-lg lg:text-xl font-bold leading-relaxed text-[#0f1419]">
-                            「数字を共通言語にして、<span class="text-blue-600 font-extrabold bg-blue-50 px-1.5 py-0.5 rounded">逆算</span> と <span class="text-amber-600 font-extrabold bg-amber-50 px-1.5 py-0.5 rounded">スピード</span> で“成長の再現性”を証明し続ける」
+                        <p class="text-base font-bold text-slate-900 leading-relaxed">
+                            「数字を共通言語にして、<span class="text-blue-600">逆算</span>と<span class="text-blue-600">スピード</span>で“成長の再現性”を証明し続ける」
                         </p>
-                        <p class="text-sm text-[#334155] leading-relaxed">
-                            AI活用の人材派遣・常駐受託（「上駐」）支援事業を率い、<strong class="text-emerald-700 font-bold">シリーズA調達（5〜10億円）</strong>と<strong class="text-blue-700 font-bold">「1年後に有料顧客3,000社」</strong>という全社ゴールを牽引。毎週金曜の経営会議を主宰し、営業・採用・財務・資金調達・ガバナンスのすべてを数字で統括する戦略的CFO/CEO。
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            AI活用の人材派遣・常駐受託（「上駐」）支援事業を率い、シリーズA調達（5〜10億円）と「1年後に有料顧客3,000社」という全社ゴールを牽引。毎週金曜の経営会議を主宰し、営業・採用・財務・資金調達・ガバナンスのすべてを数字で統括する戦略的CFO/CEO。
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-3.5 w-full lg:w-auto shrink-0 font-mono text-center">
-                        <div class="bg-blue-50/70 border-2 border-blue-200 p-4 rounded-xl shadow-sm">
-                            <div class="text-xs text-blue-800 font-sans font-bold flex items-center justify-center space-x-1">
-                                <i data-lucide="target" class="w-3.5 h-3.5 text-blue-600"></i>
-                                <span>全社ゴール (1年後)</span>
-                            </div>
-                            <div class="text-2xl font-black text-blue-700 mt-1">有料 3,000社</div>
-                            <div class="text-xs text-blue-900 font-sans font-bold mt-0.5">達成ボーナス 1億円</div>
+                    <div class="grid grid-cols-2 gap-3 w-full lg:w-auto shrink-0 text-center font-mono">
+                        <div class="border border-slate-200 p-3.5 rounded-lg bg-white">
+                            <div class="text-[11px] text-slate-500 font-sans font-medium">全社ゴール (1年後)</div>
+                            <div class="text-xl font-bold text-slate-900 mt-0.5">有料 3,000社</div>
+                            <div class="text-[10px] text-blue-600 font-sans font-medium mt-0.5">ボーナス 1億円</div>
                         </div>
 
-                        <div class="bg-emerald-50/70 border-2 border-emerald-200 p-4 rounded-xl shadow-sm">
-                            <div class="text-xs text-emerald-800 font-sans font-bold flex items-center justify-center space-x-1">
-                                <i data-lucide="coins" class="w-3.5 h-3.5 text-emerald-600"></i>
-                                <span>資金調達目標</span>
-                            </div>
-                            <div class="text-2xl font-black text-emerald-700 mt-1">5億〜10億円</div>
-                            <div class="text-xs text-emerald-900 font-sans font-bold mt-0.5">シリーズA 大型調達</div>
+                        <div class="border border-slate-200 p-3.5 rounded-lg bg-white">
+                            <div class="text-[11px] text-slate-500 font-sans font-medium">資金調達目標</div>
+                            <div class="text-xl font-bold text-slate-900 mt-0.5">5億〜10億円</div>
+                            <div class="text-[10px] text-slate-500 font-sans font-medium mt-0.5">シリーズA</div>
                         </div>
 
-                        <div class="bg-slate-50 border-2 border-slate-200 p-4 rounded-xl shadow-sm">
-                            <div class="text-xs text-slate-600 font-sans font-bold flex items-center justify-center space-x-1">
-                                <i data-lucide="layers" class="w-3.5 h-3.5 text-slate-600"></i>
-                                <span>蓄積会議データ</span>
-                            </div>
-                            <div id="summary-meeting-count" class="text-2xl font-black text-slate-900 mt-1">-</div>
-                            <div class="text-xs text-slate-500 font-sans font-medium mt-0.5">全件同期中</div>
+                        <div class="border border-slate-200 p-3.5 rounded-lg bg-white">
+                            <div class="text-[11px] text-slate-500 font-sans font-medium">蓄積会議数</div>
+                            <div id="summary-meeting-count" class="text-xl font-bold text-slate-900 mt-0.5">-</div>
+                            <div class="text-[10px] text-slate-500 font-sans font-medium mt-0.5">全件同期中</div>
                         </div>
 
-                        <div class="bg-amber-50/70 border-2 border-amber-200 p-4 rounded-xl shadow-sm">
-                            <div class="text-xs text-amber-800 font-sans font-bold flex items-center justify-center space-x-1">
-                                <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-600"></i>
-                                <span>意思決定ルール</span>
-                            </div>
-                            <div class="text-2xl font-black text-amber-700 mt-1">10分会議</div>
-                            <div class="text-xs text-amber-900 font-sans font-bold mt-0.5">LINE即時承認</div>
+                        <div class="border border-slate-200 p-3.5 rounded-lg bg-white">
+                            <div class="text-[11px] text-slate-500 font-sans font-medium">意思決定ルール</div>
+                            <div class="text-xl font-bold text-slate-900 mt-0.5">10分会議</div>
+                            <div class="text-[10px] text-slate-500 font-sans font-medium mt-0.5">LINE即時承認</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-blue-50/50 border-l-4 border-blue-600 p-4 rounded-r-xl flex items-start space-x-3 border-y border-r border-blue-200">
-                    <i data-lucide="sparkles" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i>
-                    <div class="space-y-1">
-                        <div class="text-xs font-black text-blue-800 uppercase tracking-wide">
-                            最新の経営進捗・日置さんの重要方針（<span id="latest-meeting-date">-</span>）：
-                        </div>
-                        <div id="latest-decision-text" class="text-sm text-[#0f1419] font-bold leading-relaxed">-</div>
-                    </div>
+                <div class="border-t border-slate-100 pt-4 flex items-start space-x-2 text-xs">
+                    <span class="font-bold text-slate-900 shrink-0">最新の重要方針（<span id="latest-meeting-date">-</span>）：</span>
+                    <span id="latest-decision-text" class="text-slate-700 leading-relaxed">-</span>
                 </div>
             </div>
 
-            <!-- Principles -->
-            <div class="space-y-5">
-                <div class="flex items-center justify-between border-b border-[#cfd9de] pb-3">
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="cpu" class="w-6 h-6 text-blue-600"></i>
-                        <h3 class="text-2xl font-black text-[#0f1419] tracking-tight">日置流『思考OS（Thinking OS）』7大原則</h3>
-                    </div>
-                    <span class="text-xs text-[#536471] font-bold hidden sm:inline">
-                        「第二の日置さん」を目指すための行動・判断基準
-                    </span>
+            <!-- Principles - Clean Unified Cards -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2 border-b border-slate-100 pb-2">
+                    <h3 class="text-lg font-bold text-slate-900">
+                        日置流『思考OS（Thinking OS）』7大原則
+                    </h3>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <div class="bg-white border-2 border-blue-200 hover:border-blue-500 transition p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="border border-slate-200 bg-white p-5 rounded-xl flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-black text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200 font-mono">原則 01</span>
-                                <span class="text-[11px] font-bold text-blue-600">【戦略・目標設定】</span>
+                            <div class="flex items-center justify-between text-xs mb-1.5">
+                                <span class="font-bold text-slate-400 font-mono">原則 01</span>
+                                <span class="text-[11px] text-slate-400">戦略・目標設定</span>
                             </div>
-                            <h4 class="text-lg font-black text-[#0f1419] mb-2">すべては「<span class="text-blue-600">逆算</span>」で組む</h4>
-                            <p class="text-sm text-[#334155] leading-relaxed">
-                                ゴール（例：7月上駐100件）から逆算してリードタイム・転換率・行動量へ分解。<strong class="text-blue-700">「上駐100件 ÷ 6掛け ＝ アポ160件 ＝ 初回接触200件」</strong>を即座に組み立てる。
+                            <h4 class="text-base font-bold text-slate-900 mb-2">すべては「逆算」で組む</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                ゴールから逆算してリードタイム・転換率・行動量へ分解。<strong>「上駐100件 ÷ 6掛け ＝ アポ160件 ＝ 初回接触200件」</strong>を即座に組み立てる。
                             </p>
                         </div>
-                        <div class="pt-3 border-t border-blue-100 text-xs font-bold text-blue-800 bg-blue-50/60 p-2.5 rounded-lg border border-blue-100">
+                        <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded">
                             💬「リーダー12人必要なら今候補は何人いるか逆算して」
                         </div>
                     </div>
 
-                    <div class="bg-white border-2 border-purple-200 hover:border-purple-500 transition p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-sm">
+                    <div class="border border-slate-200 bg-white p-5 rounded-xl flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-black text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200 font-mono">原則 02</span>
-                                <span class="text-[11px] font-bold text-purple-600">【数値化・言語化】</span>
+                            <div class="flex items-center justify-between text-xs mb-1.5">
+                                <span class="font-bold text-slate-400 font-mono">原則 02</span>
+                                <span class="text-[11px] text-slate-400">数値化・言語化</span>
                             </div>
-                            <h4 class="text-lg font-black text-[#0f1419] mb-2">定性論を<span class="text-purple-600">数字に翻訳</span>させる</h4>
-                            <p class="text-sm text-[#334155] leading-relaxed">
-                                「頑張ります」などの定性論を禁止。<strong class="text-purple-700">「成約数 ＝ 相談数 × 成功率」</strong>の基本数式に落とし込み、ボトルネックが分母か転換率かを即特定させる。
+                            <h4 class="text-base font-bold text-slate-900 mb-2">定性論を数字に翻訳させる</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                「頑張ります」などの定性論を禁止。<strong>「成約数 ＝ 相談数 × 成功率」</strong>の基本数式に落とし、ボトルネックが分母か転換率かを即特定させる。
                             </p>
                         </div>
-                        <div class="pt-3 border-t border-purple-100 text-xs font-bold text-purple-800 bg-purple-50/60 p-2.5 rounded-lg border border-purple-100">
+                        <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded">
                             💬「それを数字で言うと？」「相談数×成功率でどこが課題？」
                         </div>
                     </div>
 
-                    <div class="bg-white border-2 border-indigo-200 hover:border-indigo-500 transition p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-sm">
+                    <div class="border border-slate-200 bg-white p-5 rounded-xl flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-black text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200 font-mono">原則 03</span>
-                                <span class="text-[11px] font-bold text-indigo-600">【投資家目線・仕組み化】</span>
+                            <div class="flex items-center justify-between text-xs mb-1.5">
+                                <span class="font-bold text-slate-400 font-mono">原則 03</span>
+                                <span class="text-[11px] text-slate-400">投資家目線・仕組み化</span>
                             </div>
-                            <h4 class="text-lg font-black text-[#0f1419] mb-2">成長の<span class="text-indigo-600">再現性・スケール</span>の証明</h4>
-                            <p class="text-sm text-[#334155] leading-relaxed">
-                                投資家が見ているのは<strong class="text-indigo-700">「成長できることの証明」</strong>のみ。一発屋を排し、スキルTier1〜7ピラミッドや教育フロー1枚スライドなど仕組み化に執着。
+                            <h4 class="text-base font-bold text-slate-900 mb-2">成長の再現性・スケールの証明</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                投資家が見ているのは<strong>「成長できることの証明」</strong>のみ。一発屋を排し、スキルTier1〜7ピラミッドや教育フロー1枚スライドなど仕組み化に執着。
                             </p>
                         </div>
-                        <div class="pt-3 border-t border-indigo-100 text-xs font-bold text-indigo-800 bg-indigo-50/60 p-2.5 rounded-lg border border-indigo-100">
+                        <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded">
                             💬「投資家が見てるのは成長の証明。成長できてることが全て」
                         </div>
                     </div>
 
-                    <div class="bg-white border-2 border-amber-200 hover:border-amber-500 transition p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-sm">
+                    <div class="border border-slate-200 bg-white p-5 rounded-xl flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-black text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 font-mono">原則 04</span>
-                                <span class="text-[11px] font-bold text-amber-600">【実行速度・組織】</span>
+                            <div class="flex items-center justify-between text-xs mb-1.5">
+                                <span class="font-bold text-slate-400 font-mono">原則 04</span>
+                                <span class="text-[11px] text-slate-400">実行速度・組織</span>
                             </div>
-                            <h4 class="text-lg font-black text-[#0f1419] mb-2"><span class="text-amber-600">スピード</span>＝唯一の競争優位</h4>
-                            <p class="text-sm text-[#334155] leading-relaxed">
-                                予算承認に1週間かけるな。<strong class="text-amber-700">LINEで喋りながら即承認</strong>。会議は10分以内ルール、秒単位で意思決定サイクルを回す。
+                            <h4 class="text-base font-bold text-slate-900 mb-2">スピード＝唯一の競争優位</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                予算承認に1週間かけるな。<strong>LINEで喋りながら即承認</strong>。会議は10分以内ルール、秒単位で意思決定サイクルを回す。
                             </p>
                         </div>
-                        <div class="pt-3 border-t border-amber-100 text-xs font-bold text-amber-800 bg-amber-50/60 p-2.5 rounded-lg border border-amber-100">
+                        <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded">
                             💬「喋りながらLINEで連絡して今すぐ承認しろ」
                         </div>
                     </div>
 
-                    <div class="bg-white border-2 border-orange-200 hover:border-orange-500 transition p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-sm">
+                    <div class="border border-slate-200 bg-white p-5 rounded-xl flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-black text-orange-700 bg-orange-50 px-2 py-0.5 rounded border border-orange-200 font-mono">原則 05</span>
-                                <span class="text-[11px] font-bold text-orange-600">【予実管理・リスク予防】</span>
+                            <div class="flex items-center justify-between text-xs mb-1.5">
+                                <span class="font-bold text-slate-400 font-mono">原則 05</span>
+                                <span class="text-[11px] text-slate-400">予実管理・リスク予防</span>
                             </div>
-                            <h4 class="text-lg font-black text-[#0f1419] mb-2">予実管理と「<span class="text-orange-600">見込み3倍</span>」ルール</h4>
-                            <p class="text-sm text-[#334155] leading-relaxed">
-                                <strong class="text-orange-700">「見込みは目標の3倍（150%以上）持て。100%だと必ず下振れる」</strong>。下振れを資金調達と成長への最重要リスクとして日次で監視。
+                            <h4 class="text-base font-bold text-slate-900 mb-2">予実管理と「見込み3倍」ルール</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                <strong>「見込みは目標の3倍（150%以上）持て。100%だと必ず下振れる」</strong>。下振れを最重要リスクとして日次で監視。
                             </p>
                         </div>
-                        <div class="pt-3 border-t border-orange-100 text-xs font-bold text-orange-800 bg-orange-50/60 p-2.5 rounded-lg border border-orange-100">
+                        <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded">
                             💬「見込み放置は資金調達と成長に直結して悪影響」
                         </div>
                     </div>
 
-                    <div class="bg-white border-2 border-emerald-200 hover:border-emerald-500 transition p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-sm">
+                    <div class="border border-slate-200 bg-white p-5 rounded-xl flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-black text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-mono">原則 06</span>
-                                <span class="text-[11px] font-bold text-emerald-600">【利益率・財務規律】</span>
+                            <div class="flex items-center justify-between text-xs mb-1.5">
+                                <span class="font-bold text-slate-400 font-mono">原則 06</span>
+                                <span class="text-[11px] text-slate-400">利益率・財務規律</span>
                             </div>
-                            <h4 class="text-lg font-black text-[#0f1419] mb-2"><span class="text-emerald-700">利益構造</span>・ユニットエコノミクス</h4>
-                            <p class="text-sm text-[#334155] leading-relaxed">
-                                売上だけでなく限界利益率・原価率・案件粗利を見る。<strong class="text-emerald-700">インターン給与上限50%や全社原価率66%圧縮</strong>を徹底し、粗利を残す体制を確立。
+                            <h4 class="text-base font-bold text-slate-900 mb-2">利益構造・ユニットエコノミクス</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                売上だけでなく限界利益率・原価率・案件粗利を見る。<strong>インターン給与上限50%や全社原価率66%圧縮</strong>を徹底し粗利を確保。
                             </p>
                         </div>
-                        <div class="pt-3 border-t border-emerald-100 text-xs font-bold text-emerald-800 bg-emerald-50/60 p-2.5 rounded-lg border border-emerald-100">
+                        <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded">
                             💬「初月売上ではなく原価を引いた後の案件利益率で判断しろ」
                         </div>
                     </div>
@@ -292,94 +267,93 @@
         </section>
 
         <!-- TAB 2: Dynamic KPI & Simulator -->
-        <section id="tab-kpi" class="tab-content hidden space-y-10">
-            <div class="bg-white border-2 border-[#cfd9de] rounded-2xl p-6 lg:p-8 space-y-6 shadow-sm">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-[#e1e8ed] pb-4">
+        <section id="tab-kpi" class="tab-content hidden space-y-8">
+            <div class="border border-slate-200 rounded-xl p-6 lg:p-8 space-y-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-100 pb-4">
                     <div>
-                        <div class="text-xs font-black uppercase tracking-wider text-blue-600 flex items-center space-x-1">
-                            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
-                            <span>Interactive Reverse Engineering Tool</span>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                            Interactive Reverse Engineering Tool
                         </div>
-                        <h3 class="text-2xl font-black text-[#0f1419]">
+                        <h3 class="text-xl font-bold text-slate-900">
                             日置流『営業・供給 逆算シミュレーター』
                         </h3>
                     </div>
-                    <p class="text-xs text-[#536471] font-medium max-w-md">
-                        目標とする「上駐開始件数（成約）」を入力すると、日置さんのロジック（転換率・リードタイム・リーダーキャパ）に基づいて必要なアクション量を即座に逆算します。
+                    <p class="text-xs text-slate-500 max-w-md">
+                        目標とする「上駐開始件数（成約）」を入力すると、日置さんのロジックに基づいて必要なアクション量を即座に逆算します。
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="space-y-4 bg-blue-50/30 p-5 rounded-2xl border-2 border-blue-200">
+                    <div class="space-y-4 bg-slate-50 p-5 rounded-xl border border-slate-200">
                         <div>
-                            <label class="block text-xs font-black text-blue-900 mb-1.5">
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">
                                 目標 上駐開始数 (成約件数 / 月)
                             </label>
                             <div class="relative">
-                                <input type="number" id="sim-target-deals" value="100" class="w-full bg-white border-2 border-blue-500 rounded-xl px-3.5 py-2.5 text-blue-700 font-mono font-black text-2xl focus:outline-none shadow-sm" oninput="calculateReverseModel()">
-                                <span class="absolute right-3.5 top-3 text-sm text-blue-900 font-bold">社</span>
+                                <input type="number" id="sim-target-deals" value="100" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-slate-900 font-mono font-bold text-xl focus:border-slate-900 focus:outline-none" oninput="calculateReverseModel()">
+                                <span class="absolute right-3 top-2.5 text-xs text-slate-500 font-bold">社</span>
                             </div>
                         </div>
 
                         <div>
-                            <div class="flex justify-between text-xs font-bold text-slate-800 mb-1">
+                            <div class="flex justify-between text-xs font-medium text-slate-700 mb-1">
                                 <span>初期設計 → 上駐 転換率</span>
-                                <span id="sim-rate-deal-val" class="font-mono text-blue-600 font-bold">63%</span>
+                                <span id="sim-rate-deal-val" class="font-mono font-bold">63%</span>
                             </div>
-                            <input type="range" id="sim-rate-deal" min="30" max="90" value="63" class="w-full accent-blue-600" oninput="calculateReverseModel()">
+                            <input type="range" id="sim-rate-deal" min="30" max="90" value="63" class="w-full accent-slate-900" oninput="calculateReverseModel()">
                         </div>
 
                         <div>
-                            <div class="flex justify-between text-xs font-bold text-slate-800 mb-1">
+                            <div class="flex justify-between text-xs font-medium text-slate-700 mb-1">
                                 <span>アポ → 初期設計 転換率</span>
-                                <span id="sim-rate-design-val" class="font-mono text-blue-600 font-bold">80%</span>
+                                <span id="sim-rate-design-val" class="font-mono font-bold">80%</span>
                             </div>
-                            <input type="range" id="sim-rate-design" min="40" max="95" value="80" class="w-full accent-blue-600" oninput="calculateReverseModel()">
+                            <input type="range" id="sim-rate-design" min="40" max="95" value="80" class="w-full accent-slate-900" oninput="calculateReverseModel()">
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold text-slate-800 mb-1">
+                            <label class="block text-xs font-medium text-slate-700 mb-1">
                                 リーダー1人あたり案件キャパ
                             </label>
-                            <input type="number" id="sim-leader-cap" value="8" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-slate-900 font-mono text-sm font-bold focus:outline-none" oninput="calculateReverseModel()">
+                            <input type="number" id="sim-leader-cap" value="8" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-slate-900 font-mono text-sm font-bold focus:outline-none" oninput="calculateReverseModel()">
                         </div>
                     </div>
 
-                    <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-3.5">
-                        <div class="bg-blue-50/70 border-2 border-blue-200 p-4 rounded-xl flex flex-col justify-between shadow-sm">
-                            <div class="text-xs font-bold text-blue-800">① 必要初期設計数 (先行指標)</div>
-                            <div id="res-design-count" class="text-3xl lg:text-4xl font-black text-blue-700 font-mono my-2">160</div>
-                            <div class="text-[11px] text-blue-900 font-medium">リードタイム: 約22日前</div>
+                    <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        <div class="border border-slate-200 p-4 rounded-xl flex flex-col justify-between bg-white">
+                            <div class="text-xs text-slate-500 font-medium">① 必要初期設計数 (先行指標)</div>
+                            <div id="res-design-count" class="text-3xl font-bold text-slate-900 font-mono my-2">160</div>
+                            <div class="text-[10px] text-slate-400">リードタイム: 約22日前</div>
                         </div>
 
-                        <div class="bg-purple-50/70 border-2 border-purple-200 p-4 rounded-xl flex flex-col justify-between shadow-sm">
-                            <div class="text-xs font-bold text-purple-800">② 必要アポイント数</div>
-                            <div id="res-appo-count" class="text-3xl lg:text-4xl font-black text-purple-700 font-mono my-2">200</div>
-                            <div id="res-appo-daily" class="text-[11px] text-purple-900 font-mono font-bold">日次: 約8.0件</div>
+                        <div class="border border-slate-200 p-4 rounded-xl flex flex-col justify-between bg-white">
+                            <div class="text-xs text-slate-500 font-medium">② 必要アポイント数</div>
+                            <div id="res-appo-count" class="text-3xl font-bold text-slate-900 font-mono my-2">200</div>
+                            <div id="res-appo-daily" class="text-[10px] text-slate-400 font-mono">日次: 約8.0件</div>
                         </div>
 
-                        <div class="bg-amber-50/70 border-2 border-amber-300 p-4 rounded-xl flex flex-col justify-between shadow-sm">
-                            <div class="text-xs font-black text-amber-800">③ 必要見込み (3倍ルール)</div>
-                            <div id="res-pipeline-3x" class="text-3xl lg:text-4xl font-black text-amber-700 font-mono my-2">300</div>
-                            <div class="text-[11px] text-amber-900 font-black">下振れ防止バッファ</div>
+                        <div class="border border-slate-200 p-4 rounded-xl flex flex-col justify-between bg-slate-50">
+                            <div class="text-xs text-slate-700 font-bold">③ 必要見込み (3倍ルール)</div>
+                            <div id="res-pipeline-3x" class="text-3xl font-bold text-blue-600 font-mono my-2">300</div>
+                            <div class="text-[10px] text-blue-600 font-medium">下振れ防止バッファ</div>
                         </div>
 
-                        <div class="bg-slate-50 border-2 border-slate-200 p-4 rounded-xl flex flex-col justify-between shadow-sm">
-                            <div class="text-xs font-bold text-slate-700">④ 必要リーダー数</div>
-                            <div id="res-leader-count" class="text-3xl lg:text-4xl font-black text-slate-900 font-mono my-2">13</div>
-                            <div class="text-[11px] text-slate-600 font-medium">名 (案件管理体制)</div>
+                        <div class="border border-slate-200 p-4 rounded-xl flex flex-col justify-between bg-white">
+                            <div class="text-xs text-slate-500 font-medium">④ 必要リーダー数</div>
+                            <div id="res-leader-count" class="text-3xl font-bold text-slate-900 font-mono my-2">13</div>
+                            <div class="text-[10px] text-slate-400">名 (案件管理体制)</div>
                         </div>
 
-                        <div class="bg-emerald-50/70 border-2 border-emerald-200 p-4 rounded-xl flex flex-col justify-between shadow-sm">
-                            <div class="text-xs font-bold text-emerald-800">⑤ 想定月次売上 (単価25万)</div>
-                            <div id="res-monthly-sales" class="text-3xl lg:text-4xl font-black text-emerald-700 font-mono my-2">2,500万</div>
-                            <div class="text-[11px] text-emerald-900 font-medium">円 / 月</div>
+                        <div class="border border-slate-200 p-4 rounded-xl flex flex-col justify-between bg-white">
+                            <div class="text-xs text-slate-500 font-medium">⑤ 想定月次売上 (単価25万)</div>
+                            <div id="res-monthly-sales" class="text-3xl font-bold text-slate-900 font-mono my-2">2,500万</div>
+                            <div class="text-[10px] text-slate-400">円 / 月</div>
                         </div>
 
-                        <div class="bg-red-50/70 border-2 border-red-200 p-4 rounded-xl flex flex-col justify-between shadow-sm">
-                            <div class="text-xs font-bold text-red-800">⑥ インターン給与上限 (50%)</div>
-                            <div id="res-intern-budget" class="text-3xl lg:text-4xl font-black text-red-600 font-mono my-2">1,250万</div>
-                            <div class="text-[11px] text-red-900 font-bold">円 (財務規律上限)</div>
+                        <div class="border border-slate-200 p-4 rounded-xl flex flex-col justify-between bg-white">
+                            <div class="text-xs text-slate-500 font-medium">⑥ インターン給与上限 (50%)</div>
+                            <div id="res-intern-budget" class="text-3xl font-bold text-slate-900 font-mono my-2">1,250万</div>
+                            <div class="text-[10px] text-slate-400">円 (財務規律上限)</div>
                         </div>
                     </div>
                 </div>
@@ -390,16 +364,16 @@
         <section id="tab-chronicle" class="tab-content hidden space-y-6">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                    <h3 class="text-2xl font-black text-[#0f1419] tracking-tight">
+                    <h3 class="text-xl font-bold text-slate-900 tracking-tight">
                         VEXUM経営会議 完全クロニクル
                     </h3>
-                    <p class="text-xs text-[#536471] font-medium">
-                        蓄積されたすべての会議議事録・意思決定ログ（全 <span id="chronicle-total-count" class="font-bold text-blue-600">0</span> 件）
+                    <p class="text-xs text-slate-500">
+                        全 <span id="chronicle-total-count" class="font-bold text-slate-900">0</span> 件の会議議事録・意思決定ログ
                     </p>
                 </div>
                 <div class="flex items-center gap-2">
-                    <input type="text" id="chronicle-search" placeholder="キーワード・発言検索..." class="bg-white border-2 border-[#cfd9de] rounded-xl px-3.5 py-2 text-xs font-bold text-[#0f1419] placeholder-[#536471] focus:border-blue-500 focus:outline-none shadow-sm" oninput="filterChronicle()">
-                    <select id="chronicle-tag-filter" class="bg-white border-2 border-[#cfd9de] rounded-xl px-3 py-2 text-xs font-bold text-[#0f1419] focus:outline-none shadow-sm" onchange="filterChronicle()">
+                    <input type="text" id="chronicle-search" placeholder="キーワード・発言検索..." class="bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:border-slate-900 focus:outline-none" oninput="filterChronicle()">
+                    <select id="chronicle-tag-filter" class="bg-white border border-slate-200 rounded-lg px-2.5 py-1.5 text-xs text-slate-900 focus:outline-none" onchange="filterChronicle()">
                         <option value="ALL">全てのタグ</option>
                         <option value="逆算設計">逆算設計</option>
                         <option value="資金調達">資金調達</option>
@@ -409,32 +383,24 @@
                 </div>
             </div>
 
-            <div id="chronicle-container" class="space-y-4"></div>
+            <div id="chronicle-container" class="space-y-3"></div>
         </section>
 
         <!-- TAB 4: Roadmap & Drills -->
-        <section id="tab-roadmap" class="tab-content hidden space-y-10">
+        <section id="tab-roadmap" class="tab-content hidden space-y-8">
             <div class="space-y-1">
-                <h3 class="text-2xl font-black text-[#0f1419] tracking-tight">
-                    「第二の日置さん」育成ロードマップ ＆ 実践ドリル
+                <h3 class="text-xl font-bold text-slate-900 tracking-tight">
+                    「第二の日置さん」思考ドリル
                 </h3>
-                <p class="text-xs text-[#536471] font-medium">
-                    ドキュメントが追加されるたびに、新しい意思決定や論点が学習データとして蓄積されます。
+                <p class="text-xs text-slate-500">
+                    経営会議から抽出された重要論点に基づく実践思考トレーニング
                 </p>
             </div>
 
-            <div class="bg-white border-2 border-blue-200 rounded-2xl p-6 space-y-4 shadow-sm">
-                <h4 class="text-base font-black text-blue-900 flex items-center space-x-2">
-                    <i data-lucide="layers" class="w-5 h-5 text-blue-600"></i>
-                    <span>全会議から蓄積された日置流「意思決定・実践ログ」</span>
-                </h4>
-                <div id="dynamic-decisions-container" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs max-h-72 overflow-y-auto pr-1"></div>
-            </div>
-
-            <div class="bg-white border-2 border-[#cfd9de] rounded-2xl p-6 lg:p-8 space-y-6 shadow-sm">
-                <div class="flex items-center justify-between border-b border-[#e1e8ed] pb-4">
-                    <h4 class="text-lg font-black text-[#0f1419]">
-                        日置式 実践思考ドリル (<span id="drill-score" class="font-black text-emerald-600">0</span> / 5 正解)
+            <div class="border border-slate-200 rounded-xl p-6 space-y-6 bg-white">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                    <h4 class="text-base font-bold text-slate-900">
+                        日置式 実践思考ドリル (<span id="drill-score" class="font-bold text-slate-900">0</span> / 5 正解)
                     </h4>
                 </div>
                 <div id="quiz-container" class="space-y-6"></div>
@@ -444,28 +410,28 @@
         <!-- TAB 5: Manage & Sync -->
         <section id="tab-manage" class="tab-content hidden space-y-8">
             <div class="space-y-1">
-                <h3 class="text-2xl font-black text-[#0f1419] tracking-tight">
+                <h3 class="text-xl font-bold text-slate-900 tracking-tight">
                     ドキュメント投入 ＆ 全体自動同期
                 </h3>
-                <p class="text-xs text-[#536471] font-medium">
+                <p class="text-xs text-slate-500">
                     PDFやTXTをドロップすると自動解析され、KPI・シミュレーター・クロニクルが全自動で更新されます。
                 </p>
             </div>
 
-            <div id="drop-zone" class="bg-white border-2 border-dashed border-blue-300 hover:border-blue-600 p-10 rounded-2xl text-center space-y-4 transition-all cursor-pointer shadow-sm" onclick="document.getElementById('file-drop-input').click()">
+            <div id="drop-zone" class="border-2 border-dashed border-slate-300 hover:border-slate-900 p-8 rounded-xl text-center space-y-4 transition cursor-pointer bg-white" onclick="document.getElementById('file-drop-input').click()">
                 <input type="file" id="file-drop-input" accept=".pdf,.txt" multiple class="hidden" onchange="handleFileDropSelect(event)">
-                <div class="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto border border-blue-200">
-                    <i data-lucide="upload-cloud" class="w-8 h-8"></i>
+                <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center mx-auto border border-slate-200">
+                    <i data-lucide="upload-cloud" class="w-6 h-6"></i>
                 </div>
                 <div class="space-y-1">
-                    <h4 class="text-lg font-black text-[#0f1419]">
+                    <h4 class="text-sm font-bold text-slate-900">
                         ここにPDF・TXTファイルをドラッグ＆ドロップ
                     </h4>
-                    <p class="text-xs text-blue-600 font-bold">
+                    <p class="text-xs text-slate-500">
                         クリックしてファイルを選択（即座に全画面のデータが自動更新されます）
                     </p>
                 </div>
-                <div id="drop-loading-status" class="hidden text-sm font-black text-blue-600 animate-pulse">
+                <div id="drop-loading-status" class="hidden text-xs font-bold text-slate-900 animate-pulse">
                     ファイルを解析中... 日置さんの意思決定・KPIを抽出して全体同期中...
                 </div>
             </div>
@@ -473,15 +439,15 @@
 
     </main>
 
-    <!-- Clean Pure White Footer -->
-    <footer class="border-t border-[#cfd9de] mt-16 py-8 px-4 text-center text-xs text-[#536471] bg-white font-medium">
-        <p>株式会社VEXUM CFO Intelligence System | Balanced Semantic Multi-Color UI (#ffffff / #0f1419)</p>
+    <!-- Clean Footer -->
+    <footer class="border-t border-slate-200 mt-16 py-6 px-4 text-center text-xs text-slate-400 bg-white">
+        <p>株式会社VEXUM CFO Intelligence System | Minimalist Pure White UI</p>
     </footer>
 
     <!-- Core Interactive JavaScript -->
     <script>
         let chronicleData = [{"date": "2026-05-01", "display_date": "2026年5月1日", "theme": "2026年5月1日 経営進捗・意思決定", "summary": "営業目標の達成とCRMデータ精査および人材供給体制の最適化を議論し ました。​ ​ 営業目標と数値管理​ 7月の受託開始100名達成に向け、5月末までに200件の初回接触を完了す る目標を確定しました。進捗は日次で追跡し、CRMと財務上の売上計上の 乖離を精査します。​ ​ 人事連携と採用フロー​ 受託開始までの期間を3週間に短縮し、ATS面談フローを改善して離脱を防 ぎます。案件情報は2ヶ月前からCRM上で共有し、人材供給の迅速化を図り ます。​ ​ コスト管理と体制構築​ 無料プランの運用を精査して収益性を改善し、コスト意識を高めます。労働 者派遣法への適法性を維持するため、指揮命令系統の記録を残す運用を 決定しました。", "yusuke_decisions": ["​ アポイントメント件数目標とリードタイムの確認: 青木こる氏が事業部側から紹介ア", "​ 進捗管理におけるクライアント接触の定義: 目標の200件という数字の進捗を管理", "​ CRM上のデータと財務上のデータの整合性: 奥野聡也氏から、CRM上の売上計上", "​ 5月の目標とATSフローの改善: 庄田桂梧氏から、5月の応募目標は150件であり、", "​ 教育フローのスライド作成の依頼: Yusuke氏は、庄田桂梧氏に対し、人材の採用"], "quotes": ["上駐 開始 が 100 から 逆算 し て 、 え", "160 にしてるって感じですか?なるほど。じゃあ、えっと、その前の数字としては、 えっと、", "っていう数字のだから、ま、進捗ですよね。今やっぱそうですね。紹介ちょっと言 葉の言葉をちょっと固定したいけど、ま、初回初回はい。接触か接触にする。はい。"], "kpis": [{"label": "社数指標", "value": "5 社"}, {"label": "社数指標", "value": "25 社"}, {"label": "社数指標", "value": "20 社"}, {"label": "件数目標/実績", "value": "200件"}], "actions": [{"assignee": "青木こる, 西山", "task": "160件アポ獲得", "detail": "7月上駐開始に向け、紹介によるアポを160件達"}, {"assignee": "東桂佑", "task": "営業活動ログ入力", "detail": "毎日、接触したクライアントの速報値と詳細をスプレッ"}, {"assignee": "青木こる", "task": "顧客マスター整理", "detail": "東桂佑からの入力データに基づき、クライエントマス"}, {"assignee": "西山大智", "task": "CRMステータス更新", "detail": "上駐確定案件のCRMステータスを即座に変更"}, {"assignee": "庄田桂梧", "task": "人員構成データ整理", "detail": "スタッフの内訳を事業部軸と雇用形態軸の2つの"}], "tags": ["逆算設計", "資金調達", "シリーズA", "単月黒字"], "source_file": "VEXUM経営会議 - 2026_05_01 10_02 JST - Gemini によるメモ.pdf"}, {"date": "2026-05-08", "display_date": "2026年5月8日", "theme": "確定していることが共有されました。 ・ 挙げられました。 ・ みを急ぎ構築する必要があると述べました。", "summary": "営業目標の乖離分析と資金調達を見据えた組織管理および財務体制の強 化について協議しました。​ ​ 目標乖離と組織の再編​ 5月の初期設計目標と6月の紹介目標に対する現状の大きな乖離が課題と して挙げられました。営業体制の数値管理を徹底し、現場リーダー層の意識 改革と行動管理を強化することが決定しました。​ ​ 財務管理と運用変更​ 経費支出の抑制を目的に、営業担当者による経費使用状況の報告体制を 週次等の頻度へ変更しました。また、シリーズAを見据え、資金調達と事業 目標を連動させた成長戦略を優先しています。​ ​ 資本政策と登記手続き​ バリュエーション向上と税務上のメリットを考慮し、新株予約権の行使時期を 慎重に判断する方針を確認しました。シリーズA前にストックオプションの プールを確保し、適切な登記手続きを進めます。", "yusuke_decisions": ["​ 5月の初期設計目標と現状の乖離: 5月の初期設計目標である42社に対し、現時点", "​ 6月の紹介目標とアポイント獲得の必要性: 6月の紹介目標は122件ですが、現状", "​ 目標達成に向けた見込み管理の適正化: Yusukeは、目標に対する見込みが100%", "​ 営業活動の数値化とリーダーの行動管理: 青木こるは、今後アズマと新井の目標を", "​ 資金調達と事業目標の連動: Yusukeは、5億円から10億円の資金調達を実現する", "​ シリーズAに向けたバリュエーション戦略: Yusukeは、6月・7月に数字を成長させて"], "quotes": [], "kpis": [{"label": "社数指標", "value": "5社"}, {"label": "社数指標", "value": "3社"}, {"label": "社数指標", "value": "2社"}, {"label": "社数指標", "value": "1社"}], "actions": [{"assignee": "チーム", "task": "紹介仕組み作成", "detail": "6月目標に向け、紹介が発生する仕組みを早急に作成"}, {"assignee": "青木こる", "task": "目標数値設定", "detail": "東と新井の目標を日次または週次で設定する。リーダー"}, {"assignee": "青木こる", "task": "壁打ち実施", "detail": "東と新井に対し、3日に1回程度の壁打ちセッションを実施"}, {"assignee": "青木こる", "task": "危機感共有", "detail": "今月の目標達成に向けた危機感をリーダー陣に個別に伝"}, {"assignee": "青木こる", "task": "アクションメモ作成", "detail": "リーダーのアクションの変更点や追加点を記載したメ"}], "tags": ["逆算設計", "資金調達", "シリーズA", "見込み管理"], "source_file": "VEXUM経営会議 - 2026_05_08 09_59 JST - Gemini によるメモ.pdf"}, {"date": "2026-05-15", "display_date": "2026年5月15日", "theme": "\f詳細 ・ には大きな乖離がある。 ・ チを見直し、ペースを引き上げる必要がある。", "summary": "営業目標達成に向けた集中とリソース配分の見直し、および6月の黒字化 に向けた財務戦略の策定が決定した。​ ​ 営業目標と活動の見直し​ 7月の目標達成に向けた営業リソースの集中と、対面営業の精度向上およ びトークスクリプトの改善が決定した。​ ​ 採用と全国展開戦略​ 応募から面接までの期間を1週間以内に短縮し、事業部の案件パイプライン と連動した人材配置を強化する方針とした。​ ​ 黒字化と財務目標​ 6月の単月黒字化を達成するため、稼働目標を40件に設定し、財務モデル を税込み単価165,000円へ更新する。", "yusuke_decisions": ["​ 目標とのギャップと危機感: 営業目標である7月常駐開始100件に対し、現状の", "​ 事業成長に向けた優先順位: Yusuke氏は、ベクサム（Vexsam）の成長には「成長", "​ スケジュールの戦略的活用: Yusuke氏は、会社のスピードはスケジュールの埋め", "​ 採用率の管理と目標達成状況: 応募から最終採用までの目標達成率について議論", "​ 関西地域の進捗と目標乖離: 西山大智氏より、関西の常駐目標（5月15件、6月25", "​ 期待値コントロールと目標達成に向けたアクション: Yusuke氏は、投資家への見せ"], "quotes": ["。 つまり 、 えっ と 、 この まま 行く と 、 えっ と 、 その 何 パーセン に 着地 し", "、 その 青木 さん が しっかり グリップ し て その 数字 、 数字 と その", "うん 。 まあまあ で も と は いえ ちょっと 動い て き てる じゃ ない です か 。 数字 も 含め て それ を あの な ん です か ね 。 その より こう な ん す か"], "kpis": [{"label": "社数指標", "value": "21社"}, {"label": "社数指標", "value": "22社"}, {"label": "社数指標", "value": "21 社"}, {"label": "社数指標", "value": "30 社"}], "actions": [{"assignee": "青木こる", "task": "リファラル手法のレクチャー", "detail": "来週の会議で、クライアントからの紹介を取"}, {"assignee": "西山大智", "task": "進捗聞き取り訪問", "detail": "全クライアントに対するNPSや進捗状況の聞き取り"}, {"assignee": "西山大智", "task": "対面ヒアリング実施", "detail": "訪問の際、満足度調査を名目とした対面形式での"}, {"assignee": "西山大智", "task": "訪問音声の録音と共有", "detail": "クライアント訪問の音声データを録音し、チャネ"}, {"assignee": "西山大智", "task": "トークスクリプト作成", "detail": "林氏などが実施している訪問内容を抽出し、トー"}], "tags": ["資金調達", "単月黒字", "CRMデータ整合性", "社内育成"], "source_file": "VEXUM経営会議 - 2026_05_15 09_59 JST - Gemini によるメモ.pdf"}, {"date": "2026-05-22", "display_date": "2026年5月22日", "theme": "営業と採用の目標再定義 ・ リソース管理と事業戦略 ・ 頼する。", "summary": "営業目標と採用戦略の再設計、および財務方針の確定を巡る議論。 営業と採用の目標再定義 営業アポイント獲得目標を1日1件へと現実的に再設計した。採用においても定性的な議論を排し、 データに基づく数値目標設定を徹底する方針で合意した。 リソース管理と事業戦略 採用数と既存稼働枠（アーリス）を密に連携させ、事業の強みを言語化する方針が共有された。CRM を用いた進捗管理の徹底により案件の可視化を図る。 財務方針と資金調達 6月決算に向けた免税事業者選択の方針を確定した。資金調達の最大化に向け、より強固な事業実績 の積み上げが求められる。", "yusuke_decisions": ["[青木こる] 8月の目標設定: 7月の実績を分析し、現実的かつストレッチした8月の事業目標数値を策", "[東桂佑] 見込み客データの記録: 見込み客の進捗状況を、アポイント取得日とLINE接続日を含めて", "[奥野聡也] 消費税対応報告: 選択した消費税パターンの決定事項を税理士と共有し、進展があれば報", "[Yusuke] ストックオプション準備: ストックオプション付与のスケジュールを策定し、増資前に実", "営業活動の目標設定: 営業目標について議論が行われ、当初検討されていた1日1人あたり1.5件のア", "リソース不足と目標達成の課題: 月間160件のアポイント獲得目標に対し、現状の体制では不足が生"], "quotes": [], "kpis": [{"label": "社数指標", "value": "16社"}, {"label": "社数指標", "value": "30社"}, {"label": "社数指標", "value": "100社"}, {"label": "社数指標", "value": "50社"}], "actions": [{"assignee": "宮本武明", "task": "契約内容の伝達", "detail": "白山さんに対し、成果物の開示に関する契約内容の再確認と見直しを依"}, {"assignee": "青木こる", "task": "8月の目標設定", "detail": "7月の実績を分析し、現実的かつストレッチした8月の事業目標数値を策"}, {"assignee": "東桂佑", "task": "見込み客データの記録", "detail": "見込み客の進捗状況を、アポイント取得日とLINE接続日を含めて"}, {"assignee": "庄田桂梧", "task": "稼働データ作成", "detail": "全社員の現在の稼働状況と担当案件数（アリス）を紐づけ、各個人の最"}, {"assignee": "奥野聡也", "task": "消費税対応報告", "detail": "選択した消費税パターンの決定事項を税理士と共有し、進展があれば報"}], "tags": ["資金調達", "シリーズA", "単月黒字", "CRMデータ整合性"], "source_file": "_VEXUM経営会議 - 2026_05_22 09_59 JST - Gemini によるメモ.pdf"}, {"date": "2026-05-29", "display_date": "2026年5月29日", "theme": "採用と人事評価制度 ・ 次のステップ ・ を議論する。", "summary": "営業目標の必達と財務体制の強化および組織構造の最適化に向けた議論が行われました。 営業目標と戦略共有 8月の常駐開始目標に向け、テレアポによるアポイント獲得と目標の強度向上が必須とされました。 また、目標達成の論理的根拠を明確化し、可視化することが合意されました。 採用と人事評価制度 採用数は目標を上回る41名に達し、新たな評価指標と賃金比率の見直しが進められました。人事評価 制度の刷新は、財務への影響を含めて慎重に試算が行われます。 財務管理と方針決定 シリーズA調達を見据え、コスト発生時の事前報告プロセスが徹底されました。また、家賃補助を廃 止し給与へ上乗せする給与制度への変更が正式に決定されました。", "yusuke_decisions": ["[西山大智, 青木こる] 進捗確認: 事業部内のCRMデータに基づき、上駐開始前、上駐開始日確定分、", "[庄田桂梧] アーリス算出: 稼働率と稼働人材の平均上駐数を算出し、事業部の現状と目標数値を明確", "インサイドセールスの戦略と目標: 青木こるは、8月の常駐開始60社という目標に向け、営業サイド", "事業部の目標達成と数値の定義: 西山大智は、6月の常駐開始目標を22社とし、現時点で決定してい", "目標達成に向けたロジックの可視化: 目標数値の達成見込みについて、西山大智と青木こるは、現状", "CRMデータと顧客維持・アップセル: 西山大智は、契約更新の対応について各担当アドバイザーへ"], "quotes": ["えっと、すいません。6 月の目標 22 なわけですよね。だから 22 が目標っていうのは 22 っ ていう数字はえっと", "22 達成したらやったではなくて 22 はマストなんすよ。っていう", "そのそういう強度で数字を捉えてもらえるとありがたいです。今の"], "kpis": [{"label": "社数指標", "value": "60社"}, {"label": "社数指標", "value": "22社"}, {"label": "社数指標", "value": "8 社"}, {"label": "社数指標", "value": "1 社"}], "actions": [{"assignee": "青木こる", "task": "テレアポキックオフ", "detail": "テレアポの営業メンバーを集めてキックオフを行い、6月の進め方"}, {"assignee": "西山大智, 青木こる", "task": "進捗確認", "detail": "事業部内のCRMデータに基づき、上駐開始前、上駐開始日確定分、"}, {"assignee": "庄田桂梧", "task": "アーリス算出", "detail": "稼働率と稼働人材の平均上駐数を算出し、事業部の現状と目標数値を明確"}, {"assignee": "庄田桂梧, 西山大智", "task": "評価影響算出", "detail": "評価制度の見直しに伴う前権比率への影響について、具体的な"}, {"assignee": "The group", "task": "費用承認徹底", "detail": "請求書が財務に届く前に、全ての費用発生について事前に報告・承認を"}], "tags": ["資金調達", "シリーズA", "単月黒字", "ユニットエコノミクス"], "source_file": "VEXUM経営会議 - 2026_05_29 09_59 JST - Gemini によるメモ.pdf"}, {"date": "2026-06-05", "display_date": "2026年6月5日", "theme": "営業進捗と戦略見直し ・ \f次のステップ ・ 告する。", "summary": "営業進捗の分析と展示会戦略の策定を経て、収益モデルの実験および事業拡大の準備が進められた。 営業進捗と戦略見直し 営業流入経路のデータ分析を推奨し、顧客継続率改善のためLINEを活用した3プランの提供を開始し た。CRM上の数値定義を明確化し、管理運用体制の強化を図ることで合意した。 アップセルと財務管理 提案時にスタンダードプランをデフォルトとするアップセル戦略を採用した。財務面では、単月黒字 化を目標とし、東京オフィス展開においてもコスト管理を徹底する方針を確認した。 展示会戦略の決定 福岡と幕張の比較検討の結果、幕張での出展および1コマでの実施を決定した。展示会ではブース規 模よりも、能動的な来場者対応によるリード獲得と学習プロセスを重視する。", "yusuke_decisions": ["[青木こる] KPI修正報告: アポイントから初期設計への転換率等の数値を検証し、目標を適切に修正", "[西山大智] CRM管理最適化: CRM上のステータス管理においてパーセンテージを用いたリードタイ", "営業事業部 - 6月の目標達成状況: 青木こるは、6月の目標ポイントである530に対し、現時点で55ポ", "収益モデルの実験: Yusukeは、ソフトウェアによる継続的な課金モデルを早期に経験し、資金フ", "事業部KPIの進捗: 西山大智は、8月の上駐開始目標を60件とし、現時点で全地域合計22件の上駐開", "CRM入力の定義と運用: Yusukeは、CRM上の「確定」という数字の定義が曖昧であることを指摘し"], "quotes": ["がその 1 週間で取れた数字なのか、なんか 2 週間で取れた数字なのかによって全然倍違う わけじゃないですか ? 当たり前。うん", "できるだけ短くして、でも短すぎたら数字に説得力がないんですけど、その", "を分解していって制約率、制約獲得単価のところまで細かくどのルートが何ぼぐらいだっ ていうのが、ま、見えてくると、そのどこにどれだけ投資してみたいなところがよりこう見えてくる んで、ちょっとそれは、ま、とりあえず数字を残すことが大事だと思います。"], "kpis": [{"label": "社数指標", "value": "1社"}, {"label": "社数指標", "value": "22 社"}, {"label": "社数指標", "value": "1 社"}, {"label": "社数指標", "value": "30 社"}], "actions": [{"assignee": "青木こる", "task": "ネクストアクション共有", "detail": "アポイント取得後のネクストアクションの詳細と進捗状況を報"}, {"assignee": "青木こる", "task": "KPI修正報告", "detail": "アポイントから初期設計への転換率等の数値を検証し、目標を適切に修正"}, {"assignee": "青木こる", "task": "解約分析", "detail": "解約率チャーンを算出しその分析結果を共有する。"}, {"assignee": "東桂佑", "task": "流入経路報告", "detail": "営業流入経路の詳細情報を整理して報告する。"}, {"assignee": "東桂佑", "task": "受託条件策定", "detail": "個人での直接請負を防ぐための条件を社長と協議し契約内容を策定する。"}], "tags": ["単月黒字", "解約率チャーン", "CRMデータ整合性", "社内育成"], "source_file": "VEXUM経営会議 - 2026_06_05 09_59 JST - Gemini によるメモ.pdf"}, {"date": "2026-06-12", "display_date": "2026年6月12日", "theme": "営業状況と保留ルール ・ 次のステップ ・ 間変動のない案件を保留ステータスへ自動変更する。", "summary": "営業進捗と業務効率化の確認を行い、1年後の有料顧客3000社達成へ向けた全社戦略を策定した。 営業状況と保留ルール 営業進捗は目標に対して73.6%で推移しており、初期設計から一定期間経過した案件は自動的に保留 へ移行する仕組みが決定した。 全社目標と報酬制度 今後1年間で有料顧客数を3000社にする目標が掲げられ、達成度に応じた総額1億円のボーナス支給 計画が共有された。 戦略施策と運営ルール 海外展開や新規事業創出といった戦略テーマを推進しつつ、会議時間を10分以内とする組織運営の効 率化が方針化された。", "yusuke_decisions": ["営業部門の現状と進捗: 青木こるは、6月の営業活動についてアポイント件数が78件であり、目標と", "1年後の全社目標の設定: Yusukeは、今後1年間の会社としての最重要目標として、有料顧客数を", "3000社達成に向けたロードマップ: Yusukeは、3000社達成という目標から逆算し、新規クライアン", "詳細計画の策定と次回議論のスケジュール: Yusukeは、7月から9月までの3ヶ月間における定量的な", "全社的な戦略テーマの展開: 目標である3000社達成を主軸としつつ、その他の戦略的テーマも同時", "業務効率化と新規事業の創出: Yusukeは、業務時間の可視化を行い、対外的な活動を重視する組織"], "quotes": [], "kpis": [{"label": "社数指標", "value": "3000社"}, {"label": "社数指標", "value": "3社"}, {"label": "社数指標", "value": "1500 社"}, {"label": "社数指標", "value": "3000 社"}], "actions": [{"assignee": "新井", "task": "SNS進捗共有", "detail": "SNSの進捗状況に関する情報を共有する。"}, {"assignee": "西山大智", "task": "遷移率の算出", "detail": "初期設計から上駐開始までの遷移率データを算出する。"}, {"assignee": "尾山太一", "task": "ステータス自動化", "detail": "初期設計のステータス管理を自動化する。Google環境へ移行し1ヶ月"}, {"assignee": "奥野聡也", "task": "通信回線契約", "detail": "楽天モバイルの回線を10回線契約し来週金曜日までの納品を完了する。"}, {"assignee": "グループ", "task": "事業計画準備", "detail": "7月から9月までの定量的計画と定性的アクションプランを策定する。19"}], "tags": ["逆算設計", "資金調達", "3000社目標", "CRMデータ整合性"], "source_file": "_VEXUM経営会議 - 2026_06_12 09_59 JST - Gemini によるメモ.pdf"}, {"date": "2026-06-26", "display_date": "2026年6月26日", "theme": "採用と評価の適正化​ ・ \f詳細", "summary": "営業目標達成に向けた戦略策定と評価確定およびSFA導入によるデータ可視化体制の構 築を議論した。​ ​ 営業実績とSFA導入​ 6月の実績と7月の目標を共有し、リード獲得戦略を最適化した。SFAシステムを導入して データ管理を強化する方針を固めた。​ ​ 採用と評価の適正化​ 採用目標達成に向けて離職状況の可視化を求めた。評価シートの比率分析を行い、評価 確定会議の実施を決定した。​ ​ 戦略議論と組織構築​ 長期的な成長ストーリー構築のために定期的かつ戦略的な議論の場を設けることを決定 した。製造業向けシステム構築の専門的な助言を仰いだ。 次のステップ", "yusuke_decisions": ["​ 6月の営業実績と7月の目標: 営業部門の青木こるより、6月の営業実績について報", "​ インターン生の報酬体系: 青木こるとYusukeの間で、インターン生への報酬体系が", "​ 財務データの精査とCRMの信頼性: Yusukeと奥野聡也、西山大智の間で、CRM上", "​ 今後の採用計画と数値目標: 庄田桂梧は、9月末時点で応募数150件、採用数158", "​ CRM移行とデータ入力の要請: 小山太一は、6月30日から7月にかけてCRMを新し", "​ 事業戦略とシリーズAに向けた準備: Yusukeは、シリーズAラウンドを見据え、会社"], "quotes": ["うん。で、奥野さん、これでエレアポは走るんでもらえるとちょっと、ま、数字", "ね。多分この数字でなんかもしかしたらね、まだ全然引っかかってないなんか小 さがあるかもしれないじゃないですか。実は実", "、あ、ごめんなさい。のダメなんですけど、この 222 のうち 19 が 18、19 で着地し そって話じゃないですか ?"], "kpis": [{"label": "社数指標", "value": "3000社"}, {"label": "社数指標", "value": "11社"}, {"label": "社数指標", "value": "9社"}, {"label": "社数指標", "value": "20社"}], "actions": [{"assignee": "青木こる", "task": "システム構築", "detail": "7月から営業管理ができるセールスフォースのようなシス"}, {"assignee": "尾山太一", "task": "レポート作成", "detail": "主要数字が可視化されたレポートを作成し、入り口から"}, {"assignee": "尾山太一", "task": "企業マッピング", "detail": "3000社を前提とした地域と業種の想定比率を作成す"}, {"assignee": "庄田桂梧, ひき, 青木こる", "task": "戦略壁打ち", "detail": "1年後の採用目標達成に向けた戦略につ"}, {"assignee": "庄田桂梧, 奥野聡也", "task": "研修費相談", "detail": "今後採用する際の育成費用と研修コストにつ"}], "tags": ["逆算設計", "シリーズA", "単月黒字", "解約率チャーン"], "source_file": "VEXUM経営会議 - 2026_06_26 09_59 JST - Gemini によるメモ.pdf"}, {"date": "2026-07-03", "display_date": "2026年7月3日", "theme": "採用人事と顧客サポート​ ・ 的なサービスとして構築中である。 ・ 成約へ持っていく必要があると強調した。", "summary": "営業目標の再設定と採用強化を議論し、マーケティング費用における迅速な予算承認フ ローの運用を決定した。​ ​ 営業目標と戦略強化​ 8月の常駐開始目標を80社に定め、紹介やホットリードを活用したアプローチを計画してい る。7月の目標達成に向けては残り10件の獲得が急務である。​ ​ 予算承認フローの策定​ マーケティング施策の迅速な実行を目的として、特定のグループを通じた費用承認体制を 決定した。また、決算見込み1億円の報告と子会社設立の完了が共有された。​ ​ 採用人事と顧客サポート​ 採用強化に向けたセミナー開催計画が提示されたほか、契約終了後の顧客データ保持の ための低価格な継続プランについての検討が開始された。", "yusuke_decisions": ["​ 営業目標と戦略: 青木こるは、8月の常駐開始数目標を7月の44社から倍増の80", "​ 7月の進捗と課題: 青木こるは、7月の常駐開始目標40件に対し、現時点で確定は", "​ 事業運営のスピード感に対する提言: Yusukeは、採用計画の策定や予算承認にお", "​ 決算報告と子会社設立の進捗: 奥野聡也は、決算見込みとして利益が約1億円であ", "​ CRM入力およびデータ管理: 尾山太一は、CRM上での月次入力運用およびCSV"], "quotes": ["けど言葉の本当の意味はベンチャーって他の人たちに他の企業に勝てる要素っ てスピードだけなんですよ。だからスピードがないともう終わりなんすよ。ベンチャンってそ の意思決定もだしそのいろんな意味でスピードなんですね。で、企業って大きくなればなる ほどどんどんゆっくりなっていくんですよ", "そういうスピード感でちょっと進めてもらいたいです。ちょ、来週に持ってきますと かなん、そういうのをもちょっと聞きたくないというか、あんまりそれがこうカルチャになった らもうまずいなっていう印象なんで"], "kpis": [{"label": "社数指標", "value": "80社"}, {"label": "社数指標", "value": "44社"}, {"label": "社数指標", "value": "80\n\n社"}, {"label": "社数指標", "value": "69社"}], "actions": [{"assignee": "荒井, 東", "task": "紹介実績の記載", "detail": "ネット紹介の実績をスプレッドシートに記載する。"}, {"assignee": "庄田桂梧", "task": "セミナー予算提示", "detail": "学生団体向けセミナーの予算案を来週の会議で提"}, {"assignee": "西山", "task": "口座開設手続き", "detail": "子会社の口座設立手続きを進める。"}, {"assignee": "荒井, 青木こる, 西山, 岡田拓士", "task": "メール施策検討", "detail": "メール配信および招待状送付"}, {"assignee": "荒井", "task": "予算資料送付", "detail": "新施策の予算案資料を作成し担当窓口へ送付して確認を依"}], "tags": ["ユニットエコノミクス", "解約率チャーン", "CRMデータ整合性", "見込み管理"], "source_file": "VEXUM経営会議 - 2026_07_03 10_00 JST - Gemini によるメモ.pdf"}, {"date": "2026-07-10", "display_date": "2026年7月10日", "theme": "2026年7月10日 経営進捗・意思決定", "summary": "会議では営業目標達成への危機意識を共有し、マーケティング動線改善と全社的な業務 効率化が決定されました。​ ​ 営業目標達成に向けた改善​ テレアポ転換率向上のため、初期相談に複数名で同席する体制を徹底します。目標達成 に向けた数値を毎日確認し、改善サイクルを回す体制を構築します。​ ​ マーケティングと採用の強化​ 顧客窓口をLINEに一本化し、Webサイトを軸とした流入動線を週次で最適化します。採用 目標未達に対し、広報資料を見直して学生層へのアプローチを改善します。​ ​ 業務標準化と運営体制​ 全社で統一した会社説明資料を作成し、営業効率の底上げを図ります。今後は子会社の 重要契約を定例会議で共有する体制を確立します。", "yusuke_decisions": ["​ テレアポの現状と転換率の課題: 青木こるは、テレアポの目標である月間140件に", "​ 7月の営業見込みと進捗状況: 西山大智は、7月の目標件数42件に対し、現時点で", "​ 目標達成に向けた改善サイクルの確立: Yusukeは、見込み19件という数字は目標", "​ 採用活動の進捗と拡大施策: 庄田桂梧は、7月の応募目標150件に対し、現時点で", "​ 組織成長と報告の質: Yusukeは、組織成長のためにはメンバー自身の爆速的な成", "​ Webマーケティングの動線強化: Yusukeは、PRやWeb露出から売上、採用、資金"], "quotes": ["いや、僕が聞きたい、今気になってるのはその今月 40 でしたっけ ? 今月 402 に 対してはい。見込みがどうなってんのかって", "。これ見込みですよね。今も決まってるものじゃなくて", "本来はこの見込みが 42 以上ないといけないですよね。の現時点で"], "kpis": [{"label": "件数目標/実績", "value": "1件"}, {"label": "件数目標/実績", "value": "140件"}, {"label": "件数目標/実績", "value": "1,000件"}, {"label": "件数目標/実績", "value": "42件"}], "actions": [{"assignee": "青木こる, あらい", "task": "目標未達への対策", "detail": "7月の見込み客の目標未達分を解決するた"}, {"assignee": "西山大智", "task": "進捗状況の共有", "detail": "7月と8月の単月目標に対する進捗状況を、LINEで毎"}, {"assignee": "西山大智", "task": "危機意識の向上", "detail": "数値の進捗状況を法務チャンネルで公開し、チーム"}, {"assignee": "庄田桂梧", "task": "応募数拡大施策", "detail": "学生団体へのアプローチ手法を変更し、新たにペラ"}, {"assignee": "神田はるか", "task": "流入経路の計測", "detail": "PRからホームページへの流入数とコンバージョンを"}], "tags": ["逆算設計", "資金調達", "見込み管理"], "source_file": "VEXUM経営会議 - 2026_07_10 10_00 JST - Gemini によるメモ.pdf"}, {"date": "2026-07-17", "display_date": "2026年7月17日", "theme": "2026年7月17日 経営進捗・意思決定", "summary": "営業KPIの改善や収益構造の適正化、組織育成への投資判断について議論した。​ ​ 営業数値と課題の共有​ 7月の上駐および設計進捗が目標を下回り、高い解約率が課題となった。今後は各チャネ ルの費用対効果を週次で可視化し、体制を改善する。​ ​ 利益構造と育成への投資​ 案件ごとの利益率を重視し、採用活動を一時停止して社内育成へ予算を集中することが 承認された。健全な利益構造の構築に向けた分析を徹底する。​ ​ 体制整備とリスク管理​ 登記に必要な代表電話番号の設置方法や、事業上のリスク管理に向けた報告体制の見 直しが議論された。総会に向けた役割分担の確認も行われた。", "yusuke_decisions": ["​ チャーン（解約）理由と対応方針: 西山大智は、5月から7月にかけての平均解約率", "​ LTVおよび案件あたりの利益の算出: Yusukeは、顧客生涯価値（LTV）を定義し、1", "​ CRMデータと財務認識の不一致: 奥野聡也と西山大智の間で、チャーンの対象件", "​ 戦略的モニタリングの重要性: Yusukeは、計画を立てるだけでなく、リアルタイムで", "​ 案件利益および投資判断の基準: 青木こるが提示したROI（投資対効果）の指標に", "​ 人事および採用状況と育成への方針転換: 庄田桂梧は、現状の人員構成（151名"], "quotes": ["あ、すいません。これで、えっと、ま、件数は件数であの、出てちょっとこの数字を 信頼するしかないんですけど、えっと、つまりこれだとざっくりあの、1 顧客あたりのその LTV って何ぼぐらいになりますかね ?", "しびで切れ始めてますけど、つまで合わないんですか?この数字って。財務と授 業側の。え、それで合ってるでも今合ってない。", "あの蓋開けて多いっていうことであれば対応のそのアクセル踏むスピードが"], "kpis": [{"label": "社数指標", "value": "68 社"}, {"label": "件数目標/実績", "value": "1\n\n件"}, {"label": "件数目標/実績", "value": "42 件"}, {"label": "件数目標/実績", "value": "22 件"}], "actions": [{"assignee": "青木こる, 西山大智, 奥野聡也, 尾山太一", "task": "数値整合性確認", "detail": "財務データとCRMの"}, {"assignee": "庄田桂梧", "task": "人員配置表作成", "detail": "上駐メンバーや研修待機中の人員状況を把握するた"}, {"assignee": "青木こる", "task": "営業数値報告", "detail": "各チャネルごとの具体的な数値や獲得見込み件数につ"}, {"assignee": "庄田桂梧", "task": "育成環境整備", "detail": "15万円の予算を用いて育成体制を確立し、上駐メン"}, {"assignee": "庄田桂梧, あ", "task": "育成コストの協議", "detail": "育成コストの現状と今後の連携について別途打"}], "tags": ["ユニットエコノミクス", "解約率チャーン", "CRMデータ整合性", "社内育成"], "source_file": "VEXUM経営会議 - 2026_07_17 10_00 JST - Gemini によるメモ.pdf"}, {"date": "2026-07-24", "display_date": "2026年7月24日", "theme": "2026年7月24日 経営進捗・意思決定", "summary": "Yusuke, あ, 奥野聡也, 宮本武明, 庄田桂梧, 西山大智, 青木こる, 東桂佑, 白山詩乃, 尾山太一 あ: あ、うざいます。 庄田桂梧: おはうございます。", "yusuke_decisions": [], "quotes": [], "kpis": [{"label": "社数指標", "value": "10社"}, {"label": "件数目標/実績", "value": "7件"}, {"label": "件数目標/実績", "value": "13件"}, {"label": "件数目標/実績", "value": "42件"}], "actions": [], "tags": ["CRMデータ整合性", "社内育成", "見込み管理"], "source_file": "VEXUM経営会議 - 2026_07_24 09_58 JST～Transcript 2.pdf"}, {"date": "2026-07-31", "display_date": "2026年7月31日", "theme": "\f詳細", "summary": "経営課題の特定と営業体制の見直し、財務状況の共有を経て組織の意識改革を決定しま した。​ ​ 営業体制の構造改革​ Aliceプロジェクトの進捗遅延を受け、再現性を高めるためフェーズごとの役割分担へ体制 を移行しました。アポイント獲得手法もテレアポ依存から多様な施策へ転換します。​ ​ 財務改善とデータ管理​ 7月の売上は2200万円となり、顧問契約の整理でコストを50万円まで削減します。CRMの データ整合性を確保し、定量的な意思決定を徹底します。​ ​ 組織文化の意識改革​ 企業成長に向けた組織全体の意識改革を決定しました。あわせてM&A仲介事業を新規に 立ち上げ、既存事業のノウハウを活用した収益拡大を図ります。", "yusuke_decisions": ["​ 8月の事業目標とキャッシュフローへの影響: 8月の目標として、必達目標（マスト）", "​ 情報共有と危機感の向上: Yusukeは、成長を目指す企業として、会議での報告や", "​ 数値に基づく意思決定: Yusukeは、数字を共通言語として危機感を持ち、課題がど", "​ 組織成長に向けたマインドセット: Yusukeは、企業規模を拡大するフェーズにおい", "​ 営業手法とマーケティング施策: 青木こるは、8月のアポイント獲得目標に向けて、", "​ CRMデータと管理プロセスの整備: 尾山太一は、CRMの数値整合性を合わせる作"], "quotes": ["、これ新井さん、あさん、青木さん、西山さんあたりでこの 7 月の着地 14 件って いうのに対してどう考えてるんですかね。で、このことに関してもうひたすら議論とかどうす べきかとか何がダメだったとかってやってます", "だからその情報交換のスピードが遅すぎます。だからそのなんで会議", "議論のその質問スピードもやっぱ遅すぎますって。これ別に週 1 でやってるから その週 1"], "kpis": [{"label": "社数指標", "value": "3000社"}, {"label": "社数指標", "value": "23社"}, {"label": "社数指標", "value": "32社"}, {"label": "社数指標", "value": "64社"}], "actions": [{"assignee": "青木こる", "task": "外部施策報告", "detail": "代理店を含む各リード獲得チャネルの投資計画や進捗"}, {"assignee": "青木こる", "task": "計画共有", "detail": "3000社達成に向けた事業計画のスケジュールを更新しグ"}, {"assignee": "庄田桂梧", "task": "勉強会実施", "detail": "アドバイザー向けにスキル向上を目的とした講習を実施し"}, {"assignee": "尾山太一, 奥野聡也", "task": "データ同期", "detail": "顧客管理システムの過去の売上データを関係"}, {"assignee": "岡田拓士", "task": "開発予定共有", "detail": "プロダクト開発のスケジュール詳細をグループラインへ"}], "tags": ["シリーズA", "ユニットエコノミクス", "解約率チャーン", "3000社目標"], "source_file": "VEXUM経営会議 - 2026_07_31 10_00 JST - Gemini によるメモ.pdf"}, {"date": "2026-08-07", "display_date": "2026年8月7日", "theme": "調整済み ・ め、2〜4名体制のクオリティ改善チームを設置する。 ・ を収集し、リファラル営業の獲得を効率化する。", "summary": "営業目標の倍増に向けた現状分析と具体的な獲得施策および組織的な体制強化に関す る全体方針の確認。​ ​ 営業目標の再設定と戦略​ 月間の案件獲得目標を20件から40件に倍増させることを決定した。データに基づいた議 論とPDCAサイクルの高速化により、営業リソースを効率的に運用する方針である。​ ​ リード獲得と改善施策​ 交流会や紹介を通じたリード数拡大と専門チームによる品質改善体制を確立した。既存顧 客へのアップセル提案も戦略に組み込まれている。​ ​ 採用とサポート体制​ 地域採用の母集団形成に向けた学生団体との連携方針を定めた。技術アドバイザーへの 対面サポート体制も強化されている。 決定事項 調整済み ●​ 全メンバーの営業活動へのリソース集中 月間40件の新規獲得という目標達成に 向け、全メンバーが営業施策へリソースを集中させる体制とする。 ●​ 営業品質改善チームの設置 テレアポや手紙施策の質を継続的に向上させるた め、2〜4名体制のクオリティ改善チームを設置する。 ●​ 営業チャネルのテレアポとリファラルへの集中 営業施策の主要チャネルをテレアポ とリファラルに集中させ、まずはこの手法で月間40件の成約を目指す。 ●​ 交流会活用による紹介獲得の推進 クライアントへのヒアリングを通じて交流会情報 を収集し、リファラル営業の獲得を効率化する。 ●​ アドバイザー向けセミナーの毎日実施 自社サービスへの理解深化とリファラル営 業の発信力強化を目的に、アドバイザー向けセミナーを毎日実施する。 ●​ ISオペレーションとトークスクリプトの標準化 テレアポのオペレーションおよびトーク スクリプトを資料化し、チーム全体で共有することで運用を標準化する。 フィードバックを基に決定事項セクションを更新しましたを行いました。", "yusuke_decisions": ["​ 全メンバーの営業活動へのリソース集中 月間40件の新規獲得という目標達成に", "​ 営業成績と現状報告: 青木こるは、現状の営業状況として、見込みが17件、開始済", "​ 営業目標の再設定: Yusukeは、過去3～4ヶ月間月間20件で停滞している現状を指", "​ データ駆動型の意思決定: Yusukeは、数字に基づいた議論の重要性を強調しまし", "​ 実行スピードと意識改革: Yusukeは、チーム全体に対してPDCAサイクルの高速化", "​ 短期目標への集中: Yusukeは、会社としての中長期的な目標（3,000社など）も重"], "quotes": ["ま、ちょっとその、これから、ま、昨日か昨日とかもそうですけど、新井さん、おき さんはその投資家対応とかしていって、あの、面食らってる", "と思いますけど、やっぱり車内のこのこういう会話の数字のを絡んで議論できて ない感じがそのまんまやっぱ出ちゃうんですよね。新井さんとか青木さんの会話の質に。 నా で、この 20 件がこんな 3 ヶ月とかパーで上限で続いちゃってるのっていうことに対する 回答が成と", "ここのメンバーで全員が同じような言葉をなんか使えないとその全然チームとし てやっぱレベルが上がってかないのでだとしたらもうずっとずっとていきますよ多分でちゃ んがちゃんというか継続時契約更新時解約率が 50% でもうずっとなんかあの伸びるのか 減るのかみたいなしていくみたいじゃないですか"], "kpis": [{"label": "社数指標", "value": "3000社"}, {"label": "社数指標", "value": "3,000社"}, {"label": "社数指標", "value": "15社"}, {"label": "社数指標", "value": "1社"}], "actions": [{"assignee": "青木こる", "task": "営業戦略の整理", "detail": "3000社への到達に向けた目標とチャネルごとの投資"}, {"assignee": "グループ全員", "task": "営業活動の強化", "detail": "全員が営業施策へ参加しスピード感を持って取"}, {"assignee": "青木こる, 荒井", "task": "クオリティ改善チームの結成", "detail": "手紙やテレアポのトーク内容を精査"}, {"assignee": "グループ全員", "task": "交流会への参加", "detail": "リード獲得数向上のため週2回程度の交流会へ"}, {"assignee": "奥野さん", "task": "承認フローの構築", "detail": "クライアントからのデータ削除依頼に対応するため"}], "tags": ["逆算設計", "解約率チャーン", "3000社目標", "見込み管理"], "source_file": "VEXUM経営会議 - 2026_08_07 10_00 JST - Gemini によるメモ.pdf"}, {"date": "2026-08-14", "display_date": "2026年8月最新 (transcript.txt)", "theme": "8月着地見込み（13〜18社）・代理店/紹介チャネル多角化", "summary": "だすとお伝えしたんですけれども、 ちょっと、 客観性、客観的なコンピョンというのが、 まだ収集しきれてなくて、 今ちょうど横軸単化、 果て軸経測です。 シャスを回車を、 マトリックスで置いた時に、 それぞれの初期期待ち、 社長との耳定回数、 NPSのマンゾクド、 あとは地域であったり、 企業規模であったり、 教会というところで、 何が、 このマトリックスの 文部を表しているのかっていうのを、 ちょっと今、 検証していっている段階で、 それと、 アライサーの反覚的なサービスを書いたほうがいいというところを、 しもつけながら、 シンサービスっていうのを、 今ちょうどブラシャップしているところになります。 なので、 ここについては、 来週の月曜日、 海曜日、 海曜日、 この形で、 いきたいですっていうのを、 僕とアライサンからお伝えはできるかなと思っているので、 ちょっともう少し、 待っていただ", "yusuke_decisions": [], "quotes": [], "kpis": [{"label": "社数指標", "value": "1社"}, {"label": "社数指標", "value": "4100社"}, {"label": "件数目標/実績", "value": "46件"}, {"label": "件数目標/実績", "value": "163件"}], "actions": [], "tags": ["最新進捗", "代理店戦略", "ファネル分析"], "source_file": "transcript.txt"}];
-        const drillsData = [{"id": 1, "category": "見込み管理", "categoryColor": "bg-amber-100 text-amber-800 border-amber-300", "question": "事業部から「今月の目標100社に対して、確度の高い見込みがちょうど100社集まりました！必達を目指して頑張ります！」と報告がありました。日置さんならどう返しますか？", "options": [{"key": "A", "text": "「素晴らしい！メンバーのモチベーションを高めて、1社も落とさないよう気合いでクロージングしてください。」"}, {"key": "B", "text": "「見込み100%だと必ず下振れる。見込みは目標の3倍（300社＝150%〜300%）持っておかないとダメ。リード獲得の分母をどう増やすかすぐ再設計して。」"}, {"key": "C", "text": "「100社達成したら予算を増額するので、来月の目標を150社に引き上げておいてください。」"}], "correct": "B", "point": "見込みは目標の3倍（300%）積むのがCFOの鉄則", "explanation": "【日置流の鉄則】「見込みは目標の3倍持て」。見込み100%は商談途中でのドロップや稟議遅延により確実に未達に終わります。定性的な気合いではなく、確率論として分母を3倍に積むのがCFOの規律です（2026/5/8会議など）。"}, {"id": 2, "category": "財務・CRM整合性", "categoryColor": "bg-blue-100 text-blue-800 border-blue-300", "question": "財務担当から「CRM上の今月売上見込みは3,000万円ですが、実際の通帳入金実績は直近3ヶ月間2,000万円で横ばいです」と報告がありました。日置さんの第一声として最も適切なものは？", "options": [{"key": "A", "text": "「入金は売上計上から遅れて入ってくるものだから、来月まで様子を見ましょう。」"}, {"key": "B", "text": "「売上の入金が3ヶ月横ばいなこととCRMの数字をどう合わせるか。あの数字はめっちゃ大事。CRMのステータス定義と入金のギャップを今すぐ突合して。」"}, {"key": "C", "text": "「経理のシステムが古いのが原因なので、新しい会計クラウドを導入して自動化しましょう。」"}], "correct": "B", "point": "CRMと財務実績の乖離ゼロを徹底追求", "explanation": "【日置流の鉄則】CRMと財務会計の数値乖離を極端に嫌います。入金が横ばいなのにCRMの数字だけが先行している状態は予実の崩壊を意味するため、「あの数字はめっちゃ大事」とステータス定義と入金の即時突合を要求します（2026/5/1会議）。"}, {"id": 3, "category": "ユニットエコノミクス", "categoryColor": "bg-emerald-100 text-emerald-800 border-emerald-300", "question": "新規顧客は順調に増えているものの、解約率（チャーン）が約70%と高く、人材の定着に課題が出ています。人事部が「もっと採用広告費を増やして母集団を増やしたい」と提案してきました。日置さんならどう判断しますか？", "options": [{"key": "A", "text": "「穴の空いたバケツに水を注ぐな。新規採用を一時ストップし、予算を既存メンバーの社内育成と定着プログラムに全集中させる。」"}, {"key": "B", "text": "「解約される以上のペースで採用すればスケールするので、広告予算を2倍に増やしましょう。」"}, {"key": "C", "text": "「解約したクライアントに対して割引プランを提示して引き止めを行いましょう。」"}], "correct": "A", "point": "解約率高騰時は採用停止・育成全集中で穴を塞ぐ", "explanation": "【日置流の鉄則】解約率70%の状態で採用を増やせば採用コストと原価率が悪化するだけです。日置さんは2026/7/17の経営会議で実際に「新規採用を一時停止し、予算を社内育成に全集中する」という外科手術的ピボットを決断しました。"}, {"id": 4, "category": "意思決定スピード", "categoryColor": "bg-purple-100 text-purple-800 border-purple-300", "question": "マーケティング担当から「展示会出展やWeb広告の追加予算200万円の稟議書を作成したので、来週の経営会議でご審議いただけますか？」と言われました。日置さんの対応は？", "options": [{"key": "A", "text": "「来週の経営会議の第1アジェンダにして、役員全員で慎重に議論しましょう。」"}, {"key": "B", "text": "「ベンチャーで予算承認に1週間かけるな。LINEグループで喋りながら数字を投げて、今その場で即判断して承認しろ。」"}, {"key": "C", "text": "「一旦ROIのシミュレーションを3パターン作って来月末までに再提出してください。」"}], "correct": "B", "point": "スピード＝唯一の競争優位。LINEで即決承認", "explanation": "【日置流の鉄則】「スピードは唯一の競争優位」。日置さんは2026/7/3の会議で、マーケティング予算をLINEグループを通じて即時承認するフローを制定し、「承認に時間をかける遅さそのものがリスク」と指導しました。"}, {"id": 5, "category": "組織・会議規律", "categoryColor": "bg-rose-100 text-rose-800 border-rose-300", "question": "毎週の経営会議で各事業部の状況報告が長引き、毎回1時間を超えてしまっています。日置さんが導入したルールは？", "options": [{"key": "A", "text": "「会議時間を10分以内に制限する。状況報告は事前に数字で済ませ、本質的な意思決定のみを行う場にする。」"}, {"key": "B", "text": "「時間を無制限にして、全員が納得するまで徹底的に議論を尽くす。」"}, {"key": "C", "text": "「経営会議の開催頻度を月1回に減らし、各事業部に全権委任する。」"}], "correct": "A", "point": "会議は10分以内。報告は数字で事前共有、場は意思決定のみ", "explanation": "【日置流の鉄則】「会議は10分以内ルール」（2026/6/12会議）。定性的な状況報告を長々と聞く時間は無駄であり、事前に数字を共有した上で、ボトルネックに対する意思決定だけを秒で下すカルチャーを徹底しました。"}];
+        const drillsData = [{"id": 1, "category": "見込み管理", "question": "事業部から「今月の目標100社に対して、確度の高い見込みがちょうど100社集まりました！必達を目指して頑張ります！」と報告がありました。日置さんならどう返しますか？", "options": [{"key": "A", "text": "「素晴らしい！メンバーのモチベーションを高めて、1社も落とさないよう気合いでクロージングしてください。」"}, {"key": "B", "text": "「見込み100%だと必ず下振れる。見込みは目標の3倍（300社＝150%〜300%）持っておかないとダメ。リード獲得の分母をどう増やすかすぐ再設計して。」"}, {"key": "C", "text": "「100社達成したら予算を増額するので、来月の目標を150社に引き上げておいてください。」"}], "correct": "B", "explanation": "【日置流の鉄則】「見込みは目標の3倍持て」。見込み100%は商談途中でのドロップや稟議遅延により確実に未達に終わります。定性的な気合いではなく、確率論として分母を3倍に積むのがCFOの規律です（2026/5/8会議など）。"}, {"id": 2, "category": "財務・CRM整合性", "question": "財務担当から「CRM上の今月売上見込みは3,000万円ですが、実際の通帳入金実績は直近3ヶ月間2,000万円で横ばいです」と報告がありました。日置さんの第一声として最も適切なものは？", "options": [{"key": "A", "text": "「入金は売上計上から遅れて入ってくるものだから、来月まで様子を見ましょう。」"}, {"key": "B", "text": "「売上の入金が3ヶ月横ばいなこととCRMの数字をどう合わせるか。あの数字はめっちゃ大事。CRMのステータス定義と入金のギャップを今すぐ突合して。」"}, {"key": "C", "text": "「経理のシステムが古いのが原因なので、新しい会計クラウドを導入して自動化しましょう。」"}], "correct": "B", "explanation": "【日置流の鉄則】CRMと財務会計の数値乖離を極端に嫌います。入金が横ばいなのにCRMの数字だけが先行している状態は予実の崩壊を意味するため、「あの数字はめっちゃ大事」とステータス定義と入金の即時突合を要求します（2026/5/1会議）。"}, {"id": 3, "category": "ユニットエコノミクス", "question": "新規顧客は順調に増えているものの、解約率（チャーン）が約70%と高く、人材の定着に課題が出ています。人事部が「もっと採用広告費を増やして母集団を増やしたい」と提案してきました。日置さんならどう判断しますか？", "options": [{"key": "A", "text": "「穴の空いたバケツに水を注ぐな。新規採用を一時ストップし、予算を既存メンバーの社内育成と定着プログラムに全集中させる。」"}, {"key": "B", "text": "「解約される以上のペースで採用すればスケールするので、広告予算を2倍に増やしましょう。」"}, {"key": "C", "text": "「解約したクライアントに対して割引プランを提示して引き止めを行いましょう。」"}], "correct": "A", "explanation": "【日置流の鉄則】解約率70%の状態で採用を増やせば採用コストと原価率が悪化するだけです。日置さんは2026/7/17の経営会議で実際に「新規採用を一時停止し、予算を社内育成に全集中する」という外科手術的ピボットを決断しました。"}, {"id": 4, "category": "意思決定スピード", "question": "マーケティング担当から「展示会出展やWeb広告の追加予算200万円の稟議書を作成したので、来週の経営会議でご審議いただけますか？」と言われました。日置さんの対応は？", "options": [{"key": "A", "text": "「来週の経営会議の第1アジェンダにして、役員全員で慎重に議論しましょう。」"}, {"key": "B", "text": "「ベンチャーで予算承認に1週間かけるな。LINEグループで喋りながら数字を投げて、今その場で即判断して承認しろ。」"}, {"key": "C", "text": "「一旦ROIのシミュレーションを3パターン作って来月末までに再提出してください。」"}], "correct": "B", "explanation": "【日置流の鉄則】「スピードは唯一の競争優位」。日置さんは2026/7/3の会議で、マーケティング予算をLINEグループを通じて即時承認するフローを制定し、「承認に時間をかける遅さそのものがリスク」と指導しました。"}, {"id": 5, "category": "組織・会議運営", "question": "毎週の経営会議で各事業部の状況報告が長引き、毎回1時間を超えてしまっています。日置さんが導入したルールは？", "options": [{"key": "A", "text": "「会議時間を10分以内に制限する。状況報告は事前に数字で済ませ、本質的な意思決定のみを行う場にする。」"}, {"key": "B", "text": "「時間を無制限にして、全員が納得するまで徹底的に議論を尽くす。」"}, {"key": "C", "text": "「経営会議の開催頻度を月1回に減らし、各事業部に全権委任する。」"}], "correct": "A", "explanation": "【日置流の鉄則】「会議は10分以内ルール」（2026/6/12会議）。定性的な状況報告を長々と聞く時間は無駄であり、事前に数字を共有した上で、ボトルネックに対する意思決定だけを秒で下すカルチャーを徹底しました。"}];
         let drillResults = {};
 
         // LocalStorage sync
@@ -552,26 +518,9 @@
             const badgeEl = document.getElementById('header-badge');
 
             if (totalEl) totalEl.textContent = chronicleData.length + ' 回分';
-            if (badgeEl) badgeEl.textContent = `全 ${chronicleData.length} 会議 同期中`;
+            if (badgeEl) badgeEl.textContent = `全${chronicleData.length}会議`;
             if (latestDateEl) latestDateEl.textContent = latest.display_date || latest.date || '最新';
             if (latestDecEl) latestDecEl.textContent = (latest.yusuke_decisions && latest.yusuke_decisions[0]) || latest.summary || '経営数値の進捗確認と重要意思決定を推進中。';
-
-            const decContainer = document.getElementById('dynamic-decisions-container');
-            if (decContainer) {
-                decContainer.innerHTML = '';
-                let count = 0;
-                chronicleData.forEach(m => {
-                    (m.yusuke_decisions || []).forEach(d => {
-                        if (count < 12) {
-                            const item = document.createElement('div');
-                            item.className = 'bg-[#f7f9f9] p-3 rounded-xl border border-[#cfd9de] space-y-1';
-                            item.innerHTML = `<div class="text-[11px] font-black text-blue-600">${m.display_date || m.date}</div><div class="text-[#0f1419] font-bold">${d}</div>`;
-                            decContainer.appendChild(item);
-                            count++;
-                        }
-                    });
-                });
-            }
         }
 
         function renderChronicleCards(dataToRender) {
@@ -582,51 +531,40 @@
 
             dataToRender.forEach((m, idx) => {
                 const card = document.createElement('div');
-                card.className = "bg-white border-2 border-[#cfd9de] rounded-2xl p-6 space-y-4 shadow-sm hover:border-blue-300 transition";
+                card.className = "border border-slate-200 bg-white rounded-xl p-5 space-y-3";
                 
-                const tagsHtml = (m.tags || []).map(t => {
-                    let tagStyle = "bg-slate-100 text-slate-700 border-slate-200";
-                    if (t.includes('逆算')) tagStyle = "bg-blue-50 text-blue-700 border-blue-200";
-                    if (t.includes('調達') || t.includes('シリーズ')) tagStyle = "bg-emerald-50 text-emerald-700 border-emerald-200";
-                    if (t.includes('3000社')) tagStyle = "bg-purple-50 text-purple-700 border-purple-200";
-                    if (t.includes('原価') || t.includes('解約')) tagStyle = "bg-amber-50 text-amber-700 border-amber-200";
-                    return `<span class="px-2.5 py-0.5 rounded-full text-xs font-bold border ${tagStyle}">${t}</span>`;
-                }).join(' ');
-
+                const tagsHtml = (m.tags || []).map(t => `<span class="px-2 py-0.5 rounded text-[10px] bg-slate-50 border border-slate-100 text-slate-600 font-medium">${t}</span>`).join(' ');
                 const decisionsHtml = (m.yusuke_decisions || []).map(d => `<li>${d}</li>`).join('');
                 const quotesHtml = (m.quotes || []).map(q => `
-                    <div class="bg-amber-50/60 border-l-4 border-amber-500 p-3 rounded-r-lg text-xs text-[#0f1419] font-bold italic">
+                    <div class="bg-slate-50 border-l-2 border-slate-900 p-2.5 rounded-r text-xs text-slate-800 font-medium italic">
                         💬 "${q}"
                     </div>
                 `).join('');
 
                 card.innerHTML = `
-                    <div class="flex items-center justify-between border-b border-[#e1e8ed] pb-3">
-                        <div class="flex items-center space-x-2.5">
-                            <span class="px-2.5 py-1 rounded-md bg-[#0f1419] text-white text-xs font-black font-mono">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-xs font-mono font-semibold">
                                 第${idx + 1}回
                             </span>
-                            <span class="text-sm font-black text-[#0f1419]">
+                            <span class="text-xs font-bold text-slate-900">
                                 ${m.display_date || m.date}
                             </span>
                         </div>
-                        <div class="flex gap-1.5 flex-wrap">
+                        <div class="flex gap-1">
                             ${tagsHtml}
                         </div>
                     </div>
-                    <h4 class="text-base font-black text-[#0f1419]">${m.theme}</h4>
-                    <p class="text-xs text-[#334155] leading-relaxed font-normal">${m.summary}</p>
+                    <h4 class="text-sm font-bold text-slate-900">${m.theme}</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">${m.summary}</p>
                     ${decisionsHtml ? `
-                    <div class="space-y-1.5 pt-3 border-t border-[#e1e8ed]">
-                        <div class="text-xs font-black text-blue-800 flex items-center space-x-1.5">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
-                            <span>日置さんの重要意思決定・指摘：</span>
-                        </div>
-                        <ul class="text-xs text-[#0f1419] space-y-1.5 list-disc list-inside font-bold">
+                    <div class="space-y-1 pt-2 border-t border-slate-100">
+                        <div class="text-xs font-bold text-slate-900">日置さんの重要意思決定・指摘：</div>
+                        <ul class="text-xs text-slate-700 space-y-1 list-disc list-inside">
                             ${decisionsHtml}
                         </ul>
                     </div>` : ''}
-                    ${quotesHtml ? `<div class="space-y-2 pt-1">${quotesHtml}</div>` : ''}
+                    ${quotesHtml ? `<div class="space-y-1 pt-1">${quotesHtml}</div>` : ''}
                 `;
                 container.appendChild(card);
             });
@@ -657,28 +595,25 @@
 
             drillsData.forEach(d => {
                 const card = document.createElement('div');
-                card.className = "bg-[#f7f9f9] p-6 rounded-2xl border-2 border-[#cfd9de] space-y-4 shadow-sm";
+                card.className = "bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3";
                 card.id = `drill-${d.id}`;
 
                 const optionsHtml = d.options.map(opt => `
-                    <button onclick="handleAnswerDrill(${d.id}, '${opt.key}')" class="w-full text-left p-3.5 rounded-xl bg-white border-2 border-[#cfd9de] hover:border-blue-400 text-[#0f1419] text-xs font-bold transition">
-                        <strong class="text-blue-600 mr-1.5 text-sm">${opt.key}.</strong> ${opt.text}
+                    <button onclick="handleAnswerDrill(${d.id}, '${opt.key}')" class="w-full text-left p-3 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-800 text-xs font-medium transition">
+                        <strong class="mr-1">${opt.key}.</strong> ${opt.text}
                     </button>
                 `).join('');
 
                 card.innerHTML = `
                     <div class="flex items-center justify-between">
-                        <span class="text-xs font-black px-2.5 py-1 rounded border font-mono ${d.categoryColor}">
+                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-white text-slate-700 border border-slate-200 font-mono">
                             Q${d.id}. ${d.category}
                         </span>
-                        <span class="text-xs font-black text-[#536471]" id="drill-${d.id}-status">未回答</span>
+                        <span class="text-xs font-bold text-slate-500" id="drill-${d.id}-status">未回答</span>
                     </div>
-                    <div>
-                        <p class="text-base font-black text-[#0f1419] leading-relaxed">${d.question}</p>
-                        <div class="text-xs text-[#536471] font-bold mt-1">💡 思考ポイント：${d.point}</div>
-                    </div>
-                    <div class="space-y-2.5 text-xs">${optionsHtml}</div>
-                    <div id="drill-${d.id}-ans" class="hidden p-4 rounded-xl text-xs leading-relaxed font-bold"></div>
+                    <p class="text-sm font-bold text-slate-900 leading-relaxed">${d.question}</p>
+                    <div class="space-y-2 text-xs">${optionsHtml}</div>
+                    <div id="drill-${d.id}-ans" class="hidden p-3 rounded-lg text-xs leading-relaxed"></div>
                 `;
                 container.appendChild(card);
             });
@@ -695,13 +630,13 @@
             resultEl.classList.remove('hidden');
 
             if (choice === drill.correct) {
-                resultEl.className = 'p-4 rounded-xl text-xs leading-relaxed bg-emerald-50 border-2 border-emerald-500 text-emerald-950 font-bold';
-                resultEl.innerHTML = `<div class="text-sm font-black text-emerald-700 mb-1">🎉 正解！ 正しい日置さんの思考です。</div>${drill.explanation}`;
+                resultEl.className = 'p-3 rounded-lg text-xs leading-relaxed bg-white border border-slate-200 text-slate-800 font-medium';
+                resultEl.innerHTML = `<div class="font-bold mb-1">🎉 正解！ 正しい日置さんの思考です。</div>${drill.explanation}`;
                 statusEl.textContent = '正解 ✅';
                 drillResults[qId] = true;
             } else {
-                resultEl.className = 'p-4 rounded-xl text-xs leading-relaxed bg-red-50 border-2 border-red-400 text-red-950 font-bold';
-                resultEl.innerHTML = `<div class="text-sm font-black text-red-700 mb-1">❌ 不正解（正解: ${drill.correct}）</div>${drill.explanation}`;
+                resultEl.className = 'p-3 rounded-lg text-xs leading-relaxed bg-rose-50 border border-rose-200 text-rose-900 font-medium';
+                resultEl.innerHTML = `<div class="font-bold mb-1">❌ 不正解（正解: ${drill.correct}）</div>${drill.explanation}`;
                 statusEl.textContent = '要復習 ❌';
                 drillResults[qId] = false;
             }
