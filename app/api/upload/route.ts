@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import pdfParse from 'pdf-parse';
+// @ts-ignore
+import mammoth from 'mammoth';
 
 export const dynamic = 'force-dynamic';
 
@@ -60,6 +62,7 @@ function parseMeetingText(fileName: string, text: string) {
 
   // Tags
   const tags = ["新規追加", "自動解析"];
+  if (fileName.endsWith('.docx')) tags.push("DOCX");
   if (text.includes("逆算")) tags.push("逆算設計");
   if (text.includes("調達") || text.includes("シリーズA")) tags.push("資金調達");
   if (text.includes("黒字") || text.includes("利益")) tags.push("ユニットエコノミクス");
@@ -91,9 +94,14 @@ export async function POST(req: NextRequest) {
     const buffer = Buffer.from(arrayBuffer);
 
     let extractedText = '';
-    if (fileName.endsWith('.pdf')) {
+    const lowerName = fileName.toLowerCase();
+
+    if (lowerName.endsWith('.pdf')) {
       const pdfData = await pdfParse(buffer);
       extractedText = pdfData.text;
+    } else if (lowerName.endsWith('.docx')) {
+      const docxResult = await mammoth.extractRawText({ buffer: buffer });
+      extractedText = docxResult.value;
     } else {
       extractedText = buffer.toString('utf-8');
     }

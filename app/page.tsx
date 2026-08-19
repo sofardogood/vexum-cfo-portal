@@ -842,7 +842,7 @@ export default function Home() {
               <input 
                 type="file" 
                 id="drop-file-input" 
-                accept=".pdf,.txt" 
+                accept=".pdf,.txt,.docx,.doc" 
                 multiple 
                 className="hidden" 
                 onChange={e => handleFileUpload(e.target.files)} 
@@ -852,7 +852,7 @@ export default function Home() {
               </div>
               <div className="space-y-1">
                 <h4 className="text-sm font-bold text-slate-900">
-                  ここにPDF・TXTファイルをドラッグ＆ドロップ
+                  ここにPDF・Word (DOCX)・TXTファイルをドラッグ＆ドロップ
                 </h4>
                 <p className="text-xs text-slate-500">
                   クリックしてファイルを選択（Vercel上でGitHubに直接コミットされます）

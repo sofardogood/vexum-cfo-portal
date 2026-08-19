@@ -82,6 +82,8 @@ def generate_html(chronicle_data, output_path):
     <script>
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     </script>
+    <!-- Mammoth.js for in-browser DOCX parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -483,18 +485,18 @@ def generate_html(chronicle_data, output_path):
                     ドキュメント投入 ＆ 全体自動同期
                 </h3>
                 <p class="text-xs text-slate-500">
-                    PDFやTXTをドロップすると自動解析され、KPI・シミュレーター・クロニクルが全自動で更新されます。
+                    PDF・Word (DOCX)・TXTをドロップすると自動解析され、KPI・シミュレーター・クロニクルが全自動で更新されます。
                 </p>
             </div>
 
             <div id="drop-zone" class="border-2 border-dashed border-slate-300 hover:border-slate-900 p-8 rounded-xl text-center space-y-4 transition cursor-pointer bg-white" onclick="document.getElementById('file-drop-input').click()">
-                <input type="file" id="file-drop-input" accept=".pdf,.txt" multiple class="hidden" onchange="handleFileDropSelect(event)">
+                <input type="file" id="file-drop-input" accept=".pdf,.txt,.docx,.doc" multiple class="hidden" onchange="handleFileDropSelect(event)">
                 <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center mx-auto border border-slate-200">
                     <i data-lucide="upload-cloud" class="w-6 h-6"></i>
                 </div>
                 <div class="space-y-1">
                     <h4 class="text-sm font-bold text-slate-900">
-                        ここにPDF・TXTファイルをドラッグ＆ドロップ
+                        ここにPDF・Word (DOCX)・TXTファイルをドラッグ＆ドロップ
                     </h4>
                     <p class="text-xs text-slate-500">
                         クリックしてファイルを選択（即座に全画面のデータが自動更新されます）
@@ -714,7 +716,7 @@ def generate_html(chronicle_data, output_path):
             document.getElementById('drill-score').textContent = correctCount;
         }}
 
-        // In-Browser Drag & Drop PDF / TXT Parsing with full tab refresh
+        // In-Browser Drag & Drop PDF / DOCX / TXT Parsing with full tab refresh
         async function handleFiles(files) {{
             if (!files || files.length === 0) return;
             const statusEl = document.getElementById('drop-loading-status');
@@ -725,9 +727,13 @@ def generate_html(chronicle_data, output_path):
             for (let i = 0; i < files.length; i++) {{
                 const file = files[i];
                 let text = '';
-                if (file.name.endsWith('.pdf')) {{
+                const lower = file.name.toLowerCase();
+
+                if (lower.endsWith('.pdf')) {{
                     text = await extractPdfText(file);
-                }} else if (file.name.endsWith('.txt')) {{
+                }} else if (lower.endsWith('.docx')) {{
+                    text = await extractDocxText(file);
+                }} else if (lower.endsWith('.txt')) {{
                     text = await file.text();
                 }}
 
@@ -752,7 +758,7 @@ def generate_html(chronicle_data, output_path):
                         quotes: [],
                         kpis: [],
                         actions: [],
-                        tags: ["ドキュメント追加", "自動同期"]
+                        tags: lower.endsWith('.docx') ? ["DOCX", "ドキュメント追加", "自動同期"] : ["ドキュメント追加", "自動同期"]
                     }};
 
                     chronicleData.unshift(newMeeting);
@@ -785,6 +791,17 @@ def generate_html(chronicle_data, output_path):
                 return fullText;
             }} catch(err) {{
                 console.error("PDF extract error:", err);
+                return "";
+            }}
+        }}
+
+        async function extractDocxText(file) {{
+            try {{
+                const arrayBuffer = await file.arrayBuffer();
+                const result = await mammoth.extractRawText({{ arrayBuffer: arrayBuffer }});
+                return result.value;
+            }} catch(err) {{
+                console.error("DOCX extract error:", err);
                 return "";
             }}
         }}

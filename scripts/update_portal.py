@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 VEXUM CFO Intelligence Portal - 自動同期 & 更新スクリプト
-meetings/ ディレクトリ内のすべてのPDFやtxtファイルをスキャン・自動解析し、
+meetings/ ディレクトリ内のすべてのPDF、DOCX、TXTファイルをスキャン・自動解析し、
 最新の経営会議データを取り込んで HTML ポータルおよび data/chronicle.json を更新します。
 """
 
@@ -11,6 +11,8 @@ import glob
 import re
 import json
 import subprocess
+import zipfile
+import xml.etree.ElementTree as ET
 from datetime import datetime
 
 SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -27,10 +29,30 @@ def extract_text_from_pdf(pdf_path):
         print(f"Error reading PDF {pdf_path}: {e}")
         return ""
 
+def extract_text_from_docx(docx_path):
+    try:
+        with zipfile.ZipFile(docx_path) as z:
+            xml_content = z.read('word/document.xml')
+            tree = ET.fromstring(xml_content)
+            # Namespace for docx
+            namespaces = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+            paragraphs = []
+            for p in tree.iterfind('.//w:p', namespaces):
+                texts = [node.text for node in p.iterfind('.//w:t', namespaces) if node.text]
+                if texts:
+                    paragraphs.append(''.join(texts))
+            return '\n'.join(paragraphs)
+    except Exception as e:
+        print(f"Error reading DOCX {docx_path}: {e}")
+        return ""
+
 def extract_text_from_file(file_path):
-    if file_path.endswith('.pdf'):
+    lower = file_path.lower()
+    if lower.endswith('.pdf'):
         return extract_text_from_pdf(file_path)
-    elif file_path.endswith('.txt'):
+    elif lower.endswith('.docx'):
+        return extract_text_from_docx(file_path)
+    elif lower.endswith('.txt'):
         with open(file_path, 'r', encoding='utf-8', errors='ignore') as fp:
             return fp.read()
     return ""
@@ -116,6 +138,8 @@ def parse_meeting_document(file_path, content):
             break
 
     tags = []
+    if file_path.lower().endswith('.docx'):
+        tags.append('DOCX')
     tag_keywords = [
         ('逆算', '逆算設計'),
         ('調達', '資金調達'),
@@ -156,7 +180,11 @@ def main():
     print("🚀 VEXUM CFO Intelligence Portal - 自動同期開始")
     print("==================================================")
     
-    files = sorted(glob.glob(os.path.join(MEETINGS_DIR, '*.pdf')) + glob.glob(os.path.join(MEETINGS_DIR, '*.txt')))
+    files = sorted(
+        glob.glob(os.path.join(MEETINGS_DIR, '*.pdf')) + 
+        glob.glob(os.path.join(MEETINGS_DIR, '*.docx')) + 
+        glob.glob(os.path.join(MEETINGS_DIR, '*.txt'))
+    )
     print(f"📁 検出ファイル数: {len(files)} 件 in {MEETINGS_DIR}")
     
     meetings = []
